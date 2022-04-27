@@ -47,9 +47,9 @@ import { ToolbarButton } from "./input/ToolbarButton";
 import { RoomEntryModal } from "./room/RoomEntryModal";
 import { EnterOnDeviceModal } from "./room/EnterOnDeviceModal";
 import { MicSetupModalContainer } from "./room/MicSetupModalContainer";
-import { InvitePopoverContainer } from "./room/InvitePopoverContainer";
+// import { InvitePopoverContainer } from "./room/InvitePopoverContainer";
 import { MoreMenuPopoverButton, CompactMoreMenuButton, MoreMenuContextProvider } from "./room/MoreMenuPopover";
-import { ChatSidebarContainer, ChatContextProvider, ChatToolbarButtonContainer } from "./room/ChatSidebarContainer";
+// import { ChatSidebarContainer, ChatContextProvider, ChatToolbarButtonContainer } from "./room/ChatSidebarContainer";
 import { ContentMenu, PeopleMenuButton, ObjectsMenuButton } from "./room/ContentMenu";
 import { ReactComponent as CameraIcon } from "./icons/Camera.svg";
 import { ReactComponent as AvatarIcon } from "./icons/Avatar.svg";
@@ -74,10 +74,10 @@ import { ObjectListProvider } from "./room/useObjectList";
 import { ObjectsSidebarContainer } from "./room/ObjectsSidebarContainer";
 import { ObjectMenuContainer } from "./room/ObjectMenuContainer";
 import { useCssBreakpoints } from "react-use-css-breakpoints";
-import { PlacePopoverContainer } from "./room/PlacePopoverContainer";
+// import { PlacePopoverContainer } from "./room/PlacePopoverContainer";
 //import { SharePopoverContainer } from "./room/SharePopoverContainer";
 import { AudioPopoverContainer } from "./room/AudioPopoverContainer";
-import { ReactionPopoverContainer } from "./room/ReactionPopoverContainer";
+// import { ReactionPopoverContainer } from "./room/ReactionPopoverContainer";
 import { SafariMicModal } from "./room/SafariMicModal";
 import { RoomSignInModalContainer } from "./auth/RoomSignInModalContainer";
 import { SignInStep } from "./auth/SignInModal";
@@ -1541,11 +1541,11 @@ class UIRoot extends Component {
                 }
                 modal={this.state.dialog}
                 toolbarLeft={
-                  <InvitePopoverContainer
-                    hub={this.props.hub}
-                    hubChannel={this.props.hubChannel}
-                    scene={this.props.scene}
-                  />
+                  // <InvitePopoverContainer
+                  //   hub={this.props.hub}
+                  //   hubChannel={this.props.hubChannel}
+                  //   scene={this.props.scene}
+                  // />
                 }
                 toolbarCenter={
                   <>
@@ -1573,25 +1573,25 @@ class UIRoot extends Component {
                       <>
                         <AudioPopoverContainer scene={this.props.scene} />
                         {/* <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} /> */}
-                        <PlacePopoverContainer
+                        {/* <PlacePopoverContainer
                           scene={this.props.scene}
                           hubChannel={this.props.hubChannel}
                           mediaSearchStore={this.props.mediaSearchStore}
                           showNonHistoriedDialog={this.showNonHistoriedDialog}
-                        />
-                        {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
+                        /> */}
+                        {/* {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />} */}
                       </>
                     )}
                     <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
                     {entered &&
                       isMobileVR && (
-                        <ToolbarButton
-                          className={styleUtils.hideLg}
-                          icon={<VRIcon />}
-                          preset="accept"
-                          label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
-                          onClick={() => exit2DInterstitialAndEnterVR(true)}
-                        />
+                        // <ToolbarButton
+                        //   className={styleUtils.hideLg}
+                        //   icon={<VRIcon />}
+                        //   preset="accept"
+                        //   label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
+                        //   onClick={() => exit2DInterstitialAndEnterVR(true)}
+                        // />
                       )}
                   </>
                 }
