@@ -33,7 +33,7 @@ export const AllButtons = args => (
     {presets.map(preset => (
       <ToolbarButton key={preset} icon={<ShareIcon />} label={preset} preset={preset} {...args} />
     ))}
-    <ToolbarButton icon={<ShareIcon />} label="Share" preset="accent5" statusColor="recording" {...args} />
+    {/* <ToolbarButton icon={<ShareIcon />} label="Share" preset="accent5" statusColor="recording" {...args} /> */}
     <ToolbarButton icon={<MicrophoneIcon />} label="Voice" statusColor="enabled" {...args} />
   </Column>
 );
@@ -62,7 +62,7 @@ export const RoomToolbar = () => (
             statusColor={"enabled"}
           />
         </div>
-        <ToolbarButton icon={<ShareIcon />} label="Share" preset="accent5" />
+        {/* <ToolbarButton icon={<ShareIcon />} label="Share" preset="accent5" /> */}
         <ToolbarButton icon={<ObjectIcon />} label="Place" preset="accent3" />
         <ToolbarButton icon={<ReactionIcon />} label="React" preset="accent2" />
         <ToolbarButton icon={<ChatIcon />} label="Chat" preset="accent4" />
