@@ -564,8 +564,9 @@ class UIRoot extends Component {
       }
       this.beginOrSkipAudioSetup();
     } else {
-      this.onRequestMicPermission();
-      this.pushHistoryState("entry_step", "audio");
+      //this.onRequestMicPermission();
+      //this.pushHistoryState("entry_step", "audio");
+      this.beginOrSkipAudioSetup();
     }
 
     this.setState({ waitingOnAudio: false });
@@ -606,8 +607,10 @@ class UIRoot extends Component {
       console.log(`Skipping audio setup (forcedVREntryType = ${this.props.forcedVREntryType})`);
       this.onAudioReadyButton();
     } else {
-      console.log(`Starting audio setup`);
-      this.pushHistoryState("entry_step", "audio");
+      // console.log(`Starting audio setup`);
+      // this.pushHistoryState("entry_step", "audio");
+      console.log(`Skipping audio setup (forcedVREntryType = ${this.props.forcedVREntryType})`);
+      this.onAudioReadyButton();
     }
   };
 
@@ -834,8 +837,9 @@ class UIRoot extends Component {
               if (promptForNameAndAvatarBeforeEntry) {
                 this.pushHistoryState("entry_step", "profile");
               } else {
-                this.onRequestMicPermission();
-                this.pushHistoryState("entry_step", "audio");
+                // this.onRequestMicPermission();
+                // this.pushHistoryState("entry_step", "audio");
+                this.beginOrSkipAudioSetup();
               }
             } else {
               this.handleForceEntry();
@@ -1071,8 +1075,9 @@ class UIRoot extends Component {
                     this.pushHistoryState();
                     this.handleForceEntry();
                   } else {
-                    this.onRequestMicPermission();
-                    this.pushHistoryState("entry_step", "audio");
+                    // this.onRequestMicPermission();
+                    // this.pushHistoryState("entry_step", "audio");
+                    this.beginOrSkipAudioSetup();
                   }
                 }}
                 showBackButton
