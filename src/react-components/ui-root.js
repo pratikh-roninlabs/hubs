@@ -783,6 +783,18 @@ class UIRoot extends Component {
     });
   }
 
+  timePeriod(){
+
+    var now = new Date();
+    if(now.getHours() <= 17 ){
+      console.log("4pm to 5pm is event time so you will be muted till then");
+    }
+    else{
+      <AudioPopoverContainer scene={this.props.scene} />
+    }
+
+  };
+
   onFocusChat = e => {
     this.setSidebar("chat", {
       chatInputEffect: input => {
@@ -1576,7 +1588,8 @@ class UIRoot extends Component {
                     )}
                     {entered && (
                       <>
-                        <AudioPopoverContainer scene={this.props.scene} />
+                        {this.timePeriod}
+                        {/* <AudioPopoverContainer scene={this.props.scene} /> */}
                         {/* <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} /> */}
                         {/* <PlacePopoverContainer
                           scene={this.props.scene}
