@@ -1588,8 +1588,8 @@ class UIRoot extends Component {
                     )}
                     {entered && (
                       <>
-                        {this.timePeriod}
-                        {/* <AudioPopoverContainer scene={this.props.scene} /> */}
+                        {/* {this.timePeriod} */}
+                        <AudioPopoverContainer scene={this.props.scene} />
                         {/* <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} /> */}
                         {/* <PlacePopoverContainer
                           scene={this.props.scene}
