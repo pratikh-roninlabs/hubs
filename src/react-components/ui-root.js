@@ -783,17 +783,17 @@ class UIRoot extends Component {
     });
   }
 
-  timePeriod = () => {
+  // timePeriod = () => {
 
-    var now = new Date();
-    if(now.getHours() <= 17 ){
-      console.log("4pm to 5pm is event time so you will be muted till then");
-    }
-    else{
-      return (<AudioPopoverContainer scene={this.props.scene} />);
-    }
+  //   var now = new Date();
+  //   if(now.getHours() <= 17 ){
+  //     console.log("4pm to 5pm is event time so you will be muted till then");
+  //   }
+  //   else{
+  //     return (<AudioPopoverContainer scene={this.props.scene} />);
+  //   }
 
-  };
+  // }
 
   onFocusChat = e => {
     this.setSidebar("chat", {
