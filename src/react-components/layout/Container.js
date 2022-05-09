@@ -4,6 +4,7 @@ import classNames from "classnames";
 import styles from "./Container.scss";
 
 export function Container({ as: Component, children, className, ...rest }) {
+  console.log(Component);
   return (
     <Component className={classNames(styles.container, className)} {...rest}>
       {children}

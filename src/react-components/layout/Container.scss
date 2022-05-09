@@ -1,7 +1,7 @@
 @use "../styles/theme.scss";
 
 :local(.container) {
-  display: flex;
+  // display: flex;
   margin: auto;
   max-width: 100%;
 
@@ -22,6 +22,6 @@
   }
 
   @media(min-width: theme.$breakpoint-xxl) {
-    max-width: 1140px;
+    max-width: 1280px;
   }
 }

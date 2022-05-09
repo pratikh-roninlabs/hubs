@@ -1,10 +1,14 @@
-import React, { useEffect } from "react";
-import { FormattedMessage } from "react-intl";
+import React, { useContext, useEffect } from "react";
+import { FormattedMessage, useIntl } from "react-intl";
 import classNames from "classnames";
 import configs from "../../utils/configs";
+import { getAppLogo } from "../../utils/get-app-logo";
+import { CreateRoomButton } from "./CreateRoomButton";
+import { PWAButton } from "./PWAButton";
 import { useFavoriteRooms } from "./useFavoriteRooms";
 import { usePublicRooms } from "./usePublicRooms";
 import styles from "./HomePage.scss";
+import { AuthContext } from "../auth/AuthContext";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
 import { MediaGrid } from "../room/MediaGrid";
 import { MediaTile } from "../room/MediaTiles";
@@ -14,9 +18,14 @@ import { Column } from "../layout/Column";
 import { Button } from "../input/Button";
 import { Container } from "../layout/Container";
 import { SocialBar } from "../home/SocialBar";
-import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
+import { SignInButton } from "./SignInButton";
+import maskEmail from "../../utils/mask-email";
+import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
 
 export function HomePage() {
+  const auth = useContext(AuthContext);
+  const intl = useIntl();
+
   const { results: favoriteRooms } = useFavoriteRooms();
   const { results: publicRooms } = usePublicRooms();
 
@@ -43,11 +52,52 @@ export function HomePage() {
     }
   }, []);
 
+  const canCreateRooms = !configs.feature("disable_room_creation") || auth.isAdmin;
+  const email = auth.email;
   return (
     <PageContainer className={styles.homePage}>
       <Container>
-        <div className={styles.bbLogoContaniner}>
-          <img src={BBLogo} />
+        <div className={styles.hero}>
+          {auth.isSignedIn ? (
+            <div className={styles.signInContainer}>
+              <span>
+                <FormattedMessage
+                  id="header.signed-in-as"
+                  defaultMessage="Signed in as {email}"
+                  values={{ email: maskEmail(email) }}
+                />
+              </span>
+              <a href="#" onClick={auth.signOut} className={styles.mobileSignOut}>
+                <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
+              </a>
+            </div>
+          ) : (
+            <SignInButton mobile />
+          )}
+          <div className={styles.logoContainer}>
+            {isHmc ? (
+              <HmcLogo className="hmc-logo" />
+            ) : (
+              <img alt={configs.translation("app-name")} src={getAppLogo()} />
+            )}
+          </div>
+          <div className={styles.appInfo}>
+            <div className={styles.appDescription}>{configs.translation("app-description")}</div>
+            {canCreateRooms && <CreateRoomButton />}
+            <PWAButton />
+          </div>
+          <div className={styles.heroImageContainer}>
+            <img
+              alt={intl.formatMessage(
+                {
+                  id: "home-page.hero-image-alt",
+                  defaultMessage: "Screenshot of {appName}"
+                },
+                { appName: configs.translation("app-name") }
+              )}
+              src={configs.image("home_background")}
+            />
+          </div>
         </div>
       </Container>
       {configs.feature("show_feature_panels") && (
