@@ -9,10 +9,12 @@ import li from "../../assets/images/hdfcbb/linkedin.svg";
 import yt from "../../assets/images/hdfcbb/yt.svg";
 /* styles */
 import styles from "./newHomePage.scss";
+import { RoomEntryModal } from "../room/RoomEntryModal";
 
 const NewHomePage = () => {
   return (
     <div>
+      {/* <RoomEntryModal roomName={"test"} /> */}
       <Container>
         <div>
           <div className={styles.hpHeader}>

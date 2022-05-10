@@ -6,18 +6,19 @@ import { Button } from "../input/Button";
 import { ReactComponent as EnterIcon } from "../icons/Enter.svg";
 import { ReactComponent as VRIcon } from "../icons/VR.svg";
 // import { ReactComponent as ShowIcon } from "../icons/Show.svg";
-import { ReactComponent as SettingsIcon } from "../icons/Settings.svg";
-import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
+// import { ReactComponent as SettingsIcon } from "../icons/Settings.svg";
+// import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
 import styles from "./RoomEntryModal.scss";
-import styleUtils from "../styles/style-utils.scss";
+// import styleUtils from "../styles/style-utils.scss";
 import { useCssBreakpoints } from "react-use-css-breakpoints";
 import { Column } from "../layout/Column";
 import { FormattedMessage } from "react-intl";
-import configs from "../../utils/configs";
+// import configs from "../../utils/configs";
+import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
 
 export function RoomEntryModal({
-  appName,
-  logoSrc,
+  // appName,
+  // logoSrc,
   className,
   roomName,
   showJoinRoom,
@@ -26,19 +27,20 @@ export function RoomEntryModal({
   onEnterOnDevice,
   // showSpectate,
   // onSpectate,
-  showOptions,
-  onOptions,
+  // showOptions,
+  // onOptions,
   ...rest
 }) {
   const breakpoint = useCssBreakpoints();
-  const isHmc = configs.feature("show_cloud");
+  // const isHmc = configs.feature("show_cloud");
+  // {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}
   return (
     <Modal className={classNames(styles.roomEntryModal, className)} disableFullscreen {...rest}>
       <Column center className={styles.content}>
         {breakpoint !== "sm" &&
           breakpoint !== "md" && (
             <div className={styles.logoContainer}>
-              {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}
+              <img src={BBLogo} />
             </div>
           )}
         <div className={styles.roomName}>
@@ -72,7 +74,7 @@ export function RoomEntryModal({
               </span>
             </Button>
           )} */}
-          {showOptions &&
+          {/* {showOptions &&
             breakpoint !== "sm" && (
               <>
                 <hr className={styleUtils.showLg} />
@@ -83,7 +85,7 @@ export function RoomEntryModal({
                   </span>
                 </Button>
               </>
-            )}
+            )} */}
         </Column>
       </Column>
     </Modal>

@@ -7,13 +7,14 @@ $input-height: 40px;
   position: relative;
   height: $input-height;
   border: 1px solid theme.$input-border-color;
-  border-radius: theme.$border-radius-regular;
+  border-radius: 15px;
   color: #000;
   overflow: hidden;
+  background: #fff;
 
   &:focus-within  {
-    border-color: theme.$input-outline-color;
-    box-shadow: 0 0 0 1px theme.$input-outline-color;
+    border-color: theme.$hdfcGray;
+    box-shadow: 0 0 0 1px theme.$hdfcGray;
   }
 }
 

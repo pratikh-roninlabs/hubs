@@ -5,9 +5,9 @@
   display: flex;
   flex-direction: column;
   height: max-content;
-  background-color: theme.$background1-color;
+  background-color: theme.$hdfcBGColor;
   border: 1px solid theme.$border1-color;
-  border-radius: theme.$border-radius-regular;
+  border-radius:34px;
   margin: 24px;
   z-index: 1;
   width: 100%;
