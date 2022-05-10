@@ -5,7 +5,7 @@ import { Modal } from "../modal/Modal";
 import { Button } from "../input/Button";
 import { ReactComponent as EnterIcon } from "../icons/Enter.svg";
 import { ReactComponent as VRIcon } from "../icons/VR.svg";
-import { ReactComponent as ShowIcon } from "../icons/Show.svg";
+// import { ReactComponent as ShowIcon } from "../icons/Show.svg";
 import { ReactComponent as SettingsIcon } from "../icons/Settings.svg";
 import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
 import styles from "./RoomEntryModal.scss";
@@ -24,8 +24,8 @@ export function RoomEntryModal({
   onJoinRoom,
   showEnterOnDevice,
   onEnterOnDevice,
-  showSpectate,
-  onSpectate,
+  // showSpectate,
+  // onSpectate,
   showOptions,
   onOptions,
   ...rest
@@ -64,14 +64,14 @@ export function RoomEntryModal({
               </span>
             </Button>
           )}
-          {showSpectate && (
+          {/* {showSpectate && (
             <Button preset="accent2" onClick={onSpectate}>
               <ShowIcon />
               <span>
                 <FormattedMessage id="room-entry-modal.spectate-button" defaultMessage="Spectate" />
               </span>
             </Button>
-          )}
+          )} */}
           {showOptions &&
             breakpoint !== "sm" && (
               <>

@@ -6,7 +6,7 @@ import {
   SystemMessage,
   ChatMessageList,
   ChatInput,
-  MessageAttachmentButton,
+  // MessageAttachmentButton,
   SpawnMessageButton,
   ChatToolbarButton,
   SendMessageButton,
@@ -160,7 +160,7 @@ ChatContextProvider.propTypes = {
   messageDispatch: PropTypes.object
 };
 
-export function ChatSidebarContainer({ scene, canSpawnMessages, presences, occupantCount, inputEffect, onClose }) {
+export function ChatSidebarContainer({ /*scene,*/ canSpawnMessages, presences, occupantCount, inputEffect, onClose }) {
   const { messageGroups, sendMessage, setMessagesRead } = useContext(ChatContext);
   const [onScrollList, listRef, scrolledToBottom] = useMaintainScrollPosition(messageGroups);
   const [message, setMessage] = useState("");
@@ -199,17 +199,17 @@ export function ChatSidebarContainer({ scene, canSpawnMessages, presences, occup
     setMessage("");
   };
 
-  const onUploadAttachments = useCallback(
-    e => {
-      // TODO: Right now there's no way to upload files to the chat only.
-      // When we add the place menu whcih will have an explicit button for uploading files,
-      // should we make this attach button only upload to chat?
-      for (const file of e.target.files) {
-        scene.emit("add_media", file);
-      }
-    },
-    [scene]
-  );
+  // const onUploadAttachments = useCallback(
+  //   e => {
+  //     // TODO: Right now there's no way to upload files to the chat only.
+  //     // When we add the place menu whcih will have an explicit button for uploading files,
+  //     // should we make this attach button only upload to chat?
+  //     for (const file of e.target.files) {
+  //       scene.emit("add_media", file);
+  //     }
+  //   },
+  //   [scene]
+  // );
 
   useEffect(() => inputEffect(inputRef.current), [inputEffect, inputRef]);
 
@@ -296,13 +296,11 @@ export function ChatSidebarContainer({ scene, canSpawnMessages, presences, occup
             {!isMobile && (
               <EmojiPickerPopoverButton onSelectEmoji={emoji => setMessage(message => message + emoji.native)} />
             )}
-            {message.length === 0 && canSpawnMessages ? (
-              <MessageAttachmentButton onChange={onUploadAttachments} />
-            ) : (
-              <SendMessageButton onClick={onSendMessage} disabled={message.length === 0 || isOverMaxLength} />
-            )}
             {canSpawnMessages && (
               <SpawnMessageButton disabled={message.length === 0 || isOverMaxLength} onClick={onSpawnMessage} />
+            )}
+            {message.length === 0 && canSpawnMessages ? null : (
+              <SendMessageButton onClick={onSendMessage} disabled={message.length === 0 || isOverMaxLength} />
             )}
           </>
         }
