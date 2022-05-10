@@ -2,9 +2,10 @@
 
 :local(.spinner) {
   animation: rotate 3s infinite linear;
-
+  width: 50px;
+  height: 50px;
   *[stroke=\#000] {
-    stroke: theme.$primary-color;
+    stroke: #000;
   }
 
   *[fill=\#000] {

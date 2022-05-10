@@ -4,7 +4,6 @@ import { WrappedIntlProvider } from "./react-components/wrapped-intl-provider";
 import registerTelemetry from "./telemetry";
 import Store from "./storage/store";
 import "./utils/theme";
-// import { HomePage } from "./react-components/home/HomePage";
 import NewHomePage from "./react-components/home/newHomePage";
 import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
