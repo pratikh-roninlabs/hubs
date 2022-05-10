@@ -26,19 +26,14 @@ export function AvatarSettingsContent({
         spellCheck="false"
         required
         onChange={onChangeDisplayName}
-        description={
-          <FormattedMessage
-            id="avatar-settings-content.display-name-description"
-            defaultMessage="Alphanumerics, hyphens, underscores, and tildes. At least 3 characters, no more than 32"
-          />
-        }
+        description={"Choose a nickname that your friends can identify you with."}
         ref={displayNameInputRef}
       />
       <div className={styles.avatarPreviewContainer}>
         {avatarPreview || <div />}
-        <Button type="button" preset="basic" onClick={onChangeAvatar}>
+        <button type="button" preset="basic" className={styles.changeBtn} onClick={onChangeAvatar}>
           <FormattedMessage id="avatar-settings-content.change-avatar-button" defaultMessage="Change Avatar" />
-        </Button>
+        </button>
       </div>
       <AcceptButton preset="accept" type="submit" />
     </Column>

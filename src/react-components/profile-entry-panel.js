@@ -117,6 +117,7 @@ export default class ProfileEntryPanel extends Component {
 
   refetchAvatar = async () => {
     const avatar = await fetchAvatar(this.state.avatarId);
+    console.log(avatar);
     if (this.state.avatarId !== avatar.avatar_id) return; // This is an old result, ignore it
     this.setState({ avatar });
   };

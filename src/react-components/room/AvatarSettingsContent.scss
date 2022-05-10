@@ -23,7 +23,7 @@
     width: 168px;
     height: 250px;
     border-radius: 8px;
-    background-color: theme.$tile-bg-color;
+    background-color: theme.$hdfcCream;
   }
 
   button {
@@ -31,4 +31,11 @@
     bottom: 0;
     margin-bottom: 8px;
   }
+}
+
+/* our code */
+:local(.changeBtn) {
+  background-color: #fff;
+  color:theme.$hdfcBlue;
+  border-width: 0px;
 }

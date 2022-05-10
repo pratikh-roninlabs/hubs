@@ -17,7 +17,7 @@
 :local(.header) {
   display: flex;
   height: 48px;
-  border-bottom: 1px solid theme.$border1-color;
+  // border-bottom: 1px solid theme.$border1-color;
   align-items: center;
   justify-content: center;
 }
@@ -59,4 +59,10 @@
       overflow-y: auto;
     }
   }
+}
+
+/* our code */
+:local(.centerTitle) {
+  color: theme.$hdfcBlue;
+  font-size: 18px;
 }
