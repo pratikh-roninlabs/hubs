@@ -35,7 +35,9 @@ export function AvatarSettingsContent({
           <FormattedMessage id="avatar-settings-content.change-avatar-button" defaultMessage="Change Avatar" />
         </button>
       </div>
-      <AcceptButton preset="accept" type="submit" />
+      <button className={styles.acceptBtn} type="submit">
+        {"CONFIRM"}
+      </button>
     </Column>
   );
 }
