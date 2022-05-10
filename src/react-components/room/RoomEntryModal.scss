@@ -22,7 +22,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  color: #000;
+  margin-top: 10px;
   h5 {
     font-size: theme.$font-size-xs;
     color: theme.$grey;
@@ -30,20 +31,39 @@
   }
 
   p {
-    font-size: theme.$font-size-sm;
+    font-size: 20px;
     text-align: center;
+    color: theme.$hdfcGray;
 
     @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
 }
 
 :local(.buttons) {
+  width: 100%;
+  margin-top: 15px;
   button {
     margin-left: 16px;
     margin-right: 16px;
-
+    width: 85%;
+    height: 56px;
+    min-height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    border-width: 0;
+    border-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+    white-space: nowrap;
+    padding: 0 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      margin-right: 10px;
+    }
     @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
       margin-left: 8px;
       margin-right: 8px;
@@ -52,3 +72,16 @@
 }
 
 /* our code */
+:local(.enterRoomBtn) {
+  color: #fff;
+  background-color: theme.$hdfcRed;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+:local(.enterVRBtn) {
+  color: theme.$hdfcRed;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  border: 1px solid theme.$hdfcRed !important;
+}

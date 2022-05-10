@@ -6,7 +6,7 @@
   flex-direction: column;
   height: max-content;
   background-color: theme.$hdfcBGColor;
-  border: 1px solid theme.$border1-color;
+  border: 1px solid rgba(theme.$hdfcGray,.5);
   border-radius:34px;
   margin: 24px;
   z-index: 1;

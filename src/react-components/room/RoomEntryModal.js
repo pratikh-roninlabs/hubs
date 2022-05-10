@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Modal } from "../modal/Modal";
 import { Button } from "../input/Button";
-import { ReactComponent as EnterIcon } from "../icons/Enter.svg";
-import { ReactComponent as VRIcon } from "../icons/VR.svg";
 // import { ReactComponent as ShowIcon } from "../icons/Show.svg";
 // import { ReactComponent as SettingsIcon } from "../icons/Settings.svg";
 // import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
@@ -15,6 +13,8 @@ import { Column } from "../layout/Column";
 import { FormattedMessage } from "react-intl";
 // import configs from "../../utils/configs";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
+import { ReactComponent as EnterIcon } from "../icons/enterMeta.svg";
+import { ReactComponent as VRIcon } from "../icons/vrdevice.svg";
 
 export function RoomEntryModal({
   // appName,
@@ -44,27 +44,24 @@ export function RoomEntryModal({
             </div>
           )}
         <div className={styles.roomName}>
-          <h5>
+          {/* <h5>
             <FormattedMessage id="room-entry-modal.room-name-label" defaultMessage="Room Name" />
           </h5>
-          <p>{roomName}</p>
+          <p>{roomName}</p> */}
+          <p>{"Welcome! Please choose an option from below to enter."}</p>
         </div>
         <Column center className={styles.buttons}>
           {showJoinRoom && (
-            <Button preset="accent4" onClick={onJoinRoom}>
+            <button className={styles.enterRoomBtn} onClick={onJoinRoom}>
               <EnterIcon />
-              <span>
-                <FormattedMessage id="room-entry-modal.join-room-button" defaultMessage="Join Room" />
-              </span>
-            </Button>
+              <span>{"Enter the Metaverse"}</span>
+            </button>
           )}
           {showEnterOnDevice && (
-            <Button preset="accent5" onClick={onEnterOnDevice}>
+            <button className={styles.enterVRBtn} onClick={onEnterOnDevice}>
               <VRIcon />
-              <span>
-                <FormattedMessage id="room-entry-modal.enter-on-device-button" defaultMessage="Enter On Device" />
-              </span>
-            </Button>
+              <span>{"Join with VR Device"}</span>
+            </button>
           )}
           {/* {showSpectate && (
             <Button preset="accent2" onClick={onSpectate}>

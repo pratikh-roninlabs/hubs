@@ -14,7 +14,7 @@ import { RoomEntryModal } from "../room/RoomEntryModal";
 const NewHomePage = () => {
   return (
     <div>
-      {/* <RoomEntryModal roomName={"test"} /> */}
+      <RoomEntryModal roomName={"test"} />
       <Container>
         <div>
           <div className={styles.hpHeader}>
