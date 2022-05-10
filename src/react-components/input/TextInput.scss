@@ -8,12 +8,12 @@ $input-height: 40px;
   height: $input-height;
   border: 1px solid theme.$input-border-color;
   border-radius: theme.$border-radius-regular;
-  color: theme.$text1-color;
+  color: #000;
   overflow: hidden;
 
   &:focus-within  {
     border-color: theme.$input-outline-color;
-    box-shadow: 0 0 0 2px theme.$input-outline-color;
+    box-shadow: 0 0 0 1px theme.$input-outline-color;
   }
 }
 
@@ -104,7 +104,7 @@ $input-height: 40px;
   background-color: transparent;
   padding-left: 8px;
   line-height: calc(#{$input-height} - 2px);
-
+  color: #000;
   &:focus {
     box-shadow: none;
   }

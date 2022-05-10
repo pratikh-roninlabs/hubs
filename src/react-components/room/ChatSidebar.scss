@@ -115,11 +115,11 @@
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$input-icon-color;
+      stroke: theme.$hdfcGray;
     }
 
     *[fill=\#000] {
-      fill: theme.$input-icon-color;
+      fill: theme.$hdfcGray;
     }
   }
 }
