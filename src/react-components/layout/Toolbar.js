@@ -4,7 +4,7 @@ import classNames from "classnames";
 import styles from "./Toolbar.scss";
 import styleUtils from "../styles/style-utils.scss";
 
-export function Toolbar({ className, left, center, right, ...rest }) {
+export function Toolbar({ className, left, center, right, isSidebar, ...rest }) {
   return (
     <div className={classNames(styles.toolbar, className)} {...rest}>
       <div className={classNames(styles.content, styles.leftContent, styleUtils.showLg)}>{left}</div>
@@ -20,5 +20,6 @@ Toolbar.propTypes = {
   center: PropTypes.node,
   right: PropTypes.node,
   hideLeft: PropTypes.string,
-  hideRight: PropTypes.string
+  hideRight: PropTypes.string,
+  isSidebar: PropTypes.bool
 };

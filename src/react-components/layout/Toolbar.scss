@@ -9,10 +9,12 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;
     justify-content: space-between;
+    &.sideBar {
+      width: calc(100%-450px);
+    }
   }
 }
 

@@ -33,6 +33,7 @@ export function RoomLayout({
               left={toolbarLeft}
               center={toolbarCenter}
               right={toolbarRight}
+              isSidebar={sidebar}
             />
           ) : null}
         </>
