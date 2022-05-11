@@ -1373,7 +1373,6 @@ class UIRoot extends Component {
               )}
             {this.props.hub && (
               <RoomLayoutContainer
-                playerEntered={entered}
                 scene={this.props.scene}
                 store={this.props.store}
                 objectFocused={!!this.props.selectedObject}
@@ -1542,18 +1541,11 @@ class UIRoot extends Component {
                 }
                 modal={this.state.dialog}
                 toolbarLeft={
-                  <>
-                    {entered && (
-                      <>
-                        <AudioPopoverContainer scene={this.props.scene} />
-                      </>
-                    )}
-                  </>
-                  // <InvitePopoverContainer
-                  //   hub={this.props.hub}
-                  //   hubChannel={this.props.hubChannel}
-                  //   scene={this.props.scene}
-                  // />
+                  <InvitePopoverContainer
+                    hub={this.props.hub}
+                    hubChannel={this.props.hubChannel}
+                    scene={this.props.scene}
+                  />
                 }
                 toolbarCenter={
                   <>
@@ -1579,18 +1571,18 @@ class UIRoot extends Component {
                     )}
                     {entered && (
                       <>
-                        {/* <AudioPopoverContainer scene={this.props.scene} /> */}
-                        {/* <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
+                        <AudioPopoverContainer scene={this.props.scene} />
+                        <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
                         <PlacePopoverContainer
                           scene={this.props.scene}
                           hubChannel={this.props.hubChannel}
                           mediaSearchStore={this.props.mediaSearchStore}
                           showNonHistoriedDialog={this.showNonHistoriedDialog}
                         />
-                        {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />} */}
+                        {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
                     )}
-                    {/* <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} /> */}
+                    <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
                     {entered &&
                       isMobileVR && (
                         <ToolbarButton
@@ -1605,7 +1597,7 @@ class UIRoot extends Component {
                 }
                 toolbarRight={
                   <>
-                    {/* {entered &&
+                    {entered &&
                       isMobileVR && (
                         <ToolbarButton
                           icon={<VRIcon />}
@@ -1626,10 +1618,8 @@ class UIRoot extends Component {
                           });
                         }}
                       />
-                    )} */}
-                    <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
-                    {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
-                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
+                    )}
+                    <MoreMenuPopoverButton menu={moreMenu} />
                   </>
                 }
               />
