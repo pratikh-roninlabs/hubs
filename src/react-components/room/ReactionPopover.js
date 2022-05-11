@@ -5,6 +5,7 @@ import { Popover } from "../popover/Popover";
 import { ToolbarButton } from "../input/ToolbarButton";
 import { ReactComponent as ReactionIcon } from "../icons/Reaction.svg";
 import { defineMessage, useIntl } from "react-intl";
+import NewReactBtn from "./NewReactBtn";
 
 const reactionPopoverTitle = defineMessage({
   id: "reaction-popover.title",
@@ -22,16 +23,8 @@ export function ReactionPopoverButton({ items }) {
       placement="top"
       offsetDistance={28}
     >
-      {({ togglePopover, popoverVisible, triggerRef }) => (
-        <ToolbarButton
-          ref={triggerRef}
-          icon={<ReactionIcon />}
-          selected={popoverVisible}
-          onClick={togglePopover}
-          label={title}
-          preset="accent2"
-        />
-      )}
+      {/* <NewReactBtn onClick={togglePopover} /> */}
+      {({ togglePopover, popoverVisible, triggerRef }) => <NewReactBtn onClick={togglePopover} />}
     </Popover>
   );
 }

@@ -94,6 +94,9 @@ import { TipContainer, FullscreenTip } from "./room/TipContainer";
 import { SpectatingLabel } from "./room/SpectatingLabel";
 import { SignInMessages } from "./auth/SignInModal";
 import { MediaDevicesEvents } from "../utils/media-devices-utils";
+import NewAvatarSelectBtn from "./room/NewAvatarSelectBtn";
+import NewChatBtn from "./room/NewChatBtn";
+import NewSelfie from "./room/NewSelfie";
 
 const avatarEditorDebug = qsTruthy("avatarEditorDebug");
 
@@ -1540,84 +1543,73 @@ class UIRoot extends Component {
                   )
                 }
                 modal={this.state.dialog}
+                playerEntered={entered}
                 toolbarLeft={
-                  <InvitePopoverContainer
-                    hub={this.props.hub}
-                    hubChannel={this.props.hubChannel}
-                    scene={this.props.scene}
-                  />
-                }
-                toolbarCenter={
                   <>
-                    {watching && (
-                      <>
-                        <ToolbarButton
-                          icon={<EnterIcon />}
-                          label={<FormattedMessage id="toolbar.join-room-button" defaultMessage="Join Room" />}
-                          preset="accept"
-                          onClick={() => this.setState({ watching: false })}
-                        />
-                        {enableSpectateVRButton && (
-                          <ToolbarButton
-                            icon={<VRIcon />}
-                            preset="accent5"
-                            label={
-                              <FormattedMessage id="toolbar.spectate-in-vr-button" defaultMessage="Spectate in VR" />
-                            }
-                            onClick={() => this.props.scene.enterVR()}
-                          />
-                        )}
-                      </>
-                    )}
                     {entered && (
                       <>
                         <AudioPopoverContainer scene={this.props.scene} />
-                        <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
-                        <PlacePopoverContainer
-                          scene={this.props.scene}
-                          hubChannel={this.props.hubChannel}
-                          mediaSearchStore={this.props.mediaSearchStore}
-                          showNonHistoriedDialog={this.showNonHistoriedDialog}
-                        />
-                        {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
+                        <NewAvatarSelectBtn onClick={() => this.setSidebar("profile")} />
                       </>
                     )}
-                    <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
-                    {entered &&
-                      isMobileVR && (
-                        <ToolbarButton
-                          className={styleUtils.hideLg}
-                          icon={<VRIcon />}
-                          preset="accept"
-                          label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
-                          onClick={() => exit2DInterstitialAndEnterVR(true)}
-                        />
-                      )}
                   </>
+                }
+                toolbarCenter={
+                  // <>
+                  //   {watching && (
+                  //     <>
+                  //       <ToolbarButton
+                  //         icon={<EnterIcon />}
+                  //         label={<FormattedMessage id="toolbar.join-room-button" defaultMessage="Join Room" />}
+                  //         preset="accept"
+                  //         onClick={() => this.setState({ watching: false })}
+                  //       />
+                  //       {enableSpectateVRButton && (
+                  //         <ToolbarButton
+                  //           icon={<VRIcon />}
+                  //           preset="accent5"
+                  //           label={
+                  //             <FormattedMessage id="toolbar.spectate-in-vr-button" defaultMessage="Spectate in VR" />
+                  //           }
+                  //           onClick={() => this.props.scene.enterVR()}
+                  //         />
+                  //       )}
+                  //     </>
+                  //   )}
+                  //   {entered && (
+                  //     <>
+                  //       <AudioPopoverContainer scene={this.props.scene} />
+                  //       <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
+                  //       <PlacePopoverContainer
+                  //         scene={this.props.scene}
+                  //         hubChannel={this.props.hubChannel}
+                  //         mediaSearchStore={this.props.mediaSearchStore}
+                  //         showNonHistoriedDialog={this.showNonHistoriedDialog}
+                  //       />
+                  //       {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
+                  //     </>
+                  //   )}
+                  //   <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
+                  //   {entered &&
+                  //     isMobileVR && (
+                  //       <ToolbarButton
+                  //         className={styleUtils.hideLg}
+                  //         icon={<VRIcon />}
+                  //         preset="accept"
+                  //         label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
+                  //         onClick={() => exit2DInterstitialAndEnterVR(true)}
+                  //       />
+                  //     )}
+                  // </>
                 }
                 toolbarRight={
                   <>
-                    {entered &&
-                      isMobileVR && (
-                        <ToolbarButton
-                          icon={<VRIcon />}
-                          preset="accept"
-                          label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
-                          onClick={() => exit2DInterstitialAndEnterVR(true)}
-                        />
-                      )}
                     {entered && (
-                      <ToolbarButton
-                        icon={<LeaveIcon />}
-                        label={<FormattedMessage id="toolbar.leave-room-button" defaultMessage="Leave" />}
-                        preset="cancel"
-                        onClick={() => {
-                          this.showNonHistoriedDialog(LeaveRoomModal, {
-                            destinationUrl: "/",
-                            reason: LeaveReason.leaveRoom
-                          });
-                        }}
-                      />
+                      <>
+                        <NewSelfie onClick={this.props.scene.emit("action_toggle_camera")} />
+                        <NewChatBtn onClick={() => this.toggleSidebar("chat")} />
+                        {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
+                      </>
                     )}
                     <MoreMenuPopoverButton menu={moreMenu} />
                   </>

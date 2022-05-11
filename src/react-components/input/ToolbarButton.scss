@@ -26,6 +26,7 @@
   justify-content: center;
   align-items: center;
   border: 1px solid theme.$transparent;
+  // border-width: 0;
   background-color: theme.$transparent;
 
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
@@ -681,8 +682,10 @@
 :local(.left) {
   :local(.icon-container) {
     width: 48px;
+    border-radius: 0px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    background-color: #fff;
   } 
 }
 
@@ -698,5 +701,6 @@
     border-radius: 0px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    background-color: #fff;
   }
 }

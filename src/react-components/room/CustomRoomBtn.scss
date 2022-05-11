@@ -1,0 +1,25 @@
+:local(.avatarBtn) {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #005e9e;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+  & svg {
+    @media (min-width: 991px) {
+      margin-right: 8px;
+    }
+  }
+  & label {
+    display: none;
+    font-weight: 400;
+    font-size: 14px;
+    @media (min-width: 991px) {
+      display: block;
+    }
+  }
+}

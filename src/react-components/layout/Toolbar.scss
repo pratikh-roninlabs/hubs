@@ -6,7 +6,10 @@
   padding: 12px;
   background-color: theme.$background1-color;
   border-top: 1px solid theme.$border1-color;
-
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;
     justify-content: space-between;
@@ -17,12 +20,55 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
+  align-items: center;
 
   @media (min-width: theme.$breakpoint-lg) {
     flex: 0;
 
     & > * {
       margin-right: 24px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+:local(.leftContent) {
+  & > * {
+    margin-right: 10px;
+  }
+  @media (min-width: theme.$breakpoint-lg) {
+    & > * {
+      margin-right: 24px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+:local(.rightContent) {
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  & > * {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  @media (min-width: theme.$breakpoint-lg) {
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    & > * {
+      margin-right: 24px;
+      margin-bottom: 0;
     }
 
     &:last-child {
