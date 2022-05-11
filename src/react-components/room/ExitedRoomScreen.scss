@@ -1,0 +1,20 @@
+@use "../styles/theme.scss";
+:local(.redirectBtn) {
+  display: block;
+  height: 48px;
+  min-height: 48px;
+  width: min-content;
+  min-width: 156px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid theme.$hdfcRed;
+  background-color: #fff;
+  color: theme.$hdfcRed;
+  transition: background-color 0.1s ease-in-out;
+  white-space: nowrap;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { defineMessages, FormattedMessage, useIntl } from "react-intl";
 import { LoadingScreenLayout } from "../layout/LoadingScreenLayout";
 import { Button } from "../input/Button";
+import styles from "./ExitedRoomScreen.scss";
 
 export const ExitReason = {
   exited: "exited",
@@ -60,7 +61,7 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
 
   let subtitle = null;
   if (reason === ExitReason.closed) {
-    const contactEmail = intl.formatMessage({ id: "contact-email" });
+    //const contactEmail = intl.formatMessage({ id: "contact-email" });
 
     subtitle = (
       <>
@@ -70,7 +71,7 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
             defaultMessage="Sorry, this room is no longer available."
           />
         </b>
-        {showTerms && (
+        {/* {showTerms && (
           <p>
             <FormattedMessage
               id="exited-room-screen.closed-room-tos"
@@ -85,15 +86,15 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
               }}
             />
           </p>
-        )}
-        <p>
+        )} */}
+        {/* <p>
           <FormattedMessage
             id="exited-room-screen.contact-us"
             defaultMessage="If you have questions, contact us at {contactEmail}."
             values={{ contactEmail: <a href={`mailto:${contactEmail}`}>{contactEmail}</a> }}
           />
-        </p>
-        {showSourceLink && (
+        </p> */}
+        {/* {showSourceLink && (
           <p>
             <FormattedMessage
               id="exited-room-screen.source-link"
@@ -104,11 +105,11 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
               }}
             />
           </p>
-        )}
+        )} */}
 
-        <Button as="a" preset="accept" href="/">
+        <a className={styles.redirectBtn} href="/">
           <FormattedMessage id="exited-room-screen.home-button" defaultMessage="Back to Home" />
-        </Button>
+        </a>
       </>
     );
   } else {
@@ -133,7 +134,7 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
             />
           </p>
         )}
-        {![ExitReason.left, ExitReason.disconnected, ExitReason.sceneError].includes(reason) && (
+        {/* {![ExitReason.left, ExitReason.disconnected, ExitReason.sceneError].includes(reason) && (
           <p>
             <FormattedMessage
               id="exited-room-screen.create-room"
@@ -144,11 +145,10 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
               }}
             />
           </p>
-        )}
-
-        <Button as="a" preset="accept" href={window.location.href}>
+        )} */}
+        <a className={styles.redirectBtn} href={window.location.href}>
           <FormattedMessage id="exited-room-screen.refresh-page-button" defaultMessage="Refresh Page" />
-        </Button>
+        </a>
       </>
     );
   }
