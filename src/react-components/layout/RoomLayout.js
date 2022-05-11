@@ -18,6 +18,7 @@ export function RoomLayout({
   objectFocused,
   streaming,
   viewportRef,
+  playerEntered,
   ...rest
 }) {
   return (
@@ -25,12 +26,16 @@ export function RoomLayout({
       {sidebar && <div className={classNames(styles.sidebar, sidebarClassName)}>{sidebar}</div>}
       <div className={classNames(styles.modalContainer, styles.viewport)}>{modal}</div>
       {(toolbarLeft || toolbarCenter || toolbarRight) && (
-        <Toolbar
-          className={classNames(styles.main, styles.toolbar, toolbarClassName)}
-          left={toolbarLeft}
-          center={toolbarCenter}
-          right={toolbarRight}
-        />
+        <>
+          {playerEntered ? (
+            <Toolbar
+              className={classNames(styles.main, styles.toolbar, toolbarClassName)}
+              left={toolbarLeft}
+              center={toolbarCenter}
+              right={toolbarRight}
+            />
+          ) : null}
+        </>
       )}
       <div
         className={classNames(styles.main, styles.viewport, { [styles.streaming]: streaming }, viewportClassName)}
@@ -55,5 +60,6 @@ RoomLayout.propTypes = {
   viewport: PropTypes.node,
   objectFocused: PropTypes.bool,
   streaming: PropTypes.bool,
-  viewportRef: PropTypes.any
+  viewportRef: PropTypes.any,
+  playerEntered: PropTypes.bool
 };

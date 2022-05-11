@@ -65,7 +65,7 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
 
     subtitle = (
       <>
-        <b>
+        <b className={styles.txtColor}>
           <FormattedMessage
             id="exited-room-screen.no-longer-availible"
             defaultMessage="Sorry, this room is no longer available."
@@ -120,10 +120,10 @@ export function ExitedRoomScreen({ reason, showTerms, termsUrl, logoSrc, showSou
 
     subtitle = (
       <>
-        <b>{intl.formatMessage(messages[reason])}</b>
+        <b className={styles.txtColor}>{intl.formatMessage(messages[reason])}</b>
 
         {reason === ExitReason.connectError && (
-          <p>
+          <p className={styles.txtColor}>
             <FormattedMessage
               id="exited-room-screen.connect-tcp"
               defaultMessage="You can try <a>connecting via TCP</a>, which may work better on some networks."
