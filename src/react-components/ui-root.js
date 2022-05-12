@@ -1609,7 +1609,7 @@ class UIRoot extends Component {
                   <>
                     {entered && (
                       <>
-                        <NewSelfie onClick={this.props.scene.emit("action_toggle_camera")} />
+                        <NewSelfie onClick={() => this.props.scene.emit("action_toggle_camera")} />
                         <NewChatBtn onClick={() => this.toggleSidebar("chat")} />
                         {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
