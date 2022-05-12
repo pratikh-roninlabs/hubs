@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ImageGridPopover } from "../popover/ImageGridPopover";
 import { Popover } from "../popover/Popover";
-import { ToolbarButton } from "../input/ToolbarButton";
-import { ReactComponent as ReactionIcon } from "../icons/Reaction.svg";
+// import { ToolbarButton } from "../input/ToolbarButton";
+// import { ReactComponent as ReactionIcon } from "../icons/Reaction.svg";
 import { defineMessage, useIntl } from "react-intl";
 import NewReactBtn from "./NewReactBtn";
 
@@ -24,7 +24,7 @@ export function ReactionPopoverButton({ items }) {
       offsetDistance={28}
     >
       {/* <NewReactBtn onClick={togglePopover} /> */}
-      {({ togglePopover, popoverVisible, triggerRef }) => <NewReactBtn onClick={togglePopover} />}
+      {({ togglePopover /* , popoverVisible, triggerRef */ }) => <NewReactBtn onClick={togglePopover} />}
     </Popover>
   );
 }
