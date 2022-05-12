@@ -19,6 +19,7 @@ export function RoomLayout({
   streaming,
   viewportRef,
   playerEntered,
+  sidebarActive,
   ...rest
 }) {
   return (
@@ -34,6 +35,7 @@ export function RoomLayout({
               center={toolbarCenter}
               right={toolbarRight}
               isSidebar={sidebar}
+              sidebarActive={sidebarActive}
             />
           ) : null}
         </>
@@ -62,5 +64,6 @@ RoomLayout.propTypes = {
   objectFocused: PropTypes.bool,
   streaming: PropTypes.bool,
   viewportRef: PropTypes.any,
-  playerEntered: PropTypes.bool
+  playerEntered: PropTypes.bool,
+  sidebarActive: PropTypes.any
 };

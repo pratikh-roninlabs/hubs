@@ -1547,6 +1547,7 @@ class UIRoot extends Component {
                 }
                 modal={this.state.dialog}
                 playerEntered={entered}
+                sidebarActive={this.state.sidebarId}
                 toolbarLeft={
                   <>
                     {entered && (
