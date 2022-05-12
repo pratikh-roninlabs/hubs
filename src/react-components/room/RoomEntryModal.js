@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Modal } from "../modal/Modal";
-import { Button } from "../input/Button";
-// import { ReactComponent as ShowIcon } from "../icons/Show.svg";
+// import { Button } from "../input/Button";
+import { ReactComponent as ShowIcon } from "../icons/Show.svg";
 // import { ReactComponent as SettingsIcon } from "../icons/Settings.svg";
 // import { ReactComponent as HmcLogo } from "../icons/HmcLogo.svg";
 import styles from "./RoomEntryModal.scss";
 // import styleUtils from "../styles/style-utils.scss";
 import { useCssBreakpoints } from "react-use-css-breakpoints";
 import { Column } from "../layout/Column";
-import { FormattedMessage } from "react-intl";
+// import { FormattedMessage } from "react-intl";
 // import configs from "../../utils/configs";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
 import { ReactComponent as EnterIcon } from "../icons/enterMeta.svg";
@@ -20,13 +20,13 @@ export function RoomEntryModal({
   // appName,
   // logoSrc,
   className,
-  roomName,
+  // roomName,
   showJoinRoom,
   onJoinRoom,
   showEnterOnDevice,
   onEnterOnDevice,
-  // showSpectate,
-  // onSpectate,
+  showSpectate,
+  onSpectate,
   // showOptions,
   // onOptions,
   ...rest
@@ -63,14 +63,12 @@ export function RoomEntryModal({
               <span>{"Join with VR Device"}</span>
             </button>
           )}
-          {/* {showSpectate && (
-            <Button preset="accent2" onClick={onSpectate}>
+          {showSpectate && (
+            <button className={styles.enterVRBtn} onClick={onSpectate}>
               <ShowIcon />
-              <span>
-                <FormattedMessage id="room-entry-modal.spectate-button" defaultMessage="Spectate" />
-              </span>
-            </Button>
-          )} */}
+              <span>{"Join with VR Device"}</span>
+            </button>
+          )}
           {/* {showOptions &&
             breakpoint !== "sm" && (
               <>

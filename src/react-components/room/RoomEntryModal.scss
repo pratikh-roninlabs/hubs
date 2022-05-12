@@ -85,3 +85,20 @@
   font-size: 18px;
   border: 1px solid theme.$hdfcRed !important;
 }
+:local(.enterSpectateBtn) {
+  color: theme.$hdfcRed;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  border: 1px solid theme.$hdfcRed !important;
+  & svg {
+    *[stroke=\#000],
+    *[stroke=\black] {
+      stroke: theme.$hdfcRed;
+    }
+
+    *[fill=\#000] {
+      fill: theme.$hdfcRed
+    }
+  }
+}
