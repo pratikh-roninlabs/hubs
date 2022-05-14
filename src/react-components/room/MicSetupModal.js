@@ -153,9 +153,9 @@ export function MicSetupModal({
               <LevelBar className={styles.levelBar} level={speakerLevel} />
             </div>
             <div className={styles.actionContainer}>
-              <buttom className={styles.testAudioBtn} preset="basic" onClick={onPlaySound} sm>
+              <button className={styles.testAudioBtn} preset="basic" onClick={onPlaySound} sm>
                 <FormattedMessage id="mic-setup-modal.test-audio-button" defaultMessage="Test Audio" />
-              </buttom>
+              </button>
             </div>
             {permissionStatus === PermissionStatus.GRANTED &&
               speakerOptions?.length > 0 && (
@@ -176,7 +176,7 @@ export function MicSetupModal({
         </div>
         <button className={styles.enterBtn} preset="primary" onClick={onEnterRoom}>
           <FormattedMessage id="mic-setup-modal.enter-room-button" defaultMessage="Enter Room" />
-        </buttom>
+        </button>
       </Column>
     </Modal>
   );
