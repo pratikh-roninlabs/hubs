@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./RoomLayout.scss";
 import { Toolbar } from "./Toolbar";
+import RoomTopBar from "../room/RoomTopBar";
 
 export function RoomLayout({
   className,
@@ -20,10 +21,12 @@ export function RoomLayout({
   viewportRef,
   playerEntered,
   sidebarActive,
+  showTopBar,
   ...rest
 }) {
   return (
     <div className={classNames(styles.roomLayout, { [styles.objectFocused]: objectFocused }, className)} {...rest}>
+      {showTopBar && <RoomTopBar sidebarActive={sidebarActive} />}
       {sidebar && <div className={classNames(styles.sidebar, sidebarClassName)}>{sidebar}</div>}
       <div className={classNames(styles.modalContainer, styles.viewport)}>{modal}</div>
       {(toolbarLeft || toolbarCenter || toolbarRight) && (
@@ -65,5 +68,6 @@ RoomLayout.propTypes = {
   streaming: PropTypes.bool,
   viewportRef: PropTypes.any,
   playerEntered: PropTypes.bool,
-  sidebarActive: PropTypes.any
+  sidebarActive: PropTypes.any,
+  showTopBar: PropTypes.bool
 };
