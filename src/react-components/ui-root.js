@@ -168,7 +168,8 @@ class UIRoot extends Component {
     onLoaded: PropTypes.func,
     activeObject: PropTypes.object,
     selectedObject: PropTypes.object,
-    breakpoint: PropTypes.string
+    breakpoint: PropTypes.string,
+    peopleInRoom: PropTypes.number
   };
 
   state = {
@@ -204,6 +205,7 @@ class UIRoot extends Component {
     objectSrc: "",
     sidebarId: null,
     presenceCount: 0,
+    peopleInRoom: 0,
     chatInputEffect: () => {}
   };
   constructor(props) {
@@ -278,6 +280,9 @@ class UIRoot extends Component {
 
     if (this.state.presenceCount != this.occupantCount()) {
       this.setState({ presenceCount: this.occupantCount() });
+    }
+    if (this.state.peopleInRoom != this.occupantsInRoom()) {
+      this.setState({ peopleInRoom: this.occupantsInRoom() });
     }
   }
 
@@ -724,6 +729,14 @@ class UIRoot extends Component {
     return this.props.presences ? Object.entries(this.props.presences).length : 0;
   };
 
+  occupantsInRoom = () => {
+    const enteredCount = Object.entries(this.props.presences).reduce(
+      (acc, [_, value]) => (acc += value.metas[value.metas.length - 1].presence === "room" ? 1 : 0),
+      0
+    );
+    return enteredCount;
+  };
+
   hasEmbedPresence = () => {
     if (!this.props.presences) {
       return false;
@@ -848,9 +861,12 @@ class UIRoot extends Component {
           }}
           showEnterOnDevice={!this.state.waitingOnAudio && !this.props.entryDisallowed && !isMobileVR}
           onEnterOnDevice={() => this.attemptLink()}
-          showSpectate={this.state.presenceCount > 2}
-          // showSpectate={!this.state.waitingOnAudio}
-          onSpectate={() => this.setState({ watching: true })}
+          showSpectate={this.state.peopleInRoom > 2} // showSpectate={!this.state.waitingOnAudio}
+          onSpectate={() =>
+            this.setState({
+              watching: true
+            })
+          }
           showOptions={this.props.hubChannel.canOrWillIfCreator("update_hub")}
           onOptions={() => {
             this.props.performConditionalSignIn(
