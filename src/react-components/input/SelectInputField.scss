@@ -34,17 +34,17 @@ $input-height: 40px;
   }
   
   &:focus-within  {
-    border-color: theme.$input-outline-color;
-    box-shadow: 0 0 0 2px theme.$input-outline-color;
+    border-color: theme.$hdfcRed;
+    box-shadow: 0 0 0 2px theme.$hdfcRed;
   }
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text1-color;
+      stroke: #000;
     }
 
     *[fill=\#000] {
-      fill: theme.$text1-color;
+      fill: #000;
     }
   }
 }
@@ -54,7 +54,7 @@ $input-height: 40px;
   top: $input-height + 4px;
   display: none;
   flex-direction: column;
-  background-color: theme.$dropdown-bg-color;
+  background-color: #fff;
   border-radius: 8px;
   padding: 8px 0;
   z-index: 99999;
@@ -86,6 +86,6 @@ $input-height: 40px;
 }
 
 :local(.highlighted-item) {
-  color: theme.$active-text-color;
-  background-color: theme.$active-color;
+  color: #fff;
+  background-color: rgba(theme.$hdfcGray,.3);
 }

@@ -45,7 +45,7 @@ export function MicSetupModal({
       {...rest}
     >
       <Column center padding grow className={styles.content}>
-        <p>
+        <p style={{ color: "#000" }}>
           <FormattedMessage
             id="mic-setup-modal.check-mic"
             defaultMessage="Check your microphone and audio before entering."
@@ -106,7 +106,7 @@ export function MicSetupModal({
                 </>
               ) : (
                 (permissionStatus === PermissionStatus.PROMPT && (
-                  <p>
+                  <p style={{ color: "#000" }}>
                     <FormattedMessage
                       id="mic-setup-modal.mic-permission-prompt"
                       defaultMessage="Requesting access to your microphone..."
@@ -114,7 +114,7 @@ export function MicSetupModal({
                   </p>
                 )) ||
                 (permissionStatus === PermissionStatus.DENIED && (
-                  <p>
+                  <p style={{ color: "#000" }}>
                     <span className={styles.errorTitle}>
                       <FormattedMessage
                         id="mic-setup-modal.error-title"
@@ -134,7 +134,7 @@ export function MicSetupModal({
               isMicrophoneEnabled &&
               microphoneOptions?.length > 0 && (
                 <div className={styles.selectionContainer}>
-                  <p style={{ alignSelf: "start" }}>
+                  <p style={{ alignSelf: "start", color: "#000" }}>
                     <FormattedMessage id="mic-setup-modal.microphone-text" defaultMessage="Microphone" />
                   </p>
                   <SelectInputField
@@ -153,14 +153,14 @@ export function MicSetupModal({
               <LevelBar className={styles.levelBar} level={speakerLevel} />
             </div>
             <div className={styles.actionContainer}>
-              <Button preset="basic" onClick={onPlaySound} sm>
+              <buttom className={styles.testAudioBtn} preset="basic" onClick={onPlaySound} sm>
                 <FormattedMessage id="mic-setup-modal.test-audio-button" defaultMessage="Test Audio" />
-              </Button>
+              </buttom>
             </div>
             {permissionStatus === PermissionStatus.GRANTED &&
               speakerOptions?.length > 0 && (
                 <div className={styles.selectionContainer}>
-                  <p style={{ alignSelf: "start" }}>
+                  <p style={{ alignSelf: "start", color: "#000" }}>
                     <FormattedMessage id="mic-setup-modal.speakers-text" defaultMessage="Speakers" />
                   </p>
                   <SelectInputField
@@ -174,9 +174,9 @@ export function MicSetupModal({
               )}
           </div>
         </div>
-        <Button preset="primary" onClick={onEnterRoom}>
+        <button className={styles.enterBtn} preset="primary" onClick={onEnterRoom}>
           <FormattedMessage id="mic-setup-modal.enter-room-button" defaultMessage="Enter Room" />
-        </Button>
+        </buttom>
       </Column>
     </Modal>
   );

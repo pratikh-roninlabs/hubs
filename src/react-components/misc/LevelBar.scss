@@ -8,7 +8,7 @@
 :local(.level-bar-border) {
   position: relative;
   width: 100%;
-  border: 1px solid var(--toolbar-basic-border-color);
+  border: 1px solid rgba(theme.$hdfcGray, .4);
   border-radius: theme.$border-radius-small;
 }
 

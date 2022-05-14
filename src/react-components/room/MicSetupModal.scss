@@ -33,7 +33,7 @@ $mobile-breakpoint-width: 450px;
   gap: 10px 10px;
   padding: 20px;
   align-items: center;
-  border: 1px solid var(--toolbar-basic-border-color);
+  border: 1px solid rgba(theme.$hdfcGray, .6);
   background-color: theme.$transparent;
 
   transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
@@ -48,11 +48,11 @@ $mobile-breakpoint-width: 450px;
   height: 42px;
 
   *[stroke=\#000] {
-    stroke: theme.$text1-color;
+    stroke: #000;
   }
 
   *[fill=\#000] {
-    fill: theme.$text1-color;
+    fill: #000;
   }
 }
 
@@ -65,11 +65,11 @@ $mobile-breakpoint-width: 450px;
   height: 48px;
 
   *[stroke=\#000] {
-    stroke: theme.$text2-color;
+    stroke: #000;
   }
 
   *[fill=\#000] {
-    fill: theme.$text2-color;
+    fill: #000;
   }
 }
 
@@ -97,6 +97,8 @@ $mobile-breakpoint-width: 450px;
 :local(.selection-input) {  
   width: 100%;
   max-width: none;
+  color: #000 !important;
+  background-color: #fff !important;
 }
 
 :local(.popover) {
@@ -141,4 +143,33 @@ $mobile-breakpoint-width: 450px;
 :local(.level-bar) {
   width: 24px;
   height: 100%;
+}
+
+:local(.testAudioBtn) {
+  height: 32px;
+  min-height: 32px;
+  min-width: 100px;
+  padding: 0 8px;
+  border: 2px solid rgba(rgba(theme.$hdfcGray, .4));
+  color: rgba(0,0,0,.7);
+  background-color: transparent;
+}
+:local(.enterBtn) {
+  height: 48px;
+  min-height: 48px;
+  width: min-content;
+  min-width: 156px;
+  font-weight: 700;
+  font-size: 12px;
+  border-radius: 8px;
+  border-width: 0;
+  border-color: transparent;
+  transition: background-color .1s ease-in-out;
+  white-space: nowrap;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: theme.$hdfcRed;
+  color: #fff;
 }
