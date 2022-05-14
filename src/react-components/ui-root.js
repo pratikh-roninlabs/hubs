@@ -206,7 +206,6 @@ class UIRoot extends Component {
     presenceCount: 0,
     chatInputEffect: () => {}
   };
-
   constructor(props) {
     super(props);
 
@@ -234,7 +233,7 @@ class UIRoot extends Component {
     }
     if (!this.willCompileAndUploadMaterials && this.state.noMoreLoadingUpdates) {
       this.willCompileAndUploadMaterials = true;
-      // We want to ensure that react and the browser have had the chance to render / update.
+      // We want to ensure that react and the browser have had the chance to    der / update.
       // See https://stackoverflow.com/a/34999925 , although our solution flipped setTimeout and requestAnimationFrame
       window.requestAnimationFrame(() => {
         window.setTimeout(() => {
@@ -965,6 +964,9 @@ class UIRoot extends Component {
   }
 
   render() {
+    console.log("=-=-=-=-=-=-=-=-");
+    console.log(this.props.presences);
+    console.log("=-=-=-=-=-=-=-=-");
     const isGhost =
       configs.feature("enable_lobby_ghosts") && (this.state.watching || (this.state.hide || this.props.hide));
     const hide = this.state.hide || this.props.hide;

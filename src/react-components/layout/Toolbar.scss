@@ -10,7 +10,7 @@
   left: 0;
   width: 100%;
   &.sidebar {
-    width: calc(100%-450px);
+    width: calc(100% - 450px);
   }
   @media (min-width: theme.$breakpoint-lg) {
     padding: 12px 24px;
