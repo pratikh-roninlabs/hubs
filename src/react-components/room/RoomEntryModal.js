@@ -51,23 +51,26 @@ export function RoomEntryModal({
           <p>{"Welcome! Please choose an option from below to enter."}</p>
         </div>
         <Column center className={styles.buttons}>
-          {showJoinRoom && (
-            <button className={styles.enterRoomBtn} onClick={onJoinRoom}>
-              <EnterIcon />
-              <span>{"Enter the Metaverse"}</span>
-            </button>
-          )}
-          {showEnterOnDevice && (
-            <button className={styles.enterVRBtn} onClick={onEnterOnDevice}>
-              <VRIcon />
-              <span>{"Join with VR Device"}</span>
-            </button>
-          )}
-          {showSpectate && (
+          {showSpectate ? (
             <button className={styles.enterVRBtn} onClick={onSpectate}>
               <ShowIcon />
               <span>{"Join with VR Device"}</span>
             </button>
+          ) : (
+            <>
+              {showJoinRoom && (
+                <button className={styles.enterRoomBtn} onClick={onJoinRoom}>
+                  <EnterIcon />
+                  <span>{"Enter the Metaverse"}</span>
+                </button>
+              )}
+              {showEnterOnDevice && (
+                <button className={styles.enterVRBtn} onClick={onEnterOnDevice}>
+                  <VRIcon />
+                  <span>{"Join with VR Device"}</span>
+                </button>
+              )}
+            </>
           )}
           {/* {showOptions &&
             breakpoint !== "sm" && (
