@@ -62,6 +62,11 @@ export function MediaBrowser({
       }
       headerCenter={
         <>
+          <h2 className={styles.titleText}>{"Select a Avatar"}</h2>
+        </>
+      }
+      headerRight={
+        <>
           {selectedSource === "favorites" ? (
             <>
               <StarIcon className={styles.favoriteIcon} />
@@ -88,9 +93,9 @@ export function MediaBrowser({
           )}
         </>
       }
-      headerRight={headerRight}
     >
-      {mediaSources && (
+      // headerRight={headerRight}
+      {/* {mediaSources && (
         <div className={styles.buttonNav}>
           {mediaSources.map(source => (
             <Button
@@ -103,8 +108,8 @@ export function MediaBrowser({
             </Button>
           ))}
         </div>
-      )}
-      {facets && (
+      )} */}
+      {/* {facets && (
         <div className={classNames(styles.buttonNav, styles.facetsNav)}>
           {facets.map((facet, i) => (
             <Button
@@ -117,7 +122,7 @@ export function MediaBrowser({
             </Button>
           ))}
         </div>
-      )}
+      )} */}
       <div className={styles.content}>
         <Column grow ref={browserRef}>
           {children ? (

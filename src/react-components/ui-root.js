@@ -730,10 +730,12 @@ class UIRoot extends Component {
   };
 
   occupantsInRoom = () => {
-    const enteredCount = Object.entries(this.props.presences).reduce(
-      (acc, [_, value]) => (acc += value.metas[value.metas.length - 1].presence === "room" ? 1 : 0),
-      0
-    );
+    const enteredCount = this.props.presences
+      ? Object.entries(this.props.presences).reduce(
+          (acc, [_, value]) => (acc += value.metas[value.metas.length - 1].presence === "room" ? 1 : 0),
+          0
+        )
+      : 0;
     return enteredCount;
   };
 

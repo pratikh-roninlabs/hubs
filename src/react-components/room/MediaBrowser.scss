@@ -109,3 +109,10 @@
   justify-content: center;
   text-align: center;
 }
+
+/* our code */
+:local(.titleText) {
+  color: theme.$hdfcBlue;
+  font-size: 18px;
+  text-align:center;
+}

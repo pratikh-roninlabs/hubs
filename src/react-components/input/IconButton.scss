@@ -12,11 +12,11 @@
 
   svg {
     *[stroke=\#000] {
-      stroke: theme.$text1-color;
+      stroke: #000;
     }
 
     *[fill=\#000] {
-      fill: theme.$text1-color;
+      fill: #000;
     }
   }
 
@@ -33,11 +33,11 @@
 
     svg {
       *[stroke=\#000] {
-        stroke: theme.$primary-color-hover;
+        stroke: #000;
       }
   
       *[fill=\#000] {
-        fill: theme.$primary-color-hover;
+        fill: #000;
       }
     }
   }
@@ -47,11 +47,11 @@
 
     svg {
       *[stroke=\#000] {
-        stroke: theme.$primary-color-pressed;
+        stroke: #000;
       }
   
       *[fill=\#000] {
-        fill: theme.$primary-color-pressed;
+        fill: #000;
       }
     }
   }
@@ -66,11 +66,11 @@
 
     svg {
       *[stroke=\#000] {
-        stroke: theme.$disabled-icon-color;
+        stroke: rgba(0,0,0,.5);
       }
   
       *[fill=\#000] {
-        fill: theme.$disabled-icon-color;
+        fill: rgba(0,0,0,.5);
       }
     }
   }
