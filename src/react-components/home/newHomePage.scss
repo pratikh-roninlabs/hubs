@@ -24,7 +24,10 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top:-55px
+  margin-top:-55px;
+  & img{
+    width: 180px;
+  }
 }
 :local(.hpHeroContent) {
   width: 100%;
@@ -75,9 +78,10 @@
     text-transform: uppercase;
     border-radius: 10px;
     font-weight: bold;
-    & a:hover {
+    &:hover {
       text-decoration: none;
       color: #fff;
+      box-shadow: 0px 0px 11px 5px rgba(theme.$hdfcRed, .3);
     }
   }
 }
@@ -204,5 +208,49 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     color: #d1d3d4;
+  }
+}
+
+:local(.tabsWrapper) {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+:local(.tabs) {
+  list-style: none;
+  height: 54px;
+  border-radius: 12px;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  & li {
+    padding: 0 34px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #58595b;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(88,89,91,1) 40%, rgba(88,89,91,1) 60%, rgba(255,255,255,0) 100%);
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+    &.active {
+      background-color: theme.$hdfcRed;
+      color:#fff;
+    }
   }
 }
