@@ -9,8 +9,6 @@ import NewHomePagePost from "./react-components/home/newHomePagePost";
 import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
 import { ThemeProvider } from "./react-components/styles/theme";
-import "~slick-carousel/slick/slick.css"; 
-import "~slick-carousel/slick/slick-theme.css";
 
 registerTelemetry("/home", "Hubs Home Page");
 
