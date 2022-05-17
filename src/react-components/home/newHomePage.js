@@ -6,6 +6,14 @@ import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
 import vibha from "../../assets/images/hdfcbb/vibha.jpg";
 import sunil from "../../assets/images/hdfcbb/suni.jpg";
 import swati from "../../assets/images/hdfcbb/swati.jpg";
+import karunesh from "../../assets/images/hdfcbb/karunesh.jpg";
+import event1 from "../../assets/images/hdfcbb/event1.jpg";
+import event2 from "../../assets/images/hdfcbb/event2.jpg";
+import event3 from "../../assets/images/hdfcbb/event3.jpg";
+import event4 from "../../assets/images/hdfcbb/event4.jpg";
+import event5 from "../../assets/images/hdfcbb/event5.jpg";
+import { ReactComponent as Right } from "../icons/redRight.svg";
+import { ReactComponent as Left } from "../icons/redLeft.svg";
 /* styles */
 import styles from "./newHomePage.scss";
 import Slider from "react-slick";
@@ -15,12 +23,23 @@ const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToShow: 3,
+  slidesToScroll: 2,
+  nextArrow: (
+    <div>
+      <Right />
+    </div>
+  ),
+  prevArrow: (
+    <div>
+      <Left />
+    </div>
+  )
 };
 
 const NewHomePage = () => {
   const [tab, setTab] = useState("register");
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const handleClick = elem => {
     setTab(elem);
     const domElem = document.querySelector(`#${elem}`);
@@ -43,18 +62,40 @@ const NewHomePage = () => {
     if (qs.has("new")) {
       createAndRedirectToNewHub(null, null, true);
     }
+    setTimeLeft(calculateTimeLeft());
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
   }, []);
+  const calculateTimeLeft = () => {
+    const year = new Date().getFullYear();
+    const difference = +new Date(`05/22/${year}`) - +new Date();
+
+    let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+    return timeLeft;
+  };
   return (
     <div>
       <Container>
         <div>
-          <div className={styles.hpHeader}>
+          <div className={styles.hpHeader} style={{ paddingTop: "10px" }}>
             <div className={styles.hpHeaderLogo}>
               <img src={HDFCLogo} alt={"HDFCLifeLogo"} />
             </div>
             <div className={styles.hpTimer}>
               {"Begins in "}
-              <strong>{"4d:1hr"}</strong>
+              <strong>
+                {timeLeft["days"]}d:{timeLeft["hours"]}hr
+              </strong>
             </div>
           </div>
           <div className={styles.bbbLogoWrapper}>
@@ -77,8 +118,11 @@ const NewHomePage = () => {
             <div className={styles.hpHeroContent}>
               <p>
                 A unique <span>virtual convocation on the Metaverse</span> to celebrate the BounceBack Batch of 2022.
-                Join the fun on
-                <span>22nd May, 4pm onwards</span>.
+                Join the fun on{" "}
+                <span>
+                  22<sup>nd</sup> May, 4pm
+                </span>{" "}
+                onwards.
               </p>
             </div>
             <div className={styles.hpHeroVideo}>
@@ -100,7 +144,7 @@ const NewHomePage = () => {
                 now to take part in this exciting event.
               </p>
               <div className={styles.hpHeroRegister}>
-                <a href="#">Regitster for the event</a>
+                <a href="https://bouncebackbatch.com/">CLICK TO REGISTER</a>
               </div>
             </div>
           </section>
@@ -147,23 +191,22 @@ const NewHomePage = () => {
                 <div>
                   <h3>Swati Bhargava</h3>
                   <p>
-                    Co-Founder of CashKaro.com, Swati Bhargava is one of India’s leading women entrepreneurs and an
-                    acclaimed social media influencer.
+                    Co-Founder of CashKaro.com and EarnKaro.com, Swati Bhargava is one of India’s leading women
+                    entrepreneurs and was featured in Forbes 40 under 40.
                   </p>
                 </div>
               </div>
             </li>
             <li>
               <div className={"speakerImg"}>
-                <img src={vibha} alt="" />
+                <img src={karunesh} alt="" />
               </div>
               <div className={"speakerIntro"}>
                 <div>
-                  <h3>Biswas Bist</h3>
+                  <h3>Karunesh Talwar</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam repudiandae nobis
-                    voluptates rem eveniet maxime consectetur possimus, atque repellat quia, porro praesentium vel
-                    voluptatem quos nihil soluta dolorem eum.
+                    With over 700K subscribers on YouTube and over 170K followers on Instagram, Karunesh Talwar is one
+                    of India's most adored comedians.
                   </p>
                 </div>
               </div>
@@ -175,26 +218,27 @@ const NewHomePage = () => {
         <div className={styles.hpEventList}>
           <h2 className={styles.hpSectionTitle}>Event Hightlights</h2>
           <div className={styles.hpSliders}>
-            <div>
-              <h2> Single Item</h2>
+            <div className={styles.sliderWrapper}>
               <Slider {...settings}>
-                <div>
-                  <h3>1</h3>
+                <div className={styles.selem}>
+                  <img src={event1} alt="" />
+                  <span> A wide range of avatars to choose from.</span>
                 </div>
-                <div>
-                  <h3>2</h3>
+                <div className={styles.selem}>
+                  <img src={event2} alt="" />
+                  <span>A beautiful environment to explore.</span>
                 </div>
-                <div>
-                  <h3>3</h3>
+                <div className={styles.selem}>
+                  <img src={event3} alt="" />
+                  <span>Entertaining and inspirational talks from special guests.</span>
                 </div>
-                <div>
-                  <h3>4</h3>
+                <div className={styles.selem}>
+                  <img src={event4} alt="" />
+                  <span>An a-maze-ing experience to explore.</span>
                 </div>
-                <div>
-                  <h3>5</h3>
-                </div>
-                <div>
-                  <h3>6</h3>
+                <div className={styles.selem}>
+                  <img src={event5} alt="" />
+                  <span>A basketball court to practice shooting hoops.</span>
                 </div>
               </Slider>
             </div>
@@ -216,16 +260,20 @@ const NewHomePage = () => {
         </div>
       </Container> */}
       <div className={styles.footerWrapper}>
-        <h2>
+        {/* <h2>
           <span>Terms and Conditions</span> - <span>Privacy Policy</span>
-        </h2>
+        </h2> */}
         <p>
           <b>HDFC Life Insurance Company Limited ("HDFC Life")</b>. CIN: L65110MH2000PLC128245, IRDAI Registration No.
           101.<br />
           <b>Registered Office</b>: 13th Floor, Lodha Excelus, Apollo Mills Compound, N.M. Joshi Marg, Mahalaxmi, Mumbai
           - 400 011.<br />
-          Email: service@hdfclife.com,Tel No: 1860-267-9999. Available (Mon-Sat 10 am to 7 pm) Local charges apply. DO
-          NOT prefix any country code e.g. +91 or 00, Website: www.hdfclife.com<br />
+          Email: <a href="mailto:service@hdfclife.com">service@hdfclife.com</a>,Tel No: 1860-267-9999. Available
+          (Mon-Sat 10 am to 7 pm) Local charges apply. DO NOT prefix any country code e.g. +91 or 00, Website:{" "}
+          <a href="www.hdfclife.com" target="_blank">
+            www.hdfclife.com
+          </a>
+          <br />
           The name/letters "HDFC" in the name/logo of the company belongs to Housing Development Finance Corporation
           Limited ("HDFC Limited") and is used by HDFC Life under an agreement entered into with HDFC Limited.<br />
           ARN: INT/MC/05/22/28801
