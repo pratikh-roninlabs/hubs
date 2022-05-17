@@ -1,10 +1,19 @@
 /* hp === Home Page */
 @use '../styles/theme.scss';
 
+:local(.hpHeaderWrapper) {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 100;
+  padding: 10px 0;
+}
 :local(.hpHeader) {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 :local(.hpHeaderLogo) {
   width: 80px;
@@ -181,7 +190,7 @@
 }
 :local(.hpRulestoParticipate) {
   width: 100%;
-  max-width: 900px;
+  max-width: 700px;
   margin: 40px auto 0;
   & ol {
     list-style: auto;
@@ -252,5 +261,16 @@
       background-color: theme.$hdfcRed;
       color:#fff;
     }
+  }
+}
+:local(.enterBtnWrapper) {
+  & > button {
+    height: 48px;
+    background-color: theme.$hdfcRed;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+    padding: 0 30px;
   }
 }
