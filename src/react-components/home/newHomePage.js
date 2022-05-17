@@ -1,5 +1,5 @@
 /* eslint-disable @calm/react-intl/missing-formatted-message */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "../layout/Container";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
 import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
@@ -9,6 +9,7 @@ import swati from "../../assets/images/hdfcbb/swati.jpg";
 /* styles */
 import styles from "./newHomePage.scss";
 import Slider from "react-slick";
+import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
 
 const settings = {
   dots: true,
@@ -25,6 +26,24 @@ const NewHomePage = () => {
     const domElem = document.querySelector(`#${elem}`);
     domElem.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  useEffect(() => {
+    const qs = new URLSearchParams(location.search);
+
+    // Support legacy sign in urls.
+    if (qs.has("sign_in")) {
+      const redirectUrl = new URL("/signin", window.location);
+      redirectUrl.search = location.search;
+      window.location = redirectUrl;
+    } else if (qs.has("auth_topic")) {
+      const redirectUrl = new URL("/verify", window.location);
+      redirectUrl.search = location.search;
+      window.location = redirectUrl;
+    }
+
+    if (qs.has("new")) {
+      createAndRedirectToNewHub(null, null, true);
+    }
+  }, []);
   return (
     <div>
       <Container>
@@ -70,9 +89,9 @@ const NewHomePage = () => {
                     height="100%"
                     src="https://www.youtube.com/embed/oi1ntQwBJ9Y"
                     title="YouTube video player"
-                    frameborder="0"
+                    frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
+                    allowFullScreen
                   />
                 </div>
               </div>
