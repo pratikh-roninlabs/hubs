@@ -5,8 +5,18 @@ import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
 import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
 import vibha from "../../assets/images/hdfcbb/vibha.jpg";
 import sunil from "../../assets/images/hdfcbb/suni.jpg";
+import swati from "../../assets/images/hdfcbb/swati.jpg";
 /* styles */
 import styles from "./newHomePage.scss";
+import Slider from "react-slick";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
 
 const NewHomePage = () => {
   const [tab, setTab] = useState("register");
@@ -79,7 +89,7 @@ const NewHomePage = () => {
       </Container>
       <section id="speakers">
         <div className={styles.speakerWrapper}>
-          <h2 className={styles.hpSectionTitle}>Guest Speakers</h2>
+          <h2 className={styles.hpSectionTitle}>Speakers</h2>
           <ul className={styles.speakerList}>
             <li>
               <div className={"speakerImg"}>
@@ -112,15 +122,14 @@ const NewHomePage = () => {
             </li>
             <li>
               <div className={"speakerImg"}>
-                <img src={vibha} alt="" />
+                <img src={swati} alt="" />
               </div>
               <div className={"speakerIntro"}>
                 <div>
-                  <h3>Biswas Bist</h3>
+                  <h3>Swati Bhargava</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam repudiandae nobis
-                    voluptates rem eveniet maxime consectetur possimus, atque repellat quia, porro praesentium vel
-                    voluptatem quos nihil soluta dolorem eum.
+                    Co-Founder of CashKaro.com, Swati Bhargava is one of India’s leading women entrepreneurs and an
+                    acclaimed social media influencer.
                   </p>
                 </div>
               </div>
@@ -146,10 +155,34 @@ const NewHomePage = () => {
       <section id="highlights">
         <div className={styles.hpEventList}>
           <h2 className={styles.hpSectionTitle}>Event Hightlights</h2>
-          <div className={styles.hpSliders}>slider</div>
+          <div className={styles.hpSliders}>
+            <div>
+              <h2> Single Item</h2>
+              <Slider {...settings}>
+                <div>
+                  <h3>1</h3>
+                </div>
+                <div>
+                  <h3>2</h3>
+                </div>
+                <div>
+                  <h3>3</h3>
+                </div>
+                <div>
+                  <h3>4</h3>
+                </div>
+                <div>
+                  <h3>5</h3>
+                </div>
+                <div>
+                  <h3>6</h3>
+                </div>
+              </Slider>
+            </div>
+          </div>
         </div>
       </section>
-      <Container>
+      {/* <Container>
         <div className={styles.hpRulestoParticipate}>
           <h2 className={styles.hpSectionTitle}>How to participate</h2>
           <ol>
@@ -162,9 +195,11 @@ const NewHomePage = () => {
             </li>
           </ol>
         </div>
-      </Container>
+      </Container> */}
       <div className={styles.footerWrapper}>
-        <h2>Terms and Conditions - Privacy Policy</h2>
+        <h2>
+          <span>Terms and Conditions</span> - <span>Privacy Policy</span>
+        </h2>
         <p>
           <b>HDFC Life Insurance Company Limited ("HDFC Life")</b>. CIN: L65110MH2000PLC128245, IRDAI Registration No.
           101.<br />
