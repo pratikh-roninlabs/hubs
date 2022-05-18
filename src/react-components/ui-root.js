@@ -77,7 +77,7 @@ import { ObjectListProvider } from "./room/useObjectList";
 import { ObjectsSidebarContainer } from "./room/ObjectsSidebarContainer";
 import { ObjectMenuContainer } from "./room/ObjectMenuContainer";
 import { useCssBreakpoints } from "react-use-css-breakpoints";
-// import { PlacePopoverContainer } from "./room/PlacePopoverContainer";
+import { PlacePopoverContainer } from "./room/PlacePopoverContainer";
 // import { SharePopoverContainer } from "./room/SharePopoverContainer";
 import { AudioPopoverContainer } from "./room/AudioPopoverContainer";
 import { ReactionPopoverContainer } from "./room/ReactionPopoverContainer";
@@ -863,7 +863,7 @@ class UIRoot extends Component {
           }}
           showEnterOnDevice={!this.state.waitingOnAudio && !this.props.entryDisallowed && !isMobileVR}
           onEnterOnDevice={() => this.attemptLink()}
-          showSpectate={this.state.peopleInRoom > 2} // showSpectate={!this.state.waitingOnAudio}
+          showSpectate={this.state.peopleInRoom > 100} // showSpectate={!this.state.waitingOnAudio}
           onSpectate={() =>
             this.setState({
               watching: true
@@ -1581,6 +1581,12 @@ class UIRoot extends Component {
                 }
                 toolbarCenter={
                   <>
+                    <PlacePopoverContainer
+                      scene={this.props.scene}
+                      hubChannel={this.props.hubChannel}
+                      mediaSearchStore={this.props.mediaSearchStore}
+                      showNonHistoriedDialog={this.showNonHistoriedDialog}
+                    />
                     {/* {watching && (
                       <>
                         <ToolbarButton
