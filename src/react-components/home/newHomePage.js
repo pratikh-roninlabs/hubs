@@ -67,6 +67,7 @@ const NewHomePage = () => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
+    document.title = "HDFC Life BounceBack Batch 2022 | Virtual Convocation on Metaverse";
   }, []);
   const calculateTimeLeft = () => {
     const year = new Date().getFullYear();
