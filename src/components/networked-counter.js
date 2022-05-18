@@ -6,7 +6,7 @@
  */
 AFRAME.registerComponent("networked-counter", {
   schema: {
-    max: { default: 3 }
+    max: { default: 10 }
   },
 
   init() {
