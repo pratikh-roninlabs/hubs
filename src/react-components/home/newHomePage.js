@@ -18,6 +18,7 @@ import { ReactComponent as Left } from "../icons/redLeft.svg";
 import styles from "./newHomePage.scss";
 import Slider from "react-slick";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
+// import "../styles/slick.css";
 
 const settings = {
   dots: true,
