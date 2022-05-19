@@ -11,7 +11,7 @@ export function LoadingScreen({ logoSrc, message, infoMessages }) {
       center={
         <>
           <Spinner />
-          <p style={{ color: "#707070" }}>{message}</p>
+          <p style={{ color: "#707070" }}>Loading</p>
         </>
       }
       bottom={

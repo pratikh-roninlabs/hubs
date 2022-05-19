@@ -25,5 +25,5 @@ const infoMessages = [
 ];
 
 export const Base = () => (
-  <LoadingScreen logoSrc={logoSrc} message="Loading objects 2/14" infoMessages={infoMessages} />
+  <LoadingScreen logoSrc={logoSrc} message="Loading" infoMessages={infoMessages} />
 );

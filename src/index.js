@@ -4,7 +4,7 @@ import { WrappedIntlProvider } from "./react-components/wrapped-intl-provider";
 import registerTelemetry from "./telemetry";
 import Store from "./storage/store";
 import "./utils/theme";
-// import NewHomePage from "./react-components/home/newHomePage";
+import NewHomePage from "./react-components/home/newHomePage";
 import NewHomePagePost from "./react-components/home/newHomePagePost";
 import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
@@ -23,7 +23,7 @@ function Root() {
         <AuthContextProvider store={store}>
           <RoomTopBar />
           {/* <NewHomePage /> */}
-          <NewHomePagePost />
+          <NewHomePagePost/>
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
