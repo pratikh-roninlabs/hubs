@@ -20,7 +20,7 @@ const RoomTopBar = ({ sidebarActive }) => {
         <button onClick={() => window.open("https://4oawdoy7t47.typeform.com/to/C7d1IPWA", "_blank")}>
           <Report />
         </button>
-        <button>
+        <button onClick={() => (window.loacation.href = "/")}>
           <Leave />
         </button>
       </div>
