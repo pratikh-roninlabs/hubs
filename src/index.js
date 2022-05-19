@@ -20,8 +20,8 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          {/* <NewHomePage /> */}
-          <NewHomePagePost/>
+          <NewHomePage />
+          {/* <NewHomePagePost/> */}
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
