@@ -3,16 +3,23 @@
   top:0;
   left:0;
   width: 100%;
-  z-index: 200;
+  // z-index: 200;
   display: flex;
-  padding: 10px 40px;
+  padding: 10px 10px;
   justify-content: space-between;
   align-items: center;
   pointer-events: auto;
   z-index: 0;
+  @media (min-width:1024px) {
+    padding: 10px 40px;
+  }
   & img {
-    width: 106px;
-    height: 71px;
+    width: 80px;
+      height: 71px;
+    @media (min-width:1024px) {
+      width: 106px;
+      height: 71px;
+    }
   }
   &.sidebar {
     width: calc(100% - 450px)
@@ -23,6 +30,15 @@
     border:none;
     background-color: transparent;
     margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    @media (min-width:1024px) {
+      width: 55px;
+    height: 55px;
+    }
+    & svg{
+      width: 100%;
+    }
     &:last-child {
       margin-right: 0;
     }

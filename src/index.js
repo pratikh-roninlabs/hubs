@@ -21,9 +21,9 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <RoomTopBar />
+          {/* <RoomTopBar /> */}
           {/* <NewHomePage /> */}
-          <NewHomePagePost/>
+          <NewHomePagePost />
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
