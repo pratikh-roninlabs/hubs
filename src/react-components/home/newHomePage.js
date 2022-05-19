@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "../layout/Container";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
-import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
+import HDFCLogo from "../../assets/images/hdfcbb/hdfc_life.svg";
 import vibha from "../../assets/images/hdfcbb/vibha.jpg";
 import sunil from "../../assets/images/hdfcbb/suni.jpg";
 import swati from "../../assets/images/hdfcbb/swati.jpg";
@@ -18,6 +18,7 @@ import { ReactComponent as Left } from "../icons/redLeft.svg";
 import styles from "./newHomePage.scss";
 import Slider from "react-slick";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
+import TermsSection from "./termsSections";
 // import "../styles/slick.css";
 
 const settings = {
@@ -25,7 +26,23 @@ const settings = {
   infinite: true,
   speed: 500,
   slidesToShow: 3,
-  slidesToScroll: 2,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ],
   nextArrow: (
     <div>
       <Right />
@@ -40,6 +57,7 @@ const settings = {
 
 const NewHomePage = () => {
   const [tab, setTab] = useState("register");
+  const [terms, setTerms] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const handleClick = elem => {
     setTab(elem);
@@ -268,9 +286,9 @@ const NewHomePage = () => {
             document.querySelector("body").scrollTo({ top: 0, behavior: "smooth" });
           }}
         />
-        {/* <h2>
-          <span>Terms and Conditions</span> - <span>Privacy Policy</span>
-        </h2> */}
+        <h2>
+          <span onClick={() => setTerms(true)}>Terms and Conditions</span>
+        </h2>
         <p>
           <b>HDFC Life Insurance Company Limited ("HDFC Life")</b>. CIN: L65110MH2000PLC128245, IRDAI Registration No.
           101.<br />
@@ -287,6 +305,7 @@ const NewHomePage = () => {
           ARN: INT/MC/05/22/28801
         </p>
       </div>
+      {terms && <TermsSection close={() => setTerms(false)} />}
     </div>
   );
 };

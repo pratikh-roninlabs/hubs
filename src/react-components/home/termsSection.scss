@@ -1,0 +1,68 @@
+@use '../styles/theme.scss';
+:local(.modalWrapper) {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.3);
+  top:0;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+:local(.roomsWrapper) {
+  width: 95%;
+  max-width: 1000px;
+  border-radius: 20px;
+  padding: 60px 40px 40px;
+  background-color: #fff;
+  box-shadow: 1px 1px 8px 2px rgba(#000, .1);
+  position: relative;
+
+  & h2{
+    text-align: center;
+    font-size: 25px;
+  }
+
+  & p {
+    text-align: center;
+    font-size: 16px;
+    color: #707070;
+    margin-top: 20px;
+  }
+}
+:local(.closeBnt) {
+  position: absolute;
+  top:40px;
+  right: 40px;
+  border: none;
+  background: transparent;
+}
+:local(.modalHeading) {
+  border-bottom: 2px solid theme.$hdfcRed;
+  text-align: center;
+  color: theme.$hdfcBlue;
+  font-size: 16px;
+  padding-bottom: 10px;
+  @media (min-width:1024px) {
+    font-size: 18px;
+  }
+}
+:local(.termsData) {
+  font-size: 13px;
+  margin-top: 30px;
+  padding-left: 20px;
+  line-height:1.5;
+  max-height: 400px;
+  overflow: auto;
+  & ul {
+    list-style: disc;
+  }
+  & li {
+    margin-bottom: 15px;
+  }
+  @media (min-width:1024px) {
+    font-size: 15px;
+  }
+}
