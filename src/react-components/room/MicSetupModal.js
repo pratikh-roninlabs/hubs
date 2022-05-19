@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect }from "react";
 import PropTypes from "prop-types";
 import { Modal } from "../modal/Modal";
 import { Button } from "../input/Button";
@@ -37,6 +37,21 @@ export function MicSetupModal({
   ...rest
 }) {
   const iconStyle = isMicrophoneEnabled ? styles.iconEnabled : styles.iconDisabled;
+
+  // useEffect(() => {
+  //   console.log("Behavior before the component is added to the DOM");
+  //   let hrs = new Date().getHours() + 5 + 30/60
+  //   // if(hrs > 16 && hrs < 17)
+  //   if(true)
+  //   {
+
+  //     if(!isMicrophoneMuted)
+  //       onChangeMicrophoneMuted();
+
+  //     onEnterRoom();
+  //   }
+  // }, []); // Mark [] here.
+
   return (
     <Modal
       title={<FormattedMessage id="mic-setup-modal.title" defaultMessage="Microphone Setup" />}
