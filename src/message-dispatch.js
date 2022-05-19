@@ -81,117 +81,117 @@ export default class MessageDispatch extends EventTarget {
 
     switch (command) {
       case "fly":
-        if (this.scene.systems["hubs-systems"].characterController.fly) {
-          this.scene.systems["hubs-systems"].characterController.enableFly(false);
-          this.log(LogMessageType.flyModeDisabled);
-        } else {
-          if (this.scene.systems["hubs-systems"].characterController.enableFly(true)) {
-            this.log(LogMessageType.flyModeEnabled);
-          }
-        }
+        // if (this.scene.systems["hubs-systems"].characterController.fly) {
+        //   this.scene.systems["hubs-systems"].characterController.enableFly(false);
+        //   this.log(LogMessageType.flyModeDisabled);
+        // } else {
+        //   if (this.scene.systems["hubs-systems"].characterController.enableFly(true)) {
+        //     this.log(LogMessageType.flyModeEnabled);
+        //   }
+        // }
         break;
       case "grow":
-        for (let i = 0; i < scales.length; i++) {
-          if (scales[i] > curScale.x) {
-            avatarRig.object3D.scale.set(scales[i], scales[i], scales[i]);
-            avatarRig.object3D.matrixNeedsUpdate = true;
-            break;
-          }
-        }
+        // for (let i = 0; i < scales.length; i++) {
+        //   if (scales[i] > curScale.x) {
+        //     avatarRig.object3D.scale.set(scales[i], scales[i], scales[i]);
+        //     avatarRig.object3D.matrixNeedsUpdate = true;
+        //     break;
+        //   }
+        // }
 
         break;
       case "shrink":
-        for (let i = scales.length - 1; i >= 0; i--) {
-          if (curScale.x > scales[i]) {
-            avatarRig.object3D.scale.set(scales[i], scales[i], scales[i]);
-            avatarRig.object3D.matrixNeedsUpdate = true;
-            break;
-          }
-        }
+        // for (let i = scales.length - 1; i >= 0; i--) {
+        //   if (curScale.x > scales[i]) {
+        //     avatarRig.object3D.scale.set(scales[i], scales[i], scales[i]);
+        //     avatarRig.object3D.matrixNeedsUpdate = true;
+        //     break;
+        //   }
+        // }
 
         break;
       case "leave":
-        this.entryManager.exitScene();
-        this.remountUI({ roomUnavailableReason: ExitReason.left });
-        break;
+        // this.entryManager.exitScene();
+        // this.remountUI({ roomUnavailableReason: ExitReason.left });
+        // break;
       case "duck":
-        spawnChatMessage(getAbsoluteHref(location.href, ducky));
-        if (Math.random() < 0.01) {
-          this.scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_SPECIAL_QUACK);
-        } else {
-          this.scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_QUACK);
-        }
-        break;
+        // spawnChatMessage(getAbsoluteHref(location.href, ducky));
+        // if (Math.random() < 0.01) {
+        //   this.scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_SPECIAL_QUACK);
+        // } else {
+        //   this.scene.systems["hubs-systems"].soundEffectsSystem.playSoundOneShot(SOUND_QUACK);
+        // }
+        // break;
       case "debug":
-        physicsSystem = document.querySelector("a-scene").systems["hubs-systems"].physicsSystem;
-        physicsSystem.setDebug(!physicsSystem.debugEnabled);
-        break;
+        // physicsSystem = document.querySelector("a-scene").systems["hubs-systems"].physicsSystem;
+        // physicsSystem.setDebug(!physicsSystem.debugEnabled);
+        // break;
       case "vrstats":
-        document.getElementById("stats").components["stats-plus"].toggleVRStats();
-        break;
+        // document.getElementById("stats").components["stats-plus"].toggleVRStats();
+        // break;
       case "scene":
-        if (args[0]) {
-          if (await isValidSceneUrl(args[0])) {
-            err = this.hubChannel.updateScene(args[0]);
-            if (err === "unauthorized") {
-              this.log(LogMessageType.unauthorizedSceneChange);
-            }
-          } else {
-            this.log(LogMessageType.inalidSceneUrl);
-          }
-        } else if (this.hubChannel.canOrWillIfCreator("update_hub")) {
-          this.mediaSearchStore.sourceNavigateWithNoNav("scenes", "use");
-        }
+        // if (args[0]) {
+        //   if (await isValidSceneUrl(args[0])) {
+        //     err = this.hubChannel.updateScene(args[0]);
+        //     if (err === "unauthorized") {
+        //       this.log(LogMessageType.unauthorizedSceneChange);
+        //     }
+        //   } else {
+        //     this.log(LogMessageType.inalidSceneUrl);
+        //   }
+        // } else if (this.hubChannel.canOrWillIfCreator("update_hub")) {
+        //   this.mediaSearchStore.sourceNavigateWithNoNav("scenes", "use");
+        // }
 
         break;
       case "rename":
-        err = this.hubChannel.rename(args.join(" "));
-        if (err === "unauthorized") {
-          this.log(LogMessageType.unauthorizedRoomRename);
-        }
+        // err = this.hubChannel.rename(args.join(" "));
+        // if (err === "unauthorized") {
+        //   this.log(LogMessageType.unauthorizedRoomRename);
+        // }
         break;
       case "capture":
-        if (!captureSystem.available()) {
-          this.log(LogMessageType.captureUnavailable);
-          break;
-        }
-        if (args[0] === "stop") {
-          if (captureSystem.started()) {
-            captureSystem.stop();
-            this.log(LogMessageType.captureStopped);
-          } else {
-            this.log(LogMessageType.captureAlreadyStopped);
-          }
-        } else {
-          if (captureSystem.started()) {
-            this.log(LogMessageType.captureAlreadyRunning);
-          } else {
-            captureSystem.start();
-            this.log(LogMessageType.captureStarted);
-          }
-        }
+        // if (!captureSystem.available()) {
+        //   this.log(LogMessageType.captureUnavailable);
+        //   break;
+        // }
+        // if (args[0] === "stop") {
+        //   if (captureSystem.started()) {
+        //     captureSystem.stop();
+        //     this.log(LogMessageType.captureStopped);
+        //   } else {
+        //     this.log(LogMessageType.captureAlreadyStopped);
+        //   }
+        // } else {
+        //   if (captureSystem.started()) {
+        //     this.log(LogMessageType.captureAlreadyRunning);
+        //   } else {
+        //     captureSystem.start();
+        //     this.log(LogMessageType.captureStarted);
+        //   }
+        // }
         break;
       case "audioNormalization":
-        {
-          if (args.length === 1) {
-            const factor = Number(args[0]);
-            if (!isNaN(factor)) {
-              const effectiveFactor = Math.max(0.0, Math.min(255.0, factor));
-              window.APP.store.update({
-                preferences: { audioNormalization: effectiveFactor }
-              });
-              if (factor) {
-                this.log(LogMessageType.setAudioNormalizationFactor, { factor: effectiveFactor });
-              } else {
-                this.log(LogMessageType.audioNormalizationDisabled);
-              }
-            } else {
-              this.log(LogMessageType.audioNormalizationNaN);
-            }
-          } else {
-            this.log(LogMessageType.invalidAudioNormalizationRange);
-          }
-        }
+        // {
+          // if (args.length === 1) {
+          //   const factor = Number(args[0]);
+          //   if (!isNaN(factor)) {
+          //     const effectiveFactor = Math.max(0.0, Math.min(255.0, factor));
+          //     window.APP.store.update({
+          //       preferences: { audioNormalization: effectiveFactor }
+          //     });
+          //     if (factor) {
+          //       this.log(LogMessageType.setAudioNormalizationFactor, { factor: effectiveFactor });
+          //     } else {
+          //       this.log(LogMessageType.audioNormalizationDisabled);
+          //     }
+          //   } else {
+          //     this.log(LogMessageType.audioNormalizationNaN);
+          //   }
+          // } else {
+          //   this.log(LogMessageType.invalidAudioNormalizationRange);
+          // }
+        // }
         break;
     }
   };
