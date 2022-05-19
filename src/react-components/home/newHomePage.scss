@@ -319,7 +319,7 @@
 
 :local(.footerWrapper) {
   background-color: #231f20;
-  padding: 40px 20px;
+  padding: 60px 30px;
   margin-top: 40px;
   position:relative;
 
@@ -327,10 +327,11 @@
     font-size: 18px;
     text-align: center;
     color: #fff;
+    cursor: pointer;
   }
 
   & p {
-    // margin-top: 40px;
+    margin-top: 40px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     color: #d1d3d4;

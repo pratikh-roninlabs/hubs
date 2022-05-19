@@ -1,23 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "../layout/Container";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
-import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
+import HDFCLogo from "../../assets/images/hdfcbb/hdfc_life.svg";
 import vibha from "../../assets/images/hdfcbb/vibha.jpg";
 import sunil from "../../assets/images/hdfcbb/suni.jpg";
 import swati from "../../assets/images/hdfcbb/swati.jpg";
+import karunesh from "../../assets/images/hdfcbb/karunesh.jpg";
 
 import styles from "./newHomePage.scss";
 import { usePublicRooms } from "./usePublicRooms";
 import RoomSelector from "./roomSelector";
 import Slider from "react-slick";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
+import { ReactComponent as Right } from "../icons/redRight.svg";
+import { ReactComponent as Left } from "../icons/redLeft.svg";
 
 const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToShow: 2.5,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ],
+  nextArrow: (
+    <div>
+      <Right />
+    </div>
+  ),
+  prevArrow: (
+    <div>
+      <Left />
+    </div>
+  )
 };
 
 const NewHomePagePost = () => {
@@ -159,23 +188,22 @@ const NewHomePagePost = () => {
                 <div>
                   <h3>Swati Bhargava</h3>
                   <p>
-                    Co-Founder of CashKaro.com, Swati Bhargava is one of India’s leading women entrepreneurs and an
-                    acclaimed social media influencer.
+                    Co-Founder of CashKaro.com and EarnKaro.com, Swati Bhargava is one of India’s leading women
+                    entrepreneurs and was featured in Fortune 40 under 40.
                   </p>
                 </div>
               </div>
             </li>
             <li>
               <div className={"speakerImg"}>
-                <img src={vibha} alt="" />
+                <img src={karunesh} alt="" />
               </div>
               <div className={"speakerIntro"}>
                 <div>
-                  <h3>Biswas Bist</h3>
+                  <h3>Karunesh Talwar</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam repudiandae nobis
-                    voluptates rem eveniet maxime consectetur possimus, atque repellat quia, porro praesentium vel
-                    voluptatem quos nihil soluta dolorem eum.
+                    With over 700K subscribers on YouTube and over 170K followers on Instagram, Karunesh Talwar is one
+                    of India's most adored comedians.
                   </p>
                 </div>
               </div>
