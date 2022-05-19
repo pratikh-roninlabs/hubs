@@ -1,27 +1,62 @@
 import React, { useState, useEffect } from "react";
 import { Container } from "../layout/Container";
 import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
-import HDFCLogo from "../../assets/images/hdfcbb/hdfcLife.png";
+import HDFCLogo from "../../assets/images/hdfcbb/hdfc_life.svg";
 import vibha from "../../assets/images/hdfcbb/vibha.jpg";
 import sunil from "../../assets/images/hdfcbb/suni.jpg";
 import swati from "../../assets/images/hdfcbb/swati.jpg";
+import karunesh from "../../assets/images/hdfcbb/karunesh.jpg";
+import event1 from "../../assets/images/hdfcbb/event1.jpg";
+import event2 from "../../assets/images/hdfcbb/event2.jpg";
+import event3 from "../../assets/images/hdfcbb/event3.jpg";
+import event4 from "../../assets/images/hdfcbb/event4.jpg";
+import event5 from "../../assets/images/hdfcbb/event5.jpg";
 
 import styles from "./newHomePage.scss";
 import { usePublicRooms } from "./usePublicRooms";
 import RoomSelector from "./roomSelector";
 import Slider from "react-slick";
 import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
+import { ReactComponent as Right } from "../icons/redRight.svg";
+import { ReactComponent as Left } from "../icons/redLeft.svg";
 
 const settings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ],
+  nextArrow: (
+    <div>
+      <Right />
+    </div>
+  ),
+  prevArrow: (
+    <div>
+      <Left />
+    </div>
+  )
 };
 
 const NewHomePagePost = () => {
   const [tab, setTab] = useState("register");
+  const [terms, setTerms] = useState(false);
   const [showRooms, setShowRooms] = useState(false);
   const { results: publicRooms } = usePublicRooms();
   console.log(publicRooms);
@@ -92,7 +127,7 @@ const NewHomePagePost = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/oi1ntQwBJ9Y"
+                    src="https://www.youtube.com/embed/be4ZxY2TuSE"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -159,23 +194,22 @@ const NewHomePagePost = () => {
                 <div>
                   <h3>Swati Bhargava</h3>
                   <p>
-                    Co-Founder of CashKaro.com, Swati Bhargava is one of India’s leading women entrepreneurs and an
-                    acclaimed social media influencer.
+                    Co-Founder of CashKaro.com and EarnKaro.com, Swati Bhargava is one of India’s leading women
+                    entrepreneurs and was featured in Fortune 40 under 40.
                   </p>
                 </div>
               </div>
             </li>
             <li>
               <div className={"speakerImg"}>
-                <img src={vibha} alt="" />
+                <img src={karunesh} alt="" />
               </div>
               <div className={"speakerIntro"}>
                 <div>
-                  <h3>Biswas Bist</h3>
+                  <h3>Karunesh Talwar</h3>
                   <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis numquam repudiandae nobis
-                    voluptates rem eveniet maxime consectetur possimus, atque repellat quia, porro praesentium vel
-                    voluptatem quos nihil soluta dolorem eum.
+                    With over 700K subscribers on YouTube and over 170K followers on Instagram, Karunesh Talwar is one
+                    of India's most adored comedians.
                   </p>
                 </div>
               </div>
@@ -187,26 +221,27 @@ const NewHomePagePost = () => {
         <div className={styles.hpEventList}>
           <h2 className={styles.hpSectionTitle}>Event Hightlights</h2>
           <div className={styles.hpSliders}>
-            <div>
-              <h2> Single Item</h2>
+            <div className={styles.sliderWrapper}>
               <Slider {...settings}>
-                <div>
-                  <h3>1</h3>
+                <div className={styles.selem}>
+                  <img src={event1} alt="" />
+                  <span> A wide range of avatars to choose from.</span>
                 </div>
-                <div>
-                  <h3>2</h3>
+                <div className={styles.selem}>
+                  <img src={event2} alt="" />
+                  <span>A beautiful environment to explore.</span>
                 </div>
-                <div>
-                  <h3>3</h3>
+                <div className={styles.selem}>
+                  <img src={event3} alt="" />
+                  <span>Entertaining and inspirational talks from special guests.</span>
                 </div>
-                <div>
-                  <h3>4</h3>
+                <div className={styles.selem}>
+                  <img src={event4} alt="" />
+                  <span>An a-maze-ing experience to explore.</span>
                 </div>
-                <div>
-                  <h3>5</h3>
-                </div>
-                <div>
-                  <h3>6</h3>
+                <div className={styles.selem}>
+                  <img src={event5} alt="" />
+                  <span>A basketball court to practice shooting hoops.</span>
                 </div>
               </Slider>
             </div>
@@ -215,19 +250,32 @@ const NewHomePagePost = () => {
       </section>
       <Container />
       <div className={styles.footerWrapper}>
-        <h2>Terms and Conditions - Privacy Policy</h2>
+        <div
+          className="goTop"
+          onClick={() => {
+            document.querySelector("body").scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        />
+        <h2>
+          <span onClick={() => setTerms(true)}>Terms and Conditions</span>
+        </h2>
         <p>
           <b>HDFC Life Insurance Company Limited ("HDFC Life")</b>. CIN: L65110MH2000PLC128245, IRDAI Registration No.
           101.<br />
           <b>Registered Office</b>: 13th Floor, Lodha Excelus, Apollo Mills Compound, N.M. Joshi Marg, Mahalaxmi, Mumbai
           - 400 011.<br />
-          Email: service@hdfclife.com,Tel No: 1860-267-9999. Available (Mon-Sat 10 am to 7 pm) Local charges apply. DO
-          NOT prefix any country code e.g. +91 or 00, Website: www.hdfclife.com<br />
+          Email: <a href="mailto:service@hdfclife.com">service@hdfclife.com</a>,Tel No: 1860-267-9999. Available
+          (Mon-Sat 10 am to 7 pm) Local charges apply. DO NOT prefix any country code e.g. +91 or 00, Website:{" "}
+          <a href="https://www.hdfclife.com" target="_blank">
+            www.hdfclife.com
+          </a>
+          <br />
           The name/letters "HDFC" in the name/logo of the company belongs to Housing Development Finance Corporation
           Limited ("HDFC Limited") and is used by HDFC Life under an agreement entered into with HDFC Limited.<br />
           ARN: INT/MC/05/22/28801
         </p>
       </div>
+      {terms && <TermsSection close={() => setTerms(false)} />}
       {showRooms && <RoomSelector rooms={publicRooms} close={() => setShowRooms(false)} />}
     </div>
   );

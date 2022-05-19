@@ -38,19 +38,19 @@ export function MicSetupModal({
 }) {
   const iconStyle = isMicrophoneEnabled ? styles.iconEnabled : styles.iconDisabled;
 
-  // useEffect(() => {
-  //   console.log("Behavior before the component is added to the DOM");
-  //   let hrs = new Date().getHours() + 5 + 30/60
-  //   // if(hrs > 16 && hrs < 17)
-  //   if(true)
-  //   {
+  useEffect(() => {
+    console.log("Behavior before the component is added to the DOM");
+    let hrs = new Date().getHours() + 5 + 30/60
+    // if(hrs > 16 && hrs < 17)
+    if(true)
+    {
 
-  //     if(!isMicrophoneMuted)
-  //       onChangeMicrophoneMuted();
+      // if(!isMicrophoneMuted)
+      //   onChangeMicrophoneMuted();
 
-  //     onEnterRoom();
-  //   }
-  // }, []); // Mark [] here.
+      onEnterRoom();
+    }
+  }, []); // Mark [] here.
 
   return (
     <Modal

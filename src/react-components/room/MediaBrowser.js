@@ -107,8 +107,8 @@ export function MediaBrowser({
             </Button>
           ))}
         </div>
-      )} */}
-      {/* {facets && (
+      )}
+      {facets && (
         <div className={classNames(styles.buttonNav, styles.facetsNav)}>
           {facets.map((facet, i) => (
             <Button

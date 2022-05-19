@@ -1,4 +1,5 @@
 @use '../styles/theme.scss';
+
 :local(.modalWrapper) {
   position: fixed;
   display: flex;
@@ -6,21 +7,22 @@
   height: 100%;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.3);
-  top:0;
+  top: 0;
   z-index: 100;
   justify-content: center;
   align-items: center;
 }
+
 :local(.roomsWrapper) {
   width: 95%;
   max-width: 1000px;
   border-radius: 20px;
-  padding: 60px 20px 40px;
+  padding: 60px 40px 60px;
   background-color: #fff;
   box-shadow: 1px 1px 8px 2px rgba(#000, .1);
   position: relative;
 
-  & h2{
+  & h2 {
     text-align: center;
     font-size: 25px;
   }
@@ -32,25 +34,30 @@
     margin-top: 20px;
   }
 }
+
 :local(.closeBnt) {
   position: absolute;
-  top:20px;
+  top: 20px;
   right: 20px;
   border: none;
   background: transparent;
 }
+
 :local(.roomsList) {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
   margin-top: 30px;
 }
+
 :local(.roomsData) {
   text-align: center;
+  font-weight: 600;
+
   & .imgWrapper {
     position: relative;
 
-    & > div {
+    &>div {
       position: absolute;
       bottom: 10px;
       right: 10px;
@@ -58,28 +65,32 @@
       color: #fff;
       align-items: flex-end;
       font-size: 12px;
+
       & svg {
         width: 20px;
         margin-right: 2px;
       }
     }
   }
+
   & img {
     border-radius: 5px;
     margin-top: 10px;
   }
+
   & .enterBtn {
     display: block;
     width: 100%;
     background-color: theme.$hdfcBlue;
     color: #fff;
-    padding: 10px 0;
-    border-radius: 5px;
+    padding: 15px 0;
+    border-radius: 15px;
     margin-top: 10px;
+
     &.disable {
       pointer-events: none;
       cursor: none;
-      background-color: rgba(theme.$hdfcBlue,.5);
+      background-color: rgba(theme.$hdfcBlue, .5);
     }
   }
 }

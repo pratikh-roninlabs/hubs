@@ -319,18 +319,19 @@
 
 :local(.footerWrapper) {
   background-color: #231f20;
-  padding: 40px 20px;
+  padding: 60px 30px;
   margin-top: 40px;
-  position:relative;
+  position: relative;
 
   & h2 {
     font-size: 18px;
     text-align: center;
     color: #fff;
+    cursor: pointer;
   }
 
   & p {
-    // margin-top: 40px;
+    margin-top: 40px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 14px;
     color: #d1d3d4;
@@ -362,6 +363,7 @@
     right: 20px;
     top: 20px;
     cursor: pointer;
+
     &:before {
       content: "";
       width: 10px;
@@ -628,8 +630,8 @@
     opacity: .75;
     color: #fff
   }
-& 
-  .slick-prev {
+
+  & .slick-prev {
     left: -25px
   }
 
@@ -721,9 +723,11 @@
     opacity: .25;
     color: #000
   }
+
   & .slick-dots li.slick-active button {
     background-color: theme.$hdfcBlue;
   }
+
   & .slick-dots li.slick-active button:before {
     opacity: .75;
     color: #000
