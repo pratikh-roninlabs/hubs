@@ -1645,7 +1645,13 @@ class UIRoot extends Component {
                     <MoreMenuPopoverButton menu={moreMenu} />
                   </>
                 }
-                showTopBar={false}
+                showTopBar={entered ? true : false}
+                leaveRoom={() => {
+                  this.showNonHistoriedDialog(LeaveRoomModal, {
+                    destinationUrl: "/",
+                    reason: LeaveReason.leaveRoom
+                  });
+                }}
               />
             )}
           </div>

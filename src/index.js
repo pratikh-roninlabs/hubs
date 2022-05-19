@@ -9,6 +9,7 @@ import NewHomePagePost from "./react-components/home/newHomePagePost";
 import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
 import { ThemeProvider } from "./react-components/styles/theme";
+import RoomTopBar from "./react-components/room/RoomTopBar";
 
 registerTelemetry("/home", "Hubs Home Page");
 
@@ -20,6 +21,7 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
+          <RoomTopBar />
           {/* <NewHomePage /> */}
           <NewHomePagePost/>
         </AuthContextProvider>
