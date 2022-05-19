@@ -321,6 +321,7 @@
   background-color: #231f20;
   padding: 40px 20px;
   margin-top: 40px;
+  position:relative;
 
   & h2 {
     font-size: 18px;
@@ -349,6 +350,32 @@
 
     & p {
       font-size: 18px;
+    }
+  }
+
+  & .goTop {
+    position: absolute;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: 1px solid #fff;
+      transform: rotate(45deg);
+      position: absolute;
+      margin: auto;
+      top: 4px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
     }
   }
 }

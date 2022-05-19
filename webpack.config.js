@@ -660,7 +660,7 @@ module.exports = async (env, argv) => {
       new CopyWebpackPlugin([
         {
           from: "src/assets/images/favicon.ico",
-          to: "favicon.ico"
+          to: "assets/favicon.ico"
         }
       ]),
       // Extract required css and add a content hash.

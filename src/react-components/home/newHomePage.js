@@ -194,7 +194,7 @@ const NewHomePage = () => {
                   <h3>Swati Bhargava</h3>
                   <p>
                     Co-Founder of CashKaro.com and EarnKaro.com, Swati Bhargava is one of India’s leading women
-                    entrepreneurs and was featured in Forbes 40 under 40.
+                    entrepreneurs and was featured in Fortune 40 under 40.
                   </p>
                 </div>
               </div>
@@ -262,6 +262,12 @@ const NewHomePage = () => {
         </div>
       </Container> */}
       <div className={styles.footerWrapper}>
+        <div
+          className="goTop"
+          onClick={() => {
+            document.querySelector("body").scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        />
         {/* <h2>
           <span>Terms and Conditions</span> - <span>Privacy Policy</span>
         </h2> */}
@@ -272,7 +278,7 @@ const NewHomePage = () => {
           - 400 011.<br />
           Email: <a href="mailto:service@hdfclife.com">service@hdfclife.com</a>,Tel No: 1860-267-9999. Available
           (Mon-Sat 10 am to 7 pm) Local charges apply. DO NOT prefix any country code e.g. +91 or 00, Website:{" "}
-          <a href="www.hdfclife.com" target="_blank">
+          <a href="https://www.hdfclife.com" target="_blank">
             www.hdfclife.com
           </a>
           <br />

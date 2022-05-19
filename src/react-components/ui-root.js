@@ -1408,7 +1408,7 @@ class UIRoot extends Component {
                   <>
                     {!this.state.dialog && renderEntryFlow ? entryDialog : undefined}
                     {!this.props.selectedObject && <CompactMoreMenuButton />}
-                    {(!this.props.selectedObject ||
+                    {/* {(!this.props.selectedObject ||
                       (this.props.breakpoint !== "sm" && this.props.breakpoint !== "md")) && (
                       <ContentMenu>
                         {showObjectList && (
@@ -1423,7 +1423,7 @@ class UIRoot extends Component {
                           presencecount={this.state.presenceCount}
                         />
                       </ContentMenu>
-                    )}
+                    )} */}
                     {!entered && !streaming && !isMobile && streamerName && <SpectatingLabel name={streamerName} />}
                     {this.props.activeObject && (
                       <ObjectMenuContainer
