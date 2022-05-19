@@ -1407,7 +1407,7 @@ class UIRoot extends Component {
                 viewport={
                   <>
                     {!this.state.dialog && renderEntryFlow ? entryDialog : undefined}
-                    {!this.props.selectedObject && <CompactMoreMenuButton />}
+                    {/* {!this.props.selectedObject && <CompactMoreMenuButton />} */}
                     {/* {(!this.props.selectedObject ||
                       (this.props.breakpoint !== "sm" && this.props.breakpoint !== "md")) && (
                       <ContentMenu>
@@ -1642,10 +1642,16 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
                     )}
-                    <MoreMenuPopoverButton menu={moreMenu} />
+                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
                   </>
                 }
-                showTopBar={false}
+                showTopBar={entered ? true : false}
+                leaveRoom={() => {
+                  this.showNonHistoriedDialog(LeaveRoomModal, {
+                    destinationUrl: "/",
+                    reason: LeaveReason.leaveRoom
+                  });
+                }}
               />
             )}
           </div>
