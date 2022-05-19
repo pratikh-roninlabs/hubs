@@ -1,0 +1,134 @@
+:local(.ccWrapper) {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(255,255,255,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+:local(.closeBnt) {
+  position: absolute;
+  top:20px;
+  right: 20px;
+  border: none;
+  background: transparent;
+}
+:local(.content) {
+  width: 95%;
+  background-color: #fff;
+  border-radius: 27px;
+  padding-bottom: 40px;
+  box-shadow: 1px 1px 8px 2px rgba(#000, .1);
+  position: relative;
+  & .header {
+    padding: 40px 40px 5px;
+    border-bottom: 1px solid #e9e9e9;
+    display: flex;
+    & div {
+      flex: 1;
+      padding-bottom: 10px;
+      color: #005e9e;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+      @media (min-width:1024px) {
+        font-size: 18px;
+      }
+    }
+    & .active {
+      border-bottom: 2px solid #ed1c24;
+    }
+  }
+  @media (min-width:1024px) {
+    width: 900px;
+  }
+}
+:local(.data) {
+  padding: 20px 20px 0;
+  max-height: 400px;
+  overflow: auto;
+  @media (min-width:1024px) {
+    padding: 20px 40px 0;
+  }
+}
+:local(.supportWrapper) {
+  & > div {
+    border: 1px solid #707070;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    @media (min-width:1024px) {
+      padding: 20px 30px;
+    }
+  }
+  & label {
+    & input[type="radio"] {
+      display: none;
+      &:checked {
+        border: 1px solid red;
+        & + .labelTitle {
+          & span {
+            font-weight: 700;
+            & .dArrow {
+              display: none;
+            }
+            & .upArrow {
+              display: block;
+            }
+          }
+        }
+        & ~ .ddContent {
+          height: auto;
+          padding-top: 20px;
+        }    
+      }
+    }
+    & .labelTitle {
+      display: flex;
+      align-items: center;
+      & > span {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+        font-size: 14px;
+        padding-left: 20px;
+        & i {
+          flex: 0 0 20px;
+          & img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        & .dArrow {
+          display: block;
+        }
+        & .upArrow {
+          display: none;
+        }
+      }
+    }
+    & .ddContent {
+      padding-left: 24px;
+      line-height: 1.5;
+      height: 0;
+      font-weight: 400;
+      font-size: 14px;
+      overflow: hidden;
+    }
+  }
+}
+:local(.coc) {
+  & > div {
+    margin-bottom: 15px;
+    & b{
+      font-size: 14px;
+    }
+    & P {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+}
