@@ -67,6 +67,7 @@ const NewHomePage = () => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
+    document.title = "HDFC Life BounceBack Batch 2022 | Virtual Convocation on Metaverse";
   }, []);
   const calculateTimeLeft = () => {
     const year = new Date().getFullYear();
@@ -132,7 +133,7 @@ const NewHomePage = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/oi1ntQwBJ9Y"
+                    src="https://www.youtube.com/embed/be4ZxY2TuSE"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -193,7 +194,7 @@ const NewHomePage = () => {
                   <h3>Swati Bhargava</h3>
                   <p>
                     Co-Founder of CashKaro.com and EarnKaro.com, Swati Bhargava is one of India’s leading women
-                    entrepreneurs and was featured in Forbes 40 under 40.
+                    entrepreneurs and was featured in Fortune 40 under 40.
                   </p>
                 </div>
               </div>
@@ -261,6 +262,12 @@ const NewHomePage = () => {
         </div>
       </Container> */}
       <div className={styles.footerWrapper}>
+        <div
+          className="goTop"
+          onClick={() => {
+            document.querySelector("body").scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        />
         {/* <h2>
           <span>Terms and Conditions</span> - <span>Privacy Policy</span>
         </h2> */}
@@ -271,7 +278,7 @@ const NewHomePage = () => {
           - 400 011.<br />
           Email: <a href="mailto:service@hdfclife.com">service@hdfclife.com</a>,Tel No: 1860-267-9999. Available
           (Mon-Sat 10 am to 7 pm) Local charges apply. DO NOT prefix any country code e.g. +91 or 00, Website:{" "}
-          <a href="www.hdfclife.com" target="_blank">
+          <a href="https://www.hdfclife.com" target="_blank">
             www.hdfclife.com
           </a>
           <br />
