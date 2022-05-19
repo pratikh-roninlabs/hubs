@@ -83,7 +83,7 @@
   font-size: 18px;
 
   &:hover {
-    box-shadow: 0px 0px 11px 5px rgba(theme.$hdfcRed 30%);
+    box-shadow: 0px 0px 11px 5px rgba(theme.$hdfcRed, .3);
   }
 }
 
@@ -95,7 +95,7 @@
   border: 1px solid theme.$hdfcRed  !important;
 
   &:hover {
-    box-shadow: 0px 0px 11px 5px rgba(theme.$hdfcRed 30%);
+    box-shadow: 0px 0px 11px 5px rgba(theme.$hdfcRed, .3);
   }
 }
 
