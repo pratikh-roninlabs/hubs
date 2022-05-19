@@ -293,12 +293,12 @@ export function ChatSidebarContainer({ /*scene,*/ canSpawnMessages, presences, o
         }
         afterInput={
           <>
-            {!isMobile && (
+            {/* {!isMobile && (
               <EmojiPickerPopoverButton onSelectEmoji={emoji => setMessage(message => message + emoji.native)} />
-            )}
-            {canSpawnMessages && (
+            )} */}
+            {/* {canSpawnMessages && (
               <SpawnMessageButton disabled={message.length === 0 || isOverMaxLength} onClick={onSpawnMessage} />
-            )}
+            )} */}
             {message.length === 0 && canSpawnMessages ? null : (
               <SendMessageButton onClick={onSendMessage} disabled={message.length === 0 || isOverMaxLength} />
             )}
