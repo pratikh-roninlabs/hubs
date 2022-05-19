@@ -5,7 +5,7 @@ import registerTelemetry from "./telemetry";
 import Store from "./storage/store";
 import "./utils/theme";
 import NewHomePage from "./react-components/home/newHomePage";
-//import NewHomePagePost from "./react-components/home/newHomePagePost";
+import NewHomePagePost from "./react-components/home/newHomePagePost";
 import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
 import { ThemeProvider } from "./react-components/styles/theme";
@@ -20,8 +20,8 @@ function Root() {
     <WrappedIntlProvider>
       <ThemeProvider store={store}>
         <AuthContextProvider store={store}>
-          <NewHomePage />
-          {/* <NewHomePagePost/> */}
+          {/* <NewHomePage /> */}
+          <NewHomePagePost/>
         </AuthContextProvider>
       </ThemeProvider>
     </WrappedIntlProvider>
