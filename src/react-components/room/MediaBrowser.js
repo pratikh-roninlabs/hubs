@@ -94,7 +94,6 @@ export function MediaBrowser({
         </>
       }
     >
-      // headerRight={headerRight}
       {/* {mediaSources && (
         <div className={styles.buttonNav}>
           {mediaSources.map(source => (
