@@ -18,10 +18,14 @@
   display: flex;
   height: 48px;
   flex-shrink: 0;
-  border-bottom: 1px solid theme.$hdfcGray;
+  // border-bottom: 1px solid theme.$hdfcGray;
   align-items: center;
   justify-content: center;
   color: #000;
+  & h5 {
+    color: theme.$hdfcBlue;
+    font-size: 18px;
+  }
 }
 
 :local(.before-title) {
