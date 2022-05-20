@@ -12,7 +12,7 @@ import { useCssBreakpoints } from "react-use-css-breakpoints";
 import { Column } from "../layout/Column";
 // import { FormattedMessage } from "react-intl";
 // import configs from "../../utils/configs";
-import BBLogo from "../../assets/images/hdfcbb/bouncebackbatch_logo.svg";
+import BBLogo from "../../assets/images/hdfcbb/metaverse.png";
 import { ReactComponent as EnterIcon } from "../icons/enterMeta.svg";
 import { ReactComponent as VRIcon } from "../icons/vrdevice.svg";
 
@@ -48,7 +48,7 @@ export function RoomEntryModal({
             <FormattedMessage id="room-entry-modal.room-name-label" defaultMessage="Room Name" />
           </h5>
           <p>{roomName}</p> */}
-          <p>{"Welcome! Please choose an option from below to enter."}</p>
+          <p>{"Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."}</p>
         </div>
         <Column center className={styles.buttons}>
           {showSpectate ? (
@@ -70,6 +70,7 @@ export function RoomEntryModal({
                   <span>{"Join with VR Device"}</span>
                 </button>
               )}
+              <a className={styles.howToUse}>How to use?</a>
             </>
           )}
           {/* {showOptions &&
