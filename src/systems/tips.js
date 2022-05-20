@@ -19,8 +19,8 @@ const FINISH = 2;
 const LOCAL_STORAGE_KEY = "__hubs_finished_tips";
 
 const TIPS = {
-  desktop: ["look", "locomotion", "turning", "invite"],
-  mobile: ["look", "locomotion", "invite"],
+  desktop: ["look", "locomotion", "turning"],
+  mobile: ["look", "locomotion"],
   standalone: []
 };
 

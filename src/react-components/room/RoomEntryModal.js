@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Modal } from "../modal/Modal";
@@ -15,6 +15,7 @@ import { Column } from "../layout/Column";
 import BBLogo from "../../assets/images/hdfcbb/metaverse.png";
 import { ReactComponent as EnterIcon } from "../icons/enterMeta.svg";
 import { ReactComponent as VRIcon } from "../icons/vrdevice.svg";
+import CodeOfConduct from "./CodeofConduct";
 
 export function RoomEntryModal({
   // appName,
@@ -32,6 +33,7 @@ export function RoomEntryModal({
   ...rest
 }) {
   const breakpoint = useCssBreakpoints();
+  const [showCC, setShowCC] = useState(false);
   // const isHmc = configs.feature("show_cloud");
   // {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}
   return (
@@ -48,7 +50,11 @@ export function RoomEntryModal({
             <FormattedMessage id="room-entry-modal.room-name-label" defaultMessage="Room Name" />
           </h5>
           <p>{roomName}</p> */}
-          <p>{"Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."}</p>
+          <p>
+            {
+              "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
+            }
+          </p>
         </div>
         <Column center className={styles.buttons}>
           {showSpectate ? (
@@ -70,7 +76,9 @@ export function RoomEntryModal({
                   <span>{"Join with VR Device"}</span>
                 </button>
               )}
-              <a className={styles.howToUse}>How to use?</a>
+              <a className={styles.howToUse} href="javascript:void(0)" onClick={() => setShowCC(true)}>
+                How to use?
+              </a>
             </>
           )}
           {/* {showOptions &&
@@ -87,6 +95,7 @@ export function RoomEntryModal({
             )} */}
         </Column>
       </Column>
+      {showCC && <CodeOfConduct close={() => setShowCC(false)} />}
     </Modal>
   );
 }

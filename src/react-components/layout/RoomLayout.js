@@ -22,11 +22,12 @@ export function RoomLayout({
   playerEntered,
   sidebarActive,
   showTopBar,
+  leaveRoom,
   ...rest
 }) {
   return (
     <div className={classNames(styles.roomLayout, { [styles.objectFocused]: objectFocused }, className)} {...rest}>
-      {showTopBar && <RoomTopBar sidebarActive={sidebarActive} />}
+      {showTopBar && <RoomTopBar sidebarActive={sidebarActive} leaveRoom={leaveRoom} />}
       {sidebar && <div className={classNames(styles.sidebar, sidebarClassName)}>{sidebar}</div>}
       <div className={classNames(styles.modalContainer, styles.viewport)}>{modal}</div>
       {(toolbarLeft || toolbarCenter || toolbarRight) && (
@@ -69,5 +70,6 @@ RoomLayout.propTypes = {
   viewportRef: PropTypes.any,
   playerEntered: PropTypes.bool,
   sidebarActive: PropTypes.any,
-  showTopBar: PropTypes.bool
+  showTopBar: PropTypes.bool,
+  leaveRoom: PropTypes.any
 };

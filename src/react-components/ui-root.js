@@ -1642,7 +1642,7 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
                     )}
-                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
+                    <MoreMenuPopoverButton menu={moreMenu} />
                   </>
                 }
                 showTopBar={entered ? true : false}
