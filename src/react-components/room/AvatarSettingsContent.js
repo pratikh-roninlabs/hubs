@@ -28,6 +28,7 @@ export function AvatarSettingsContent({
         onChange={onChangeDisplayName}
         description={"Choose a nickname that your friends can identify you with."}
         ref={displayNameInputRef}
+        className={`textfield ${styles.textfield}`}
       />
       <div className={styles.avatarPreviewContainer}>
         {avatarPreview || <div />}

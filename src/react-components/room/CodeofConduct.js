@@ -270,41 +270,115 @@ const CodeOfConduct = ({ close }) => {
               </div>
               <div>
                 <b>Be Direct but Professional</b>
-                <p>
-                  We are likely to have some discussions about if and when criticism is respectful and when it’s not. We
-                  must be able to speak directly when we disagree and when we think we need to improve. We cannot
-                  withhold hard truths. Doing so respectfully is hard, doing so when others don’t seem to be listening
-                  is harder, and hearing such comments when one is the recipient can be even harder still. We need to be
-                  honest and direct, as well as respectful.
-                </p>
-              </div>
-              <div>
-                <b>Be Inclusive</b>
-                <p>
-                  Seek diverse perspectives. Diversity of views and of people on teams powers innovation, even if it is
-                  not always comfortable. Encourage all voices. Help new perspectives be heard and listen actively. If
-                  you find yourself dominating a discussion, it is especially important to step back and encourage other
-                  voices to join in. Be aware of how much time is taken up by dominant members of the group. Provide
-                  alternative ways to contribute or participate when possible.
-                </p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
+                <p>We are likely to have some discussions about if and when criticism is respectful and when it’s not. We must be able to speak directly when we disagree and when we think we need to improve. We cannot withhold hard truths. Doing so respectfully is hard, doing so when others don’t seem to be listening is harder, and hearing such comments when one is the recipient can be even harder still. We need to be honest and direct, as well as respectful.</p>
             </div>
+            <div>
+            <b>Be Inclusive</b>
+              <p>Seek diverse perspectives. Diversity of views and of people on teams powers innovation, even if it is not always comfortable. Encourage all voices. Help new perspectives be heard and listen actively. If you ﬁnd yourself dominating a discussion, it is especially
+              
+              important to step back and encourage other voices to join in. Be aware of how much time is taken up by dominant members of the group. Provide alternative ways to contribute or participate when possible.
+              Be inclusive of everyone in an interaction, respecting and facilitating people’s participation whether they are:
+              <li>	Remote (on video or phone)</li>
+              <li>	Not native language speakers</li>
+              <li>	Coming from a different culture</li>
+              <li>	Using pronouns other than “he” or “she”</li>
+              <li>	Living in a different time zone</li>
+              <li>	Facing other challenges to participate</li>
+
+              Think about how you might facilitate alternative ways to contribute or participate. If you ﬁnd yourself dominating a discussion, step back. Make way for other voices and listen actively to them.
+              </p>
+            </div>
+            <div>
+              <b>Understand Different Perspectives</b>
+              <p>Our goal should not be to “win” every disagreement or argument. A more productive goal is to be open to ideas that make our own ideas better. Strive to be an example for inclusive thinking. “Winning” is when different perspectives make our work richer and stronger.</p>
+            </div>
+            <div>
+              <b>Appreciate and Accommodate Our Similarities and Differences</b>
+              <p>Every user of the metaverse comes from many cultures and backgrounds. Cultural differences can encompass everything from ofﬁcial religious observances to personal habits to clothing. Be respectful of people with different cultural practices, attitudes and
+ 
+ beliefs. Work to eliminate your own biases, prejudices and discriminatory practices. Think of others’ needs from their point of view. Use preferred titles (including pronouns) and the appropriate tone of voice. Respect people’s right to privacy and conﬁdentiality. Be open to learning from and educating others as well as educating yourself; it is unrealistic to expect everyone to know the cultural practices of every ethnic and cultural group, but everyone needs to recognize one’s native culture is only part of positive interactions.
+ </p>
+            </div>
+            <div>
+              <b>Lead by Example</b>
+              <p>By matching your actions with your words, you become a person others want to follow. Your actions inﬂuence others to behave and respond in ways that are valuable and appropriate for our organizational outcomes. Design your community and your work for inclusion. Hold yourself and others accountable for inclusive behaviors.
+              </p>
+            </div>
+            <div>
+            <b>Behavior That Will Not Be Tolerated</b>
+            <p>The following behaviors are considered to be unacceptable under these guidelines.
+Violence and Threats of Violence
+Violence and threats of violence are not acceptable - online or ofﬂine. This includes incitement of violence toward any individual, including encouraging a person to commit self-harm. This also includes posting or threatening to post other people’s personally identifying information (“doxxing”) online.
+</p>
+            </div>
+            <div>
+              <b>Personal Attacks</b>
+              <p>Conﬂicts will inevitably arise, but frustration should never turn into a personal attack. It is not okay to insult, demean or belittle others. Attacking someone for their opinions, beliefs and ideas is not
+ 
+acceptable. It is important to speak directly when we disagree and when we think we need to improve, but such discussions must be conducted respectfully and professionally, remaining focused on the issue at hand.
+Derogatory Language
+Hurtful or harmful language related to:
+
+<li>	Background</li>
+<li>	Family status</li>
+<li>	Gender</li>
+<li>	Gender identity or expression</li>
+<li>	Marital status</li>
+<li>	Sex</li>
+<li>	Sexual orientation</li>
+<li>	Native language</li>
+<li>	Age</li>
+<li>	Ability</li>
+<li>	Race and/or ethnicity</li>
+<li>	Caste</li>
+<li>	National origin</li>
+<li>	Socioeconomic status</li>
+<li>	Religion</li>
+<li>	Geographic location</li>
+<li>	Other attributes</li>
+
+is not acceptable. This includes deliberately referring to someone by a gender that they do not identify with, and/or questioning the legitimacy of an individual’s gender identity. If you’re unsure if a word is derogatory, don’t use it. This also includes repeated subtle and/or indirect discrimination; when asked to stop, stop the behavior in question.
+</p>
+            </div>
+
+            <div>
+              <b>Unwelcome Sexual Attention or Physical Contact</b>
+              <p>Unwelcome sexual attention or unwelcome physical contact is not acceptable. This includes sexualized comments, jokes or imagery in interactions, communications or presentation materials, as well as inappropriate touching, groping, or sexual advances.
+Additionally, touching a person without permission, including sensitive areas such as their hair, pregnant stomach, mobility device (wheelchair, scooter, etc) or tattoos is unacceptable. This includes physically blocking or intimidating another person.
+Physical contact or simulated physical contact (such as emojis like “kiss”) without afﬁrmative consent is not acceptable. The sharing or distribution of sexualized images or text is unacceptable.
+</p>
+            </div>
+
+            <div>
+              <b>Disruptive Behavior</b>
+              <p>
+              Sustained disruption of events, forums, or meetings, including talks and presentations, will not be tolerated. This includes:
+<li>	‘Talking over’ or ‘heckling’ speakers.</li>
+<li>	Drinking alcohol to excess or using recreational drugs to excess, or pushing others to do so.</li>
+<li>	Making derogatory comments about those who abstain from alcohol or other substances, pushing people to drink, talking about their abstinence or preferences to others, or pressuring them to drink - physically or through jeering.</li>
+<li>	Otherwise inﬂuencing crowd actions that cause hostility in the session.</li>
+
+              </p>
+            </div>
+
+            <div>
+              <b>Inﬂuencing Unacceptable Behavior</b>
+              <p>We will treat inﬂuencing or leading such activities the same way we treat the activities themselves, and thus the same consequences apply.</p>
+            </div>
+
+            <div>
+              <b>Consequences of Unacceptable Behavior</b>
+              <p>
+              Bad behavior from anyone, including those with decision-making authority, will not be tolerated. Intentional efforts to exclude people (except as part of a consequence of the guidelines or other ofﬁcial action) from activities are not acceptable and will be dealt with appropriately.
+
+Reports of harassment/discrimination will be promptly and thoroughly investigated by the people responsible for the safety of the space, event or activity. Appropriate measures will be taken to address the situation.
+Anyone being asked to stop unacceptable behavior is expected to comply immediately. Violation of these guidelines can result in anyone being asked to leave an event or online space, either temporarily or for the duration of the event, or being banned from participation in spaces, or future events and activities in perpetuity.
+
+In addition, any participants who abuse the reporting process will be considered to be in violation of these guidelines and subject to the same consequences. False reporting, especially to retaliate or exclude, will not be accepted or tolerated.
+
+              </p>
+              </div>
+</div>
           )}
         </div>
       </div>

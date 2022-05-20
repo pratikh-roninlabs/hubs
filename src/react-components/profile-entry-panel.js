@@ -6,6 +6,8 @@ import { replaceHistoryState } from "../utils/history";
 import { AvatarSettingsSidebar } from "./room/AvatarSettingsSidebar";
 import { AvatarSetupModal } from "./room/AvatarSetupModal";
 import AvatarPreview from "./avatar-preview";
+var Filter = require('bad-words'),
+    filter = new Filter();
 
 export default class ProfileEntryPanel extends Component {
   static propTypes = {
@@ -122,13 +124,18 @@ export default class ProfileEntryPanel extends Component {
     this.setState({ avatar });
   };
 
+  handleDisplayName = e => {
+
+    this.setState({ displayName: filter.clean(e.target.value) });
+  };
+
   render() {
     const avatarSettingsProps = {
       displayNameInputRef: inp => (this.nameInput = inp),
       disableDisplayNameInput: !!this.props.displayNameOverride,
       displayName: this.props.displayNameOverride ? this.props.displayNameOverride : this.state.displayName,
       displayNamePattern: SCHEMA.definitions.profile.properties.displayName.pattern,
-      onChangeDisplayName: e => this.setState({ displayName: e.target.value }),
+      onChangeDisplayName: e => this.handleDisplayName(e),
       avatarPreview: <AvatarPreview avatarGltfUrl={this.state.avatar && this.state.avatar.gltf_url} />,
       onChangeAvatar: e => {
         e.preventDefault();

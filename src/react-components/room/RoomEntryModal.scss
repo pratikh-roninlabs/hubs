@@ -104,6 +104,12 @@
   font-size: 16px;
   font-weight: normal;
   text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: theme.$hdfcRed;
+    text-decoration: none;
+  }
 }
 
 :local(.enterSpectateBtn) {

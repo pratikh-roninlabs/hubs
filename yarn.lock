@@ -5185,6 +5185,18 @@
     "lodash" "^4.17.4"
     "to-fast-properties" "^1.0.3"
 
+"bad-words@^3.0.4":
+  "integrity" "sha512-v/Q9uRPH4+yzDVLL4vR1+S9KoFgOEUl5s4axd6NIAq8SV2mradgi4E8lma/Y0cw1ltVdvyegCQQKffCPRCp8fg=="
+  "resolved" "https://registry.npmjs.org/bad-words/-/bad-words-3.0.4.tgz"
+  "version" "3.0.4"
+  dependencies:
+    "badwords-list" "^1.0.0"
+
+"badwords-list@^1.0.0":
+  "integrity" "sha512-oWhaSG67e+HQj3OGHQt2ucP+vAPm1wTbdp2aDHeuh4xlGXBdWwzZ//pfu6swf5gZ8iX0b7JgmSo8BhgybbqszA=="
+  "resolved" "https://registry.npmjs.org/badwords-list/-/badwords-list-1.0.0.tgz"
+  "version" "1.0.0"
+
 "bail@^1.0.0":
   "integrity" "sha512-1X8CnjFVQ+a+KW36uBNMTU5s8+v5FzeqrP7hTG5aTb4aPreSbZJlhwPon9VKMuEVgV++JM+SQrALY3kr7eswdg=="
   "resolved" "https://registry.npmjs.org/bail/-/bail-1.0.3.tgz"

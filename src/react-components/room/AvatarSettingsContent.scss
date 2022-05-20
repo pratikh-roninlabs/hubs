@@ -6,20 +6,43 @@
   padding-top: 10px;
   text-align: center;
 
-  & lable[class~="InputField__label"]  {
+  & lable[class~="InputField__label"] {
     align-self: center !important;
     font-weight: 500;
     font-size: 16px;
-    color: theme.$hdfcGray
+    color: theme.$hdfcGray;
+    margin: auto;
   }
+
   & div[class~="TextInput__outer-wrapper"] {
     height: 50px !important;
   }
+
   & small[class~="InputField__info"] {
     font-weight: 500;
     font-size: 12px;
     color: theme.$hdfcGray
   }
+}
+
+:local(.textfield) {
+  width: 100%;
+  text-align: center;
+
+  small,
+  label {
+    font-weight: normal;
+    margin: auto;
+    color: #58595b;
+  }
+
+  input {
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    color: #000;
+  }
+
 }
 
 
@@ -30,7 +53,7 @@
   align-items: center;
 
   /* TODO: This styling into AvatarPreview */
-  & > :first-child {
+  &> :first-child {
     /*
     We need to set dimensions explicitly here, since AvatarPreview
     resizes itself to its container's dimensions.
@@ -45,13 +68,17 @@
     position: absolute;
     bottom: 0;
     margin-bottom: 8px;
+    padding: 22px 61px 21px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 500;
   }
 }
 
 /* our code */
 :local(.changeBtn) {
   background-color: #fff;
-  color:theme.$hdfcBlue;
+  color: theme.$hdfcBlue;
   border-width: 0px;
   border-radius: 8px;
   font-size: 16px;
@@ -59,6 +86,7 @@
   width: 90%;
   font-weight: 500;
 }
+
 :local(.acceptBtn) {
   background-color: theme.$hdfcRed;
   color: #fff;
