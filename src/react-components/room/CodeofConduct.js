@@ -270,39 +270,12 @@ const CodeOfConduct = ({ close }) => {
               </div>
               <div>
                 <b>Be Direct but Professional</b>
-                <p>
-                  We are likely to have some discussions about if and when criticism is respectful and when it’s not. We
-                  must be able to speak directly when we disagree and when we think we need to improve. We cannot
-                  withhold hard truths. Doing so respectfully is hard, doing so when others don’t seem to be listening
-                  is harder, and hearing such comments when one is the recipient can be even harder still. We need to be
-                  honest and direct, as well as respectful.
-                </p>
+                <p>We are likely to have some discussions about if and when criticism is respectful and when it’s not. We must be able to speak directly when we disagree and when we think we need to improve. We cannot withhold hard truths. Doing so respectfully is hard, doing so when others don’t seem to be listening is harder, and hearing such comments when one is the recipient can be even harder still. We need to be honest and direct, as well as respectful.</p>
               </div>
               <div>
-                <b>Be Inclusive</b>
-                <p>
-                  Seek diverse perspectives. Diversity of views and of people on teams powers innovation, even if it is
-                  not always comfortable. Encourage all voices. Help new perspectives be heard and listen actively. If
-                  you find yourself dominating a discussion, it is especially important to step back and encourage other
-                  voices to join in. Be aware of how much time is taken up by dominant members of the group. Provide
-                  alternative ways to contribute or participate when possible.
-                </p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
-              </div>
-              <div>
-                <b>Expected Behavior</b>
-                <p>The following behaviors are expected of all users of the metaverse:</p>
+                  <b>Be Inclusive</b>
+                  <p>Seek diverse perspectives. Diversity of views and of people on teams powers innovation, even if it is not always comfortable. 
+                  </p>
               </div>
             </div>
           )}
