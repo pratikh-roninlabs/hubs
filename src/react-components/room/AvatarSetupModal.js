@@ -10,7 +10,7 @@ export function AvatarSetupModal({ className, onBack, ...rest }) {
     <Modal
       title={<FormattedMessage id="avatar-setup-sidebar.title" defaultMessage="Select an avatar" />}
       beforeTitle={<BackButton onClick={onBack} />}
-      className={`setAnAvatar ${className}`}
+      className={className}
     >
       <AvatarSettingsContent {...rest} />
     </Modal>
