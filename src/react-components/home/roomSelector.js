@@ -3,8 +3,7 @@
 import React from "react";
 import styles from "./roomSelector.scss";
 import { ReactComponent as CloseIcon } from "../icons/Close.svg";
-import joinConvocation from "../../assets/images/hdfcbb/joinConvocation.svg";
-
+// import joinConvocation from "../../assets/images/hdfcbb/joinConvocation.svg";
 
 const RoomSelector = ({ rooms, close }) => {
   const sortedRooms =
@@ -15,7 +14,7 @@ const RoomSelector = ({ rooms, close }) => {
         <button className={styles.closeBnt} onClick={close}>
           <CloseIcon />
         </button>
-        <img src={joinConvocation}/>
+        {/* <img src={joinConvocation}/> */}
         <h2>Join Convocation Rooms</h2>
         <p>We’ve created different convocation rooms to help you find your friends easily. Choose any one to enter.</p>
         <div className={styles.roomsList}>
@@ -27,9 +26,9 @@ const RoomSelector = ({ rooms, close }) => {
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                   <span>{room.lobby_count + room.member_count}</span>

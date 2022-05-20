@@ -150,8 +150,8 @@
 
 :local(.presence-log-in-room) {
   position: absolute;
-  left: 20px;
-  bottom: 20px;
+  left: 15px;
+  bottom: 100px;
 
   :local(.presence-log-entry) {
     background-color: theme.$overlay-bg-color;
