@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./roomSelector.scss";
 import { ReactComponent as CloseIcon } from "../icons/Close.svg";
-import joinConvocation from "../../assets/images/hdfcbb/joinConvocation.svg";
+import { ReactComponent as joinConvocation } from "../icons/joinConvocation.svg";
 
 
 const RoomSelector = ({ rooms, close }) => {
