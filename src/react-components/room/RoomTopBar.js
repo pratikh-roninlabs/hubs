@@ -8,7 +8,7 @@ import { ReactComponent as Report } from "../icons/reportBtn.svg";
 import { ReactComponent as Leave } from "../icons/leaveBtn.svg";
 import CodeOfConduct from "./CodeofConduct";
 
-const RoomTopBar = ({ sidebarActive }) => {
+const RoomTopBar = ({ sidebarActive, leaveRoom }) => {
   const [show, setShow] = useState(false);
   return (
     <div className={classNames(styles.topBar, { sidebar: sidebarActive })}>
@@ -20,7 +20,7 @@ const RoomTopBar = ({ sidebarActive }) => {
         <button onClick={() => window.open("https://4oawdoy7t47.typeform.com/to/C7d1IPWA", "_blank")}>
           <Report />
         </button>
-        <button onClick={() => (window.loacation.href = "/")}>
+        <button onClick={() => leaveRoom()}>
           <Leave />
         </button>
       </div>
@@ -29,6 +29,7 @@ const RoomTopBar = ({ sidebarActive }) => {
   );
 };
 RoomTopBar.propTypes = {
-  sidebarActive: PropTypes.bool
+  sidebarActive: PropTypes.bool,
+  leaveRoom: PropTypes.any
 };
 export default RoomTopBar;
