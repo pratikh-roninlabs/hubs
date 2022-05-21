@@ -16,7 +16,7 @@
 
 :local(.header) {
   display: flex;
-  height: 48px;
+  height: 70px;
   // border-bottom: 1px solid theme.$border1-color;
   align-items: center;
   justify-content: center;
@@ -66,5 +66,8 @@
 /* our code */
 :local(.centerTitle) {
   color: theme.$hdfcBlue;
-  font-size: 20px;
+
+  h5 {
+    font-size: 20px;
+  }
 }

@@ -36,8 +36,12 @@
     color: #58595b;
   }
 
+  label {
+    padding-bottom: 10px;
+  }
+
   small {
-    padding-top: 5px;
+    padding-top: 10px;
   }
 
   input {
@@ -96,5 +100,5 @@
   border-radius: 12px;
   font-size: 20px;
   height: 50px;
-  padding: 18px 61px 21px;
+  padding: 14px 61px 21px;
 }
