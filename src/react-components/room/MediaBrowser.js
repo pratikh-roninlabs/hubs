@@ -62,7 +62,7 @@ export function MediaBrowser({
       }
       headerCenter={
         <>
-          <h2 className={styles.titleText}>{"Select a Avatar"}</h2>
+          <h2 className={styles.titleText}>{"Select an Avatar"}</h2>
         </>
       }
       headerRight={

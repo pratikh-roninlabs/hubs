@@ -29,6 +29,19 @@
   }
 }
 
+:local(.mobileOnly) {
+  // display: none;
+  padding: 18px 70px 17px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+
+  @media (max-width: 767px) {
+    display: block;
+
+  }
+}
+
 :local(.hpTimer) {
   font-size: 14px;
   color: theme.$hdfcBlue;
@@ -308,6 +321,8 @@
   & ol {
     list-style: auto;
     margin-top: 40px;
+    padding-left: 20px;
+    line-height: 1.71;
 
     & li {
       font-size: 18px;

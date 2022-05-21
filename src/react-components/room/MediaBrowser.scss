@@ -30,11 +30,11 @@
   border-bottom: 1px solid theme.$border1-color;
 }
 
-:local(.button-nav) > * {
+:local(.button-nav)>* {
   margin-right: theme.$spacing-sm;
 }
 
-:local(.button-nav) > :last-child {
+:local(.button-nav)> :last-child {
   margin-right: 0;
 }
 
@@ -59,7 +59,7 @@
 :local(.pager-button) {
   border: none;
   border-radius: 24px;
-  background-color: theme.$primary-color;
+  background-color: theme.$hdfcRed;
   height: 48px;
   width: 48px;
   margin: 32px;
@@ -87,17 +87,7 @@
 
   &:disabled {
     cursor: not-allowed;
-    background-color: theme.$disabled-bg-color;
-
-    svg {
-      *[stroke=\#000] {
-        stroke: theme.$disabled-icon-color;
-      }
-  
-      *[fill=\#000] {
-        fill: theme.$disabled-icon-color;
-      }
-    }
+    background-color: #d1d3d4;
   }
 }
 
@@ -114,5 +104,5 @@
 :local(.titleText) {
   color: theme.$hdfcBlue;
   font-size: 18px;
-  text-align:center;
+  text-align: center;
 }

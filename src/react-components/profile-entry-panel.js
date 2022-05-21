@@ -6,7 +6,7 @@ import { replaceHistoryState } from "../utils/history";
 import { AvatarSettingsSidebar } from "./room/AvatarSettingsSidebar";
 import { AvatarSetupModal } from "./room/AvatarSetupModal";
 import AvatarPreview from "./avatar-preview";
-import { badwords_hindi } from "./badwords_hindi";
+// import { badwords_hindi } from "./badwords_hindi"
 // var Filter = require('bad-words'),
 //     filter = new Filter();
 
@@ -44,9 +44,10 @@ export default class ProfileEntryPanel extends Component {
     this.props.store.addEventListener("statechanged", this.storeUpdated);
     this.scene = document.querySelector("a-scene");
 
-    for (let i = 0; i < badwords_hindi.length; i++) {
-      // filter.addWords(badwords_hindi[i].w);
-    }
+    // for(let i =0; i<badwords_hindi.length;i++)
+    // {
+    //   filter.addWords(badwords_hindi[i].w);
+    // }
   }
 
   getStateFromProfile = () => {
@@ -130,8 +131,8 @@ export default class ProfileEntryPanel extends Component {
   };
 
   handleDisplayName = e => {
-    // this.setState({ displayName: filter.clean(e.target.value) });
-    this.setState({ displayName: e.target.value });
+    this.setState({ displayName: filter.clean(e.target.value) });
+    // this.setState({ displayName: e.target.value });
   };
 
   render() {

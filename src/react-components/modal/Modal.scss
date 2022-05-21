@@ -6,8 +6,8 @@
   flex-direction: column;
   height: max-content;
   background-color: theme.$hdfcBGColor;
-  border: 1px solid rgba(theme.$hdfcGray,.5);
-  border-radius:34px;
+  border: 1px solid rgba(theme.$hdfcGray, .5);
+  border-radius: 34px;
   margin: 24px;
   z-index: 1;
   width: 100%;
@@ -42,7 +42,9 @@
 }
 
 :local(.sm-fullscreen) {
-  @media(max-width: theme.$breakpoint-lg - 1), (max-height: theme.$breakpoint-vr - 1) {
+
+  @media(max-width: theme.$breakpoint-lg - 1),
+  (max-height: theme.$breakpoint-vr - 1) {
     position: fixed;
     top: 0;
     left: 0;
@@ -64,5 +66,5 @@
 /* our code */
 :local(.centerTitle) {
   color: theme.$hdfcBlue;
-  font-size: 18px;
+  font-size: 20px;
 }
