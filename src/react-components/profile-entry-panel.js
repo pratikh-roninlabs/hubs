@@ -6,9 +6,9 @@ import { replaceHistoryState } from "../utils/history";
 import { AvatarSettingsSidebar } from "./room/AvatarSettingsSidebar";
 import { AvatarSetupModal } from "./room/AvatarSetupModal";
 import AvatarPreview from "./avatar-preview";
-import { badwords_hindi } from "./badwords_hindi"
-var Filter = require('bad-words'),
-    filter = new Filter();
+import { badwords_hindi } from "./badwords_hindi";
+const Filter = require("bad-words"),
+  filter = new Filter();
 
 export default class ProfileEntryPanel extends Component {
   static propTypes = {
@@ -32,7 +32,8 @@ export default class ProfileEntryPanel extends Component {
   state = {
     avatarId: null,
     displayName: null,
-    avatar: null
+    avatar: null,
+    isProfane: false
   };
 
   constructor(props) {
@@ -44,11 +45,9 @@ export default class ProfileEntryPanel extends Component {
     this.props.store.addEventListener("statechanged", this.storeUpdated);
     this.scene = document.querySelector("a-scene");
 
-    // for(let i =0; i<badwords_hindi.length;i++)
-    // {
-    //   filter.addWords(badwords_hindi[i].w);
-    // }
-
+    for (let i = 0; i < badwords_hindi.length; i++) {
+      filter.addWords(badwords_hindi[i].w);
+    }
   }
 
   getStateFromProfile = () => {
@@ -63,6 +62,8 @@ export default class ProfileEntryPanel extends Component {
 
     const { displayName } = this.props.store.state.profile;
     const { hasChangedName } = this.props.store.state.activity;
+
+    if (this.state.isProfane) return;
 
     const hasChangedNowOrPreviously = hasChangedName || this.state.displayName !== displayName;
     this.props.store.update({
@@ -132,7 +133,15 @@ export default class ProfileEntryPanel extends Component {
   };
 
   handleDisplayName = e => {
-    this.setState({ displayName: filter.clean(e.target.value) });
+    let value = e.target.value;
+    if (filter.isProfane(value)) {
+      this.setState({ isProfane: true });
+      value = filter.clean(value);
+    } else {
+      this.setState({ isProfane: false });
+    }
+
+    this.setState({ displayName: value });
     // this.setState({ displayName: e.target.value });
   };
 
@@ -150,7 +159,8 @@ export default class ProfileEntryPanel extends Component {
       },
       onSubmit: this.saveStateAndFinish,
       onClose: this.props.onClose,
-      onBack: this.props.onBack
+      onBack: this.props.onBack,
+      isProfane: this.state.isProfane
     };
 
     if (this.props.containerType === "sidebar") {

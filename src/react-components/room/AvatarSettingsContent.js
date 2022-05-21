@@ -14,6 +14,7 @@ export function AvatarSettingsContent({
   avatarPreview,
   displayNamePattern,
   onChangeAvatar,
+  isProfane,
   ...rest
 }) {
   return (
@@ -30,6 +31,11 @@ export function AvatarSettingsContent({
         ref={displayNameInputRef}
         className={`textfield ${styles.textfield}`}
       />
+      {isProfane && (
+        <span style={{ color: "#ed1c24", fontSize: "13px", marginTop: "-10px" }}>
+          Sorry, but it looks like your screen name is rude or offensive. Please try again
+        </span>
+      )}
       <div className={styles.avatarPreviewContainer}>
         {avatarPreview || <div />}
         <button type="button" preset="basic" className={styles.changeBtn} onClick={onChangeAvatar}>
@@ -51,5 +57,6 @@ AvatarSettingsContent.propTypes = {
   displayNamePattern: PropTypes.string,
   onChangeDisplayName: PropTypes.func,
   avatarPreview: PropTypes.node,
-  onChangeAvatar: PropTypes.func
+  onChangeAvatar: PropTypes.func,
+  isProfane: PropTypes.bool
 };

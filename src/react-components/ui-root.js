@@ -1668,7 +1668,7 @@ function UIRootHooksWrapper(props) {
   useEffect(
     () => {
       const el = document.getElementById("preload-overlay");
-      el.classList.add("loaded");
+      el?.classList.add("loaded");
 
       const sceneEl = props.scene;
 

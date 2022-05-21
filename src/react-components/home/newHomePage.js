@@ -88,8 +88,8 @@ const NewHomePage = () => {
     document.title = "HDFC Life BounceBack Batch 2022 | Virtual Convocation on Metaverse";
   }, []);
   const calculateTimeLeft = () => {
-    const year = new Date().getFullYear();
-    const difference = +new Date(`05/23/${year}`) - +new Date();
+    // const year = new Date().getFullYear();
+    const difference = +new Date("2022-05-22 16:00:00") - +new Date();
 
     let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
@@ -182,7 +182,8 @@ const NewHomePage = () => {
                 <div>
                   <h3>Vibha Padalkar</h3>
                   <p>
-                      CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most Powerful Women in Business" award  by popular publications.
+                    CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most
+                    Powerful Women in Business" award by popular publications.
                   </p>
                 </div>
               </div>
