@@ -52,12 +52,12 @@ export function RoomEntryModal({
           <p>{roomName}</p> */}
           <p>
             {
-              "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
+              "Stay tuned. The metaverse will open on the 22nd of May at 4PM IST, so come back then to witness this exciting event."
             }
           </p>
         </div>
         <Column center className={styles.buttons}>
-          {showSpectate ? (
+          {/* {showSpectate ? (
             <button className={styles.enterVRBtn} onClick={onSpectate}>
               <ShowIcon />
               <span>{"Join with VR Device"}</span>
@@ -80,7 +80,7 @@ export function RoomEntryModal({
                 How to use?
               </a>
             </>
-          )}
+          )} */}
           {/* {showOptions &&
             breakpoint !== "sm" && (
               <>
