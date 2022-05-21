@@ -18,10 +18,6 @@
   height: 144px;
   border-bottom: 1px solid theme.$border1-color;
 
-  @media (max-width: 767px) {
-    border-bottom: 0;
-  }
-
   @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
     height: 96px;
   }
@@ -51,6 +47,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 767px) {
+    border-top: 0;
+  }
 
   @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
     margin-top: 0;

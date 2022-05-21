@@ -88,16 +88,6 @@
   &:disabled {
     cursor: not-allowed;
     background-color: #d1d3d4;
-
-    svg {
-      *[stroke=\#000] {
-        stroke: theme.$disabled-icon-color;
-      }
-
-      *[fill=\#000] {
-        fill: theme.$disabled-icon-color;
-      }
-    }
   }
 }
 
