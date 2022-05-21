@@ -54,7 +54,7 @@ export function RoomEntryModal({
           </p>
         </div>
         <Column center className={styles.buttons}>
-          {/* {showSpectate ? (
+          {showSpectate ? (
             <button className={styles.enterVRBtn} onClick={onSpectate}>
               <ShowIcon />
               <span>{"Join with VR Device"}</span>
@@ -77,7 +77,7 @@ export function RoomEntryModal({
                 How to use?
               </a>
             </>
-          )} */}
+          )}
           {/* {showOptions &&
             breakpoint !== "sm" && (
               <>
