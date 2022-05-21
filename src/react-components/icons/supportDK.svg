@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="59" viewBox="0 0 110 59">
+    <defs>
+        <clipPath id="ofan8xzd1a">
+            <path data-name="Rectangle 165" style="fill:#fff" d="M0 0h7.012v12.904H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 568" transform="translate(-972 -40)">
+        <rect data-name="Rectangle 3" width="110" height="59" rx="19" transform="translate(972 40)" style="fill:#fff"/>
+        <g data-name="Group 567">
+            <g data-name="Group 506" transform="translate(986.293 58)">
+                <circle data-name="Ellipse 39" cx="12" cy="12" r="12" transform="translate(-.293)" style="fill:#ed1c24"/>
+                <g data-name="Group 459">
+                    <g data-name="Group 458" style="clip-path:url(#ofan8xzd1a)" transform="translate(8 6)">
+                        <path data-name="Path 44" d="M2.666 8.659a4.611 4.611 0 0 1 .28-1.783 4.144 4.144 0 0 1 .993-1.223 7.235 7.235 0 0 0 1.1-1.2 2.036 2.036 0 0 0 .382-1.18A1.728 1.728 0 0 0 4.907 2a1.928 1.928 0 0 0-1.426-.509A1.784 1.784 0 0 0 2.122 2a3.366 3.366 0 0 0-.7 1.044L0 2.411A3.876 3.876 0 0 1 1.265.7 3.463 3.463 0 0 1 3.481 0 3.482 3.482 0 0 1 6.1.942a3.134 3.134 0 0 1 .917 2.267 3.127 3.127 0 0 1-.348 1.477 5.605 5.605 0 0 1-1.117 1.393 4.348 4.348 0 0 0-1 1.223 4.155 4.155 0 0 0-.187 1.358zm.815 4.241a1.189 1.189 0 1 1 0-2.377 1.189 1.189 0 1 1 0 2.377" style="fill:#fff"/>
+                    </g>
+                </g>
+            </g>
+            <text transform="translate(1013.008 76)" style="font-size:16px;font-family:SohoGothicPro;fill:#ed1c24"><tspan x="0" y="0">Support</tspan></text>
+        </g>
+    </g>
+</svg>
