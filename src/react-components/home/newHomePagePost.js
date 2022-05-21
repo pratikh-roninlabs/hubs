@@ -130,6 +130,7 @@ const NewHomePagePost = () => {
               <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
                 <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
               </div>
+              <div className="onnn">Metaverse will be live till Tuesday end of day.</div>
             </div>
             <div className={styles.hpHeroVideo}>
               <div className={styles.hpHeroVdoWrapper}>
