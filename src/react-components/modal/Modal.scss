@@ -66,11 +66,5 @@
 /* our code */
 :local(.centerTitle) {
   color: theme.$hdfcBlue;
-  font-size: 18px;
-}
-
-.setAnAvatar {
-  :local(.centerTitle) {
-    font-size: 20px;
-  }
+  font-size: 20px;
 }
