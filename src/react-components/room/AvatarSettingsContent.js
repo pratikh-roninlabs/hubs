@@ -32,7 +32,9 @@ export function AvatarSettingsContent({
         className={`textfield ${styles.textfield}`}
       />
       {isProfane && (
-        <span style={{ color: "#ed1c24", fontSize: "13px", marginTop: "-10px" }}>Language is not appropriate</span>
+        <span style={{ color: "#ed1c24", fontSize: "13px", marginTop: "-10px" }}>
+          Sorry, but it looks like your screen name is rude or offensive. Please try again
+        </span>
       )}
       <div className={styles.avatarPreviewContainer}>
         {avatarPreview || <div />}
