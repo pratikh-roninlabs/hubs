@@ -61,20 +61,15 @@ const NewHomePagePost = () => {
   const { results: publicRooms } = usePublicRooms();
   console.log(publicRooms);
 
- 
-
-
   const handleClick = elem => {
     setTab(elem);
     const domElem = document.querySelector(`#${elem}`);
     domElem.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
- 
   useEffect(() => {
-
-    window.addEventListener('scroll', (event) => {
-      console.log('trfserfser');
+    window.addEventListener("scroll", event => {
+      console.log("trfserfser");
     });
 
     const qs = new URLSearchParams(location.search);
@@ -93,7 +88,6 @@ const NewHomePagePost = () => {
     if (qs.has("new")) {
       createAndRedirectToNewHub(null, null, true);
     }
-
   }, []);
 
   return (
@@ -136,6 +130,7 @@ const NewHomePagePost = () => {
               <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
                 <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
               </div>
+              <div className="onnn">Metaverse will be live till Tuesday end of day.</div>
             </div>
             <div className={styles.hpHeroVideo}>
               <div className={styles.hpHeroVdoWrapper}>
@@ -181,7 +176,8 @@ const NewHomePagePost = () => {
                 <div>
                   <h3>Vibha Padalkar</h3>
                   <p>
-                    CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most Powerful Women in Business" award  by popular publications.
+                    CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most
+                    Powerful Women in Business" award by popular publications.
                   </p>
                 </div>
               </div>
