@@ -89,7 +89,7 @@ const NewHomePage = () => {
   }, []);
   const calculateTimeLeft = () => {
     // const year = new Date().getFullYear();
-    const difference = +new Date("2022-05-22 4:00:00") - +new Date();
+    const difference = +new Date("2022-05-22 16:00:00") - +new Date();
 
     let timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
