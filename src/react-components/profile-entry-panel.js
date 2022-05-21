@@ -7,8 +7,8 @@ import { AvatarSettingsSidebar } from "./room/AvatarSettingsSidebar";
 import { AvatarSetupModal } from "./room/AvatarSetupModal";
 import AvatarPreview from "./avatar-preview";
 import { badwords_hindi } from "./badwords_hindi"
-// var Filter = require('bad-words'),
-//     filter = new Filter();
+var Filter = require('bad-words'),
+    filter = new Filter();
 
 export default class ProfileEntryPanel extends Component {
   static propTypes = {
@@ -132,8 +132,8 @@ export default class ProfileEntryPanel extends Component {
   };
 
   handleDisplayName = e => {
-    // this.setState({ displayName: filter.clean(e.target.value) });
-    this.setState({ displayName: e.target.value });
+    this.setState({ displayName: filter.clean(e.target.value) });
+    // this.setState({ displayName: e.target.value });
   };
 
   render() {
