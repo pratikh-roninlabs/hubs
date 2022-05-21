@@ -73,7 +73,9 @@ const NewHomePagePost = () => {
  
   useEffect(() => {
 
-    
+    window.addEventListener('scroll', (event) => {
+      console.log('trfserfser');
+    });
 
     const qs = new URLSearchParams(location.search);
 
@@ -131,9 +133,9 @@ const NewHomePagePost = () => {
               <p>
                 The BounceBack Batch Metaverse is now <span>live!</span>
               </p>
-              {/* <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
+              <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
                 <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
-              </div> */}
+              </div>
             </div>
             <div className={styles.hpHeroVideo}>
               <div className={styles.hpHeroVdoWrapper}>

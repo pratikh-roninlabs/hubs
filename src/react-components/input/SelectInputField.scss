@@ -13,8 +13,8 @@ $input-height: 40px;
   height: $input-height;
   border: 1px solid theme.$input-border-color;
   border-radius: theme.$border-radius-regular;
-  color: theme.$text1-color;
-  background-color: theme.$input-bg-color;
+  color: #000;
+  background-color: #fff;
   width: 100%;
   max-width: 300px;
   padding: 0 8px;
@@ -28,12 +28,12 @@ $input-height: 40px;
   &:hover {
     border-color: theme.$input-border-color-hover;
   }
-  
+
   &:focus {
     outline: none;
   }
-  
-  &:focus-within  {
+
+  &:focus-within {
     border-color: theme.$hdfcRed;
     box-shadow: 0 0 0 2px theme.$hdfcRed;
   }
@@ -55,6 +55,7 @@ $input-height: 40px;
   display: none;
   flex-direction: column;
   background-color: #fff;
+  color: black;
   border-radius: 8px;
   padding: 8px 0;
   z-index: 99999;
@@ -86,6 +87,6 @@ $input-height: 40px;
 }
 
 :local(.highlighted-item) {
-  color: #fff;
-  background-color: rgba(theme.$hdfcGray,.3);
+  color: #000;
+  background-color: rgba(theme.$hdfcGray, .3);
 }

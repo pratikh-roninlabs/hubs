@@ -15,6 +15,28 @@
     margin-bottom: 3px;
     white-space: nowrap;
   }
+
+  svg {
+    *[stroke=\#000] {
+      stroke: theme.$hdfcBlue;
+    }
+
+    *[fill=\#000] {
+      fill: theme.$hdfcBlue;
+    }
+  }
+
+  &:hover {
+    svg {
+      *[stroke=\#000] {
+        stroke: theme.$toolbar-basic-icon-color;
+      }
+
+      *[fill=\#000] {
+        fill: theme.$toolbar-basic-icon-color;
+      }
+    }
+  }
 }
 
 :local(.icon-container) {
@@ -51,21 +73,13 @@
   height: 96px;
 }
 
+
+
 :local(.basic),
 :local(.transparent) {
   :local(.icon-container) {
     border-color: theme.$toolbar-basic-border-color;
     background-color: transparent;
-
-    svg {
-      *[stroke=\#000] {
-        stroke: theme.$toolbar-basic-icon-color;
-      }
-
-      *[fill=\#000] {
-        fill: theme.$toolbar-basic-icon-color;
-      }
-    }
   }
 
   &:hover :local(.icon-container) {
