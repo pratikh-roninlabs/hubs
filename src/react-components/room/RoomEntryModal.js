@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Modal } from "../modal/Modal";
@@ -34,6 +34,11 @@ export function RoomEntryModal({
 }) {
   const breakpoint = useCssBreakpoints();
   const [showCC, setShowCC] = useState(false);
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      window.enterRoom = onJoinRoom;
+    }
+  }, []);
   // const isHmc = configs.feature("show_cloud");
   // {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}
   return (
