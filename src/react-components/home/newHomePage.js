@@ -114,7 +114,7 @@ const NewHomePage = () => {
             <div className={styles.hpTimer}>
               {"Begins in "}
               <strong>
-                {timeLeft["days"]}d:{timeLeft["hours"]}hr
+                {timeLeft["hours"]}Hrs {timeLeft["minutes"]}Mins
               </strong>
             </div>
           </div>
