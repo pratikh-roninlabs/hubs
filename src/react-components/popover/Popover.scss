@@ -3,12 +3,23 @@
 :local(.popover) {
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
-  background-color: theme.$background1-color;
-  border: 1px solid theme.$border1-color;
+  border-radius: 4px;
+  background-color: #fefefd;
   min-width: 160px;
   z-index: 10;
   max-height: calc(100vh - 200px);
+  bottom: 11%;
+  right: 6%;
+  top: auto !important;
+  left: auto !important;
+
+  @media (max-width: 767px) {
+    z-index: 101 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto;
+    bottom: auto;
+  }
 
   :local(.content) {
     overflow-y: auto;
@@ -22,6 +33,8 @@
 
     :local(.arrow) {
       margin-top: -9px;
+      bottom: -10px;
+      right: -10px;
 
       svg {
         transform: rotate(180deg);
@@ -78,7 +91,8 @@
   flex-shrink: 0;
 
   h5 {
-    display: flex
+    display: flex;
+    color: theme.$hdfcBlue;
   }
 
   button {
@@ -102,13 +116,13 @@
 }
 
 :local(.arrow-bg) {
-  fill: theme.$background1-color;
-  stroke: theme.$background1-color;
+  fill: #fefefd;
+  stroke: #fefefd;
 }
 
 :local(.arrow-border) {
-  stroke: theme.$border1-color;
-  fill: theme.$background1-color;
+  stroke: #fefefd;
+  fill: #fefefd;
 }
 
 :local(.fullscreen) {

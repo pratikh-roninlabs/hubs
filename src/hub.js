@@ -10,7 +10,7 @@ import "./utils/theme";
 import "@babel/polyfill";
 
 console.log(
-  `Deplyoed by Upa v6\nApp version: ${
+  `Final Deploy\nApp version: ${
     configs.IS_LOCAL_OR_CUSTOM_CLIENT
       ? `Custom client or local client (undeploy custom client to run build ${process.env.BUILD_VERSION})`
       : process.env.BUILD_VERSION || "?"

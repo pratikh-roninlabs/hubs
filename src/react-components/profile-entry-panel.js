@@ -44,10 +44,10 @@ export default class ProfileEntryPanel extends Component {
     this.props.store.addEventListener("statechanged", this.storeUpdated);
     this.scene = document.querySelector("a-scene");
 
-    for(let i =0; i<badwords_hindi.length;i++)
-    {
-      filter.addWords(badwords_hindi[i].w);
-    }
+    // for(let i =0; i<badwords_hindi.length;i++)
+    // {
+    //   filter.addWords(badwords_hindi[i].w);
+    // }
 
   }
 

@@ -182,9 +182,7 @@ const NewHomePage = () => {
                 <div>
                   <h3>Vibha Padalkar</h3>
                   <p>
-                    CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most
-                    Powerful Women in Business" award by Fortune International and Business Today for 4 consecutive
-                    years.
+                      CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most Powerful Women in Business" award  by popular publications.
                   </p>
                 </div>
               </div>

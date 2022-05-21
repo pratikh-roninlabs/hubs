@@ -36,13 +36,20 @@
     color: #58595b;
   }
 
+  label {
+    padding-bottom: 10px;
+  }
+
+  small {
+    padding-top: 10px;
+  }
+
   input {
     text-align: center;
     font-size: 20px;
     font-weight: normal;
     color: #000;
   }
-
 }
 
 
@@ -68,10 +75,9 @@
     position: absolute;
     bottom: 0;
     margin-bottom: 8px;
-    padding: 22px 61px 21px;
-    border-radius: 25px;
-    font-size: 20px;
-    font-weight: 500;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
   }
 }
 
@@ -91,8 +97,8 @@
   background-color: theme.$hdfcRed;
   color: #fff;
   border-width: 0px;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 12px;
+  font-size: 20px;
   height: 50px;
-  padding: 0 24px;
+  padding: 14px 61px 21px;
 }

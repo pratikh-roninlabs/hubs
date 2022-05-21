@@ -47,7 +47,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
+  @media (max-width: 767px) {
+    border-top: 0;
+  }
+
   @media(min-width: theme.$breakpoint-lg) and (min-height: theme.$breakpoint-vr) {
     margin-top: 0;
     border-top: none;

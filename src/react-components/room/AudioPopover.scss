@@ -11,7 +11,14 @@
   }
 }
 
-:local(.selection-input) {  
+:local(.testAudioBtn) {
+  background-color: theme.$hdfcRed;
+  color: white;
+  border-radius: 12px;
+  border: 0;
+}
+
+:local(.selection-input) {
   width: 100%;
   max-width: none;
 }
@@ -28,13 +35,6 @@
   width: 24px;
   height: 24px;
 
-  *[stroke=\#000] {
-    stroke: theme.$text1-color;
-  }
-
-  *[fill=\#000] {
-    fill: theme.$text1-color;
-  }
 }
 
 :local(.icon-disabled) {
