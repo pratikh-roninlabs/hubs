@@ -90,7 +90,7 @@ export function RoomEntryModal({
             </>
           ) : (
             <div className={styles.roomName}>
-              <p>{"Your device is not compatible with this experience, We recommend joining from another device."}</p>
+              <p>{"Your device is not compatible with this experience. We recommend joining from another device."}</p>
             </div>
           )}
           {/* {showOptions &&
