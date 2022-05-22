@@ -1,4 +1,4 @@
-[
+export var badwords_hindi = [
   {
     "w": "aand"
   },
