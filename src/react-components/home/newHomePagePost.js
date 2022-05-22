@@ -151,7 +151,7 @@ const NewHomePagePost = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/o76cCN2WIsM"
+                    src="https://www.youtube.com/embed/UGGYATK-08Q"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
