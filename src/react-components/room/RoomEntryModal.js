@@ -90,11 +90,7 @@ export function RoomEntryModal({
             </>
           ) : (
             <div className={styles.roomName}>
-              <p>
-                {
-                  "Unfortunately, the live video is not viewable from your device. We recommend you come online from a computer or and android device."
-                }
-              </p>
+              <p>{"Your device is not compatible with this experience, We recommend joining from another device."}</p>
             </div>
           )}
           {/* {showOptions &&
