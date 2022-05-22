@@ -95,10 +95,15 @@
 
   & .imgWrapper {
     position: relative;
+    margin-top: 10px;
 
     & .img {
       position: relative;
       padding-top: 56%;
+      left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 
       & img {
         position: absolute;
