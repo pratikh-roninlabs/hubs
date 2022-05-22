@@ -10,7 +10,7 @@ import "./utils/theme";
 import "@babel/polyfill";
 
 console.log(
-  `Final Deploy\nApp version: ${
+  `Final Deploy v2\nApp version: ${
     configs.IS_LOCAL_OR_CUSTOM_CLIENT
       ? `Custom client or local client (undeploy custom client to run build ${process.env.BUILD_VERSION})`
       : process.env.BUILD_VERSION || "?"
