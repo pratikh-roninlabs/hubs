@@ -39,6 +39,10 @@ export function RoomEntryModal({
       window.enterRoom = onJoinRoom;
     }
   }, []);
+  const gfg_Run = () => {
+    const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    return iOS;
+  };
   // const isHmc = configs.feature("show_cloud");
   // {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}
   return (
@@ -48,40 +52,50 @@ export function RoomEntryModal({
           <img src={BBLogo} />
         </div>
         <div className={styles.roomName}>
-          {/* <h5>
-            <FormattedMessage id="room-entry-modal.room-name-label" defaultMessage="Room Name" />
-          </h5>
-          <p>{roomName}</p> */}
-          <p>
-            {
-              "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
-            }
-          </p>
+          {!gfg_Run() && (
+            <p>
+              {
+                "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
+              }
+            </p>
+          )}
         </div>
         <Column center className={styles.buttons}>
-          {showSpectate ? (
-            <button className={styles.enterVRBtn} onClick={onSpectate}>
-              <ShowIcon />
-              <span>{"Join with VR Device"}</span>
-            </button>
-          ) : (
+          {!gfg_Run() ? (
             <>
-              {showJoinRoom && (
-                <button className={styles.enterRoomBtn} onClick={onJoinRoom}>
-                  <EnterIcon />
-                  <span>{"Enter the Metaverse"}</span>
-                </button>
-              )}
-              {showEnterOnDevice && (
-                <button className={styles.enterVRBtn} onClick={onEnterOnDevice}>
-                  <VRIcon />
+              {showSpectate ? (
+                <button className={styles.enterVRBtn} onClick={onSpectate}>
+                  <ShowIcon />
                   <span>{"Join with VR Device"}</span>
                 </button>
+              ) : (
+                <>
+                  {showJoinRoom && (
+                    <button className={styles.enterRoomBtn} onClick={onJoinRoom}>
+                      <EnterIcon />
+                      <span>{"Enter the Metaverse"}</span>
+                    </button>
+                  )}
+                  {showEnterOnDevice && (
+                    <button className={styles.enterVRBtn} onClick={onEnterOnDevice}>
+                      <VRIcon />
+                      <span>{"Join with VR Device"}</span>
+                    </button>
+                  )}
+                  <a className={styles.howToUse} href="javascript:void(0)" onClick={() => setShowCC(true)}>
+                    How to use?
+                  </a>
+                </>
               )}
-              <a className={styles.howToUse} href="javascript:void(0)" onClick={() => setShowCC(true)}>
-                How to use?
-              </a>
             </>
+          ) : (
+            <div className={styles.roomName}>
+              <p>
+                {
+                  "Unfortunately, the live video is not viewable from your device. We recommend you come online from a computer or and android device."
+                }
+              </p>
+            </div>
           )}
           {/* {showOptions &&
             breakpoint !== "sm" && (
