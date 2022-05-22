@@ -14,6 +14,7 @@ import event4 from "../../assets/images/hdfcbb/event4.jpg";
 import event5 from "../../assets/images/hdfcbb/event5.jpg";
 import { ReactComponent as Right } from "../icons/redRight.svg";
 import { ReactComponent as Left } from "../icons/redLeft.svg";
+import { usePublicRooms } from "./usePublicRooms";
 /* styles */
 import styles from "./newHomePage.scss";
 import Slider from "react-slick";
@@ -58,6 +59,7 @@ const settings = {
 const NewHomePage = () => {
   const [tab, setTab] = useState("register");
   const [terms, setTerms] = useState(false);
+  const { results: publicRooms } = usePublicRooms();
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const handleClick = elem => {
     setTab(elem);
@@ -87,6 +89,9 @@ const NewHomePage = () => {
     }, 1000);
     document.title = "HDFC Life BounceBack Batch 2022 | Virtual Convocation on Metaverse";
   }, []);
+
+  console.log(publicRooms);
+
   const calculateTimeLeft = () => {
     // const year = new Date().getFullYear();
     const difference = +new Date("2022-05-22 16:00:00") - +new Date();
@@ -114,7 +119,7 @@ const NewHomePage = () => {
             <div className={styles.hpTimer}>
               {"Begins in "}
               <strong>
-                {timeLeft["days"]}d:{timeLeft["hours"]}hr
+                {timeLeft["hours"]}Hrs {timeLeft["minutes"]}Mins
               </strong>
             </div>
           </div>
@@ -183,7 +188,7 @@ const NewHomePage = () => {
                   <h3>Vibha Padalkar</h3>
                   <p>
                     CEO and MD of HDFC Life, Vibha Padalkar is an inspirational leader and recipient of the "Most
-                    Powerful Women in Business" award by popular publications.
+                    Powerful Women in Business" award by reputed publications.
                   </p>
                 </div>
               </div>
