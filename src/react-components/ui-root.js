@@ -1581,12 +1581,12 @@ class UIRoot extends Component {
                 }
                 toolbarCenter={
                   <>
-                    {/* <PlacePopoverContainer
+                    <PlacePopoverContainer
                       scene={this.props.scene}
                       hubChannel={this.props.hubChannel}
                       mediaSearchStore={this.props.mediaSearchStore}
                       showNonHistoriedDialog={this.showNonHistoriedDialog}
-                    /> */}
+                    />
                     {/* {watching && (
                       <>
                         <ToolbarButton
