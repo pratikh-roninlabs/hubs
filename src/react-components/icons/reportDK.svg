@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="59" viewBox="0 0 104 59">
+    <g data-name="Group 569">
+        <g data-name="Group 26" transform="translate(-4 -.371)">
+            <rect data-name="Rectangle 3" width="104" height="59" rx="19" transform="translate(4 .371)" style="fill:#fff"/>
+            <path d="M12.332 1 3 5.147v6.221a12.877 12.877 0 0 0 9.332 12.442 12.877 12.877 0 0 0 9.332-12.442V5.147zm1.037 17.627h-2.074v-2.074h2.074zm0-4.147h-2.074V6.184h2.074z" transform="translate(18.669 17.465)" style="fill:#ed1c24"/>
+        </g>
+        <text transform="translate(41.008 36)" style="font-size:16px;font-family:SohoGothicPro;fill:#ed1c24"><tspan x="0" y="0">Report</tspan></text>
+    </g>
+</svg>

@@ -39,12 +39,9 @@ export function RoomEntryModal({
   return (
     <Modal className={classNames(styles.roomEntryModal, className)} disableFullscreen {...rest}>
       <Column center className={styles.content}>
-        {breakpoint !== "sm" &&
-          breakpoint !== "md" && (
-            <div className={styles.logoContainer}>
-              <img src={BBLogo} />
-            </div>
-          )}
+        <div className={styles.logoContainer}>
+          <img src={BBLogo} />
+        </div>
         <div className={styles.roomName}>
           {/* <h5>
             <FormattedMessage id="room-entry-modal.room-name-label" defaultMessage="Room Name" />
@@ -52,7 +49,7 @@ export function RoomEntryModal({
           <p>{roomName}</p> */}
           <p>
             {
-              "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
+              "Stay tuned. The metaverse will open on the 22nd of May at 4PM IST, so come back then to witness this exciting event."
             }
           </p>
         </div>

@@ -23,31 +23,31 @@ export function LoadingScreenContainer({ onLoaded, scene }) {
   const infoMessages = useMemo(
     () => [
       {
-        heading: intl.formatMessage({ id: "loading-screen.heading.tip", defaultMessage: "Tip:" }),
-        message: intl.formatMessage({
-          id: "loading-screen.message.keyboard-controls",
-          defaultMessage: "Press the Q & E keys to turn left and right."
-        })
+        heading: "Tip:",
+        message: "On desktop use WASD to navigate & on mobile use pinch to navigate."
       },
       {
-        heading: intl.formatMessage({ id: "loading-screen.heading.whats-new", defaultMessage: "What's New?" }),
-        message: intl.formatMessage(
-          {
-            id: "loading-screen.message.whats-new",
-            defaultMessage: "You can now set the default locale in your preferences. <a>Read More</a>"
-          },
-          {
-            // eslint-disable-next-line react/display-name
-            a: chunks => (
-              <a href="/whats-new" target="_blank">
-                {chunks}
-              </a>
-            )
-          }
-        )
+        heading: "Tip:",
+        message: "Be kind to one another."
+      },
+      {
+        heading: "Tip:",
+        message: "The view from the top of the balcony is amazing!"
+      },
+      {
+        heading: "Tip:",
+        message: "Read the code of conduct to avoid being banned."
+      },
+      {
+        heading: "Tip:",
+        message: "Chat and audio channels are monitored."
+      },
+      {
+        heading: "Tip:",
+        message: "Take a seat in front of the screen by holding spacebar."
       }
     ],
-    [intl]
+    []
   );
 
   return <LoadingScreen logoSrc={configs.image("logo")} message={message} infoMessages={infoMessages} />;
