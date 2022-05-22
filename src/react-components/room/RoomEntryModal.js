@@ -41,7 +41,8 @@ export function RoomEntryModal({
   }, []);
   const gfg_Run = () => {
     const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-    return iOS;
+    // return iOS;
+    return false;
   };
   // const isHmc = configs.feature("show_cloud");
   // {isHmc ? <HmcLogo className="hmc-logo" /> : <img src={logoSrc} alt={appName} />}

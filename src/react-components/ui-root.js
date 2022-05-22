@@ -1580,13 +1580,14 @@ class UIRoot extends Component {
                   </>
                 }
                 toolbarCenter={
-                  <>
+                  <><div id="hidden" style={{"display":"none"}}>{
                     <PlacePopoverContainer
                       scene={this.props.scene}
                       hubChannel={this.props.hubChannel}
                       mediaSearchStore={this.props.mediaSearchStore}
                       showNonHistoriedDialog={this.showNonHistoriedDialog}
-                    />
+                    />}
+                    </div>
                     {/* {watching && (
                       <>
                         <ToolbarButton
@@ -1642,7 +1643,7 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
                     )}
-                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
+                    <div id="hidden_moremenu" style={{"display":"none"}}>{ <MoreMenuPopoverButton menu={moreMenu} />}</div>
                   </>
                 }
                 showTopBar={entered ? true : false}
