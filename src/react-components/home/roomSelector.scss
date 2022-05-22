@@ -96,6 +96,17 @@
   & .imgWrapper {
     position: relative;
 
+    & .img {
+      position: relative;
+      padding-top: 56%;
+
+      & img {
+        position: absolute;
+        width: 100%;
+        object-fit: cover
+      }
+    }
+
     &>div {
       position: absolute;
       bottom: 10px;

@@ -863,7 +863,7 @@ class UIRoot extends Component {
           }}
           showEnterOnDevice={!this.state.waitingOnAudio && !this.props.entryDisallowed && !isMobileVR}
           onEnterOnDevice={() => this.attemptLink()}
-          showSpectate={this.state.peopleInRoom > 100} // showSpectate={!this.state.waitingOnAudio}
+          showSpectate={this.state.peopleInRoom > 50} // showSpectate={!this.state.waitingOnAudio}
           onSpectate={() =>
             this.setState({
               watching: true
@@ -1581,12 +1581,12 @@ class UIRoot extends Component {
                 }
                 toolbarCenter={
                   <>
-                    <PlacePopoverContainer
+                    {/* <PlacePopoverContainer
                       scene={this.props.scene}
                       hubChannel={this.props.hubChannel}
                       mediaSearchStore={this.props.mediaSearchStore}
                       showNonHistoriedDialog={this.showNonHistoriedDialog}
-                    />
+                    /> */}
                     {/* {watching && (
                       <>
                         <ToolbarButton
@@ -1642,7 +1642,7 @@ class UIRoot extends Component {
                         {this.props.hubChannel.can("spawn_emoji") && <ReactionPopoverContainer />}
                       </>
                     )}
-                    <MoreMenuPopoverButton menu={moreMenu} />
+                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
                   </>
                 }
                 showTopBar={entered ? true : false}
@@ -1652,6 +1652,7 @@ class UIRoot extends Component {
                     reason: LeaveReason.leaveRoom
                   });
                 }}
+                showPeople={() => this.toggleSidebar("people")}
               />
             )}
           </div>

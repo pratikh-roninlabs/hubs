@@ -18,6 +18,13 @@ import { spawnChatMessage } from "../chat-message";
 import { discordBridgesForPresences } from "../../utils/phoenix-utils";
 import { useIntl } from "react-intl";
 import { MAX_MESSAGE_LENGTH } from "../../utils/chat-message";
+import { badwords_hindi } from "../badwords_hindi";
+const Filter = require("bad-words");
+const filter = new Filter();
+
+for (let i = 0; i < badwords_hindi.length; i++) {
+  filter.addWords(badwords_hindi[i].w);
+}
 
 const ChatContext = createContext({ messageGroups: [], sendMessage: () => {} });
 
@@ -262,7 +269,13 @@ export function ChatSidebarContainer({ /*scene,*/ canSpawnMessages, presences, o
       );
     }
   }
-
+  const checkProfinity = chatStr => {
+    let value = chatStr;
+    if (filter.isProfane(value)) {
+      value = filter.clean(value);
+    }
+    setMessage(value);
+  };
   const isMobile = AFRAME.utils.device.isMobile();
   const isOverMaxLength = message.length > MAX_MESSAGE_LENGTH;
   return (
@@ -280,7 +293,7 @@ export function ChatSidebarContainer({ /*scene,*/ canSpawnMessages, presences, o
         id="chat-input"
         ref={inputRef}
         onKeyDown={onKeyDown}
-        onChange={e => setMessage(e.target.value)}
+        onChange={e => checkProfinity(e.target.value)}
         placeholder={placeholder}
         value={message}
         isOverMaxLength={isOverMaxLength}

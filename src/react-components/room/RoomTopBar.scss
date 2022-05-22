@@ -31,10 +31,20 @@
     background-color: transparent;
     margin-right: 15px;
     width: 40px;
-    height: 40px;
+    & .desktop{
+      display: none;
+    }
+    & .mobile{
+      display: block;
+    }
     @media (min-width:1024px) {
-      width: 55px;
-    height: 55px;
+      width: 100px;
+      & .desktop{
+        display: block !important;
+      }
+      & .mobile{ 
+        display: none !important;
+      }
     }
     & svg{
       width: 100%;

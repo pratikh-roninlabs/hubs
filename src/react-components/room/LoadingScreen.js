@@ -16,8 +16,8 @@ export function LoadingScreen({ logoSrc, message, infoMessages }) {
       }
       bottom={
         <>
-          <h3 style={{ color: "#707070" }}>{"TIP:"}</h3>
-          <p style={{ color: "#707070" }}>{"Press the WASD keys to move around"}</p>
+          <h3 style={{ color: "#707070" }}>{infoMessage.heading}</h3>
+          <p style={{ color: "#707070" }}>{infoMessage.message}</p>
         </>
       }
     />

@@ -11,6 +11,7 @@ import event2 from "../../assets/images/hdfcbb/event2.jpg";
 import event3 from "../../assets/images/hdfcbb/event3.jpg";
 import event4 from "../../assets/images/hdfcbb/event4.jpg";
 import event5 from "../../assets/images/hdfcbb/event5.jpg";
+import TermsSection from "./termsSections";
 
 import styles from "./newHomePage.scss";
 import { usePublicRooms } from "./usePublicRooms";
@@ -89,6 +90,14 @@ const NewHomePagePost = () => {
       createAndRedirectToNewHub(null, null, true);
     }
   }, []);
+  const allRoomFull = () => {
+    const fullRoom = publicRooms.reduce((acc, pre) => {
+      acc += pre.lobby_count + pre.member_count >= pre.room_size ? 1 : 0;
+      return acc;
+    }, 0);
+
+    return fullRoom === publicRooms.length;
+  };
 
   return (
     <div>
@@ -127,9 +136,13 @@ const NewHomePagePost = () => {
               <p>
                 The BounceBack Batch Metaverse is now <span>live!</span>
               </p>
-              <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
-                <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
-              </div>
+              {!allRoomFull() ? (
+                <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
+                  <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
+                </div>
+              ) : (
+                <div>The Event is seeing overwhelming attendees. Please wait for a bit for some seats to go free.</div>
+              )}
               <div className="onnn">Metaverse will be live till Tuesday end of day.</div>
             </div>
             <div className={styles.hpHeroVideo}>
@@ -138,7 +151,7 @@ const NewHomePagePost = () => {
                   <iframe
                     width="100%"
                     height="100%"
-                    src="https://www.youtube.com/embed/be4ZxY2TuSE"
+                    src="https://www.youtube.com/embed/o76cCN2WIsM"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -154,7 +167,7 @@ const NewHomePagePost = () => {
                 <h2 className={styles.hpSectionTitle}>How to enter the Metaverse?</h2>
                 <ol>
                   <li>Click on the link "Enter The Metaverse" at the top right corner.</li>
-                  <li>Select your room.</li>
+                  <li>Select your gate.</li>
                   <li>Enter the room from your device or use a VR device.</li>
                   <li>Enter your name and select your avatar.</li>
                   <li>Enjoy!</li>

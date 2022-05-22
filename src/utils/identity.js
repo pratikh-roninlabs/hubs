@@ -107,4 +107,5 @@ export async function fetchRandomDefaultAvatarId() {
   }
   const avatarIds = defaultAvatars.map(avatar => avatar.id);
   return chooseRandom(avatarIds);
+  // return avatarIds[0];
 }

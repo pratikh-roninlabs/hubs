@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="60" viewBox="0 0 110 60">
+    <defs>
+        <clipPath id="ke9o2vvvfa">
+            <path data-name="Rectangle 186" transform="translate(-.321 -.395)" style="fill:#fff" d="M0 0h13v16H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="Group 534" transform="translate(-782 -40)">
+        <rect data-name="Rectangle 187" width="110" height="60" rx="19" transform="translate(782 40)" style="fill:#fff"/>
+        <g data-name="Group 533" transform="translate(2)">
+            <text transform="translate(829.008 76)" style="font-size:16px;font-family:SohoGothicPro;fill:#ed1c24"><tspan x="0" y="0">Leave</tspan></text>
+            <rect data-name="Rectangle 188" width="24" height="24" rx="5" transform="translate(801 58)" style="fill:#ed1c24"/>
+            <g data-name="Group 529">
+                <g data-name="Group 528" transform="translate(807.32 62.394)" style="clip-path:url(#ke9o2vvvfa)">
+                    <path data-name="Path 51" d="m136.2 117.562 3.713 2.784-3.7 2.771v-2.025h-3.681v-1.477h3.668z" transform="translate(-127.448 -112.741)" style="fill:#fff"/>
+                    <path data-name="Path 52" d="M11.837 1.644c-.012.481-.014.963-.013 1.444 0 .55.007 1.1.007 1.651V5l-1.484-1.107V1.5H1.5v11.776h8.851V10.892l1.485-1.106v3.467a1.474 1.474 0 0 1-1.154 1.482 2.059 2.059 0 0 1-.466.041c-2.861 0-5.721-.01-8.582.008A1.561 1.561 0 0 1 0 13.151C.015 9.292.006 5.433.007 1.574A1.482 1.482 0 0 1 1.157.049a2.082 2.082 0 0 1 .467-.041C4.484.006 7.345.019 10.206 0a1.552 1.552 0 0 1 1.632 1.644" transform="translate(-.101 .216)" style="fill:#fff"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
