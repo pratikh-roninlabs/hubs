@@ -36,7 +36,7 @@ const RoomSelector = ({ rooms, close }) => {
                   <span>{room.lobby_count + room.member_count}</span>
                 </div>
               </div>
-
+              {(room.lobby_count + room.member_count) / room.room_size > 0.8 && <span>Performance could be low</span>}
               <a
                 href={room.url}
                 className={`enterBtn ${room.lobby_count + room.member_count >= room.room_size ? "disable" : ""}`}

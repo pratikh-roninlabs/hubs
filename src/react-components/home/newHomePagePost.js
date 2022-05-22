@@ -90,6 +90,14 @@ const NewHomePagePost = () => {
       createAndRedirectToNewHub(null, null, true);
     }
   }, []);
+  const allRoomFull = () => {
+    const fullRoom = publicRooms.reduce((acc, pre) => {
+      acc += pre.lobby_count + pre.member_count >= pre.room_size ? 1 : 0;
+      return acc;
+    }, 0);
+
+    return fullRoom === publicRooms.length;
+  };
 
   return (
     <div>
@@ -128,9 +136,13 @@ const NewHomePagePost = () => {
               <p>
                 The BounceBack Batch Metaverse is now <span>live!</span>
               </p>
-              <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
-                <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
-              </div>
+              {!allRoomFull() ? (
+                <div className={`stickyBtn ${styles.mobileOnly} ${styles.enterBtnWrapper}`}>
+                  <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
+                </div>
+              ) : (
+                <div>All Rooms are full</div>
+              )}
               <div className="onnn">Metaverse will be live till Tuesday end of day.</div>
             </div>
             <div className={styles.hpHeroVideo}>
