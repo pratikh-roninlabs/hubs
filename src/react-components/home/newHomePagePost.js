@@ -141,7 +141,7 @@ const NewHomePagePost = () => {
                   <button onClick={() => setShowRooms(true)}>{"Enter the Metaverse"}</button>
                 </div>
               ) : (
-                <div>All Rooms are full</div>
+                <div>The Event is seeing overwhelming attendees. Please wait for a bit for some seats to go free.</div>
               )}
               <div className="onnn">Metaverse will be live till Tuesday end of day.</div>
             </div>

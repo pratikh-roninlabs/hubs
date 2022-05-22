@@ -49,7 +49,7 @@ export function RoomEntryModal({
           <p>{roomName}</p> */}
           <p>
             {
-              "Stay tuned. The metaverse will open on the 22nd of May at 4PM IST, so come back then to witness this exciting event."
+              "Welcome to the Virtual Convocation of the BounceBack Batch of 2022! Choose an option from below to enter."
             }
           </p>
         </div>

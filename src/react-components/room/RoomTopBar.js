@@ -24,7 +24,14 @@ const RoomTopBar = ({ sidebarActive, leaveRoom }) => {
           <QNDK className="desktop" />
           <QNMB className="mobile" />
         </button>
-        <button onClick={() => window.open("https://4oawdoy7t47.typeform.com/to/C7d1IPWA", "_blank")}>
+        <button
+          onClick={() =>
+            window.open(
+              "https://docs.google.com/forms/d/e/1FAIpQLSeU5-l0v--XgzR2v7IdfwqabLeUrHAIIrq2Zks4ou3ECgp_vw/viewform?usp=sf_link",
+              "_blank"
+            )
+          }
+        >
           <RPRTDK className="desktop" />
           <RPRTMB className="mobile" />
         </button>
