@@ -1652,6 +1652,7 @@ class UIRoot extends Component {
                     reason: LeaveReason.leaveRoom
                   });
                 }}
+                showPeople={() => this.toggleSidebar("people")}
               />
             )}
           </div>

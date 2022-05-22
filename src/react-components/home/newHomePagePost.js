@@ -11,6 +11,7 @@ import event2 from "../../assets/images/hdfcbb/event2.jpg";
 import event3 from "../../assets/images/hdfcbb/event3.jpg";
 import event4 from "../../assets/images/hdfcbb/event4.jpg";
 import event5 from "../../assets/images/hdfcbb/event5.jpg";
+import TermsSection from "./termsSections";
 
 import styles from "./newHomePage.scss";
 import { usePublicRooms } from "./usePublicRooms";
@@ -154,7 +155,7 @@ const NewHomePagePost = () => {
                 <h2 className={styles.hpSectionTitle}>How to enter the Metaverse?</h2>
                 <ol>
                   <li>Click on the link "Enter The Metaverse" at the top right corner.</li>
-                  <li>Select your room.</li>
+                  <li>Select your gate.</li>
                   <li>Enter the room from your device or use a VR device.</li>
                   <li>Enter your name and select your avatar.</li>
                   <li>Enjoy!</li>

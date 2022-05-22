@@ -274,8 +274,7 @@ export function ChatSidebarContainer({ /*scene,*/ canSpawnMessages, presences, o
     if (filter.isProfane(value)) {
       value = filter.clean(value);
     }
-
-    this.setMessage(value);
+    setMessage(value);
   };
   const isMobile = AFRAME.utils.device.isMobile();
   const isOverMaxLength = message.length > MAX_MESSAGE_LENGTH;

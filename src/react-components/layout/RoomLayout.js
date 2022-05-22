@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./RoomLayout.scss";
@@ -23,8 +23,14 @@ export function RoomLayout({
   sidebarActive,
   showTopBar,
   leaveRoom,
+  showPeople = () => {
+    console.log("=-=-=-=-=-Shwo people=-=-=-=-=-");
+  },
   ...rest
 }) {
+  useEffect(() => {
+    window.showPeople = showPeople;
+  }, []);
   return (
     <div className={classNames(styles.roomLayout, { [styles.objectFocused]: objectFocused }, className)} {...rest}>
       {showTopBar && <RoomTopBar sidebarActive={sidebarActive} leaveRoom={leaveRoom} />}
@@ -71,5 +77,6 @@ RoomLayout.propTypes = {
   playerEntered: PropTypes.bool,
   sidebarActive: PropTypes.any,
   showTopBar: PropTypes.bool,
-  leaveRoom: PropTypes.any
+  leaveRoom: PropTypes.any,
+  showPeople: PropTypes.func
 };

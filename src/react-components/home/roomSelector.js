@@ -22,7 +22,9 @@ const RoomSelector = ({ rooms, close }) => {
             <div className={styles.roomsData} key={room.id}>
               <span>Gate {i + 1}</span>
               <div className="imgWrapper">
-                <img src={room.images.preview.url} alt="" />
+                <div className="img">
+                  <img src={room.images.preview.url} alt="" />
+                </div>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path
@@ -34,6 +36,7 @@ const RoomSelector = ({ rooms, close }) => {
                   <span>{room.lobby_count + room.member_count}</span>
                 </div>
               </div>
+
               <a
                 href={room.url}
                 className={`enterBtn ${room.lobby_count + room.member_count >= room.room_size ? "disable" : ""}`}
