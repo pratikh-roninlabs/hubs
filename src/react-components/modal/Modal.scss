@@ -1,7 +1,7 @@
 @use "../styles/theme.scss";
 
 :local(.modal) {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   height: max-content;
@@ -12,6 +12,8 @@
   z-index: 1;
   width: 100%;
   max-width: 460px;
+  max-height: 90%;
+  overflow: auto;
 }
 
 :local(.header) {
