@@ -254,6 +254,7 @@ import { OAuthScreenContainer } from "./react-components/auth/OAuthScreenContain
 import { SignInMessages } from "./react-components/auth/SignInModal";
 import { ThemeProvider } from "./react-components/styles/theme";
 import { LogMessageType } from "./react-components/room/ChatSidebar";
+import { WindfarmHandler } from "./WindfarmHandler";
 
 const PHOENIX_RELIABLE_NAF = "phx-reliable";
 NAF.options.firstSyncSource = PHOENIX_RELIABLE_NAF;
@@ -434,15 +435,16 @@ export async function updateEnvironmentForHub(hub, entryManager) {
         environmentEl.object3DMap.mesh.traverse(o=>{
           if(o.name === "Windfarm"){
             console.log("We found the wind farm ________________1");
+            let windfarm = new WindfarmHandler(o);
           }
-          if(o.name === "Rotor10"){
-            console.log("We found the wind Rotator ________________11111111");
-            setInterval(() => {
-              console.log("We are rotating the Rotator",o.rotation.z);
-              o.rotateZ(0.1);
-              o.matrixAutoUpdate = true
-            }, 1000);
-          }
+          // if(o.name === "Rotor10"){
+          //   console.log("We found the wind Rotator ________________11111111");
+          //   setInterval(() => {
+          //     console.log("We are rotating the Rotator",o.rotation.z);
+          //     o.rotateZ(0.1);
+          //     o.matrixAutoUpdate = true
+          //   }, 1000);
+          // }
         })
 
         // Show the canvas once the model has loaded
@@ -487,6 +489,7 @@ export async function updateEnvironmentForHub(hub, entryManager) {
             environmentEl.object3DMap.mesh.traverse(o=>{
               if(o.name === "Windfarm"){
                 console.log("We found the wind farm ________________2");
+                let windfarm = new WindfarmHandler(o);
               }
             })
 
