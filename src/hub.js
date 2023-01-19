@@ -430,6 +430,20 @@ export async function updateEnvironmentForHub(hub, entryManager) {
         environmentEl.removeEventListener("model-error", sceneErrorHandler);
 
         console.log(`Scene file initial load took ${Math.round(performance.now() - loadStart)}ms`);
+        console.log("Pratik");
+        environmentEl.object3DMap.mesh.traverse(o=>{
+          if(o.name === "Windfarm"){
+            console.log("We found the wind farm ________________1");
+          }
+          if(o.name === "Rotor10"){
+            console.log("We found the wind Rotator ________________11111111");
+            setInterval(() => {
+              console.log("We are rotating the Rotator",o.rotation.z);
+              o.rotateZ(0.1);
+              o.matrixAutoUpdate = true
+            }, 1000);
+          }
+        })
 
         // Show the canvas once the model has loaded
         document.querySelector(".a-canvas").classList.remove("a-hidden");
@@ -468,6 +482,13 @@ export async function updateEnvironmentForHub(hub, entryManager) {
             envSystem.updateEnvironment(environmentEl);
 
             console.log(`Scene file update load took ${Math.round(performance.now() - loadStart)}ms`);
+            console.log("Pratik");
+
+            environmentEl.object3DMap.mesh.traverse(o=>{
+              if(o.name === "Windfarm"){
+                console.log("We found the wind farm ________________2");
+              }
+            })
 
             traverseMeshesAndAddShapes(environmentEl);
 
